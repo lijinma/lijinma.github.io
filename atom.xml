@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-05-28T00:01:31+08:00</updated>
+  <updated>2014-05-28T00:06:53+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -13,33 +13,763 @@
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
-</feed>
-=======
----
-layout: nil
-title : Atom Feed
----
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
- 
- <title>{{ site.title }}</title>
- <link href="{{ site.production_url }}/{{ site.atom_path }}" rel="self"/>
- <link href="{{ site.production_url }}"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.production_url }}</id>
- <author>
-   <name>{{ site.author.name }}</name>
-   <email>{{ site.author.email }}</email>
- </author>
+  <entry>
+    <title type="html"><![CDATA[《每日与主同行》手机端网站]]></title>
+    <link href="http://lijinma.github.io/blog/2013/09/11/mei-ri-yu-zhu-tong-xing/"/>
+    <updated>2013-09-11T01:03:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2013/09/11/mei-ri-yu-zhu-tong-xing</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/meiriyuzhutongxing.jpg" alt="每日与主同行" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
 
- {% for post in site.posts %}
- <entry>
-   <title>{{ post.title }}</title>
-   <link href="{{ site.production_url }}{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>{{ site.production_url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
- </entry>
- {% endfor %}
- 
+<p>在阿牛哥的带领下，我现在每天都会读圣经，参考的资料就是苏颖智牧师的《每日与主同行》，经常需要在网上读一下每天的章节，但是网上大部分版本都没有做很好的手机兼容，所以在手机上读的很累，我就自己做了一个简单的网站来进行每天的阅读。</p>
+
+<h2>简介</h2>
+
+<h4>网址：</h4>
+
+<p><a href="http://mryztx.duapp.com">http://mryztx.duapp.com</a>  (mryztx是《每日与主同行》的首字母)</p>
+
+<h4>平台：</h4>
+
+<p>百度BAE</p>
+
+<h4>方法：</h4>
+
+<p>抓取网站<a href="http://www.jonahome.net/files02/PI_SGrowth-Day-Walk/gb/">http://www.jonahome.net/files02/PI_SGrowth-Day-Walk/gb/</a>的html存下来，然后重新设计为responsive的页面；使用了一点点bootstrap.min.css。</p>
+
+<h4>访问：</h4>
+
+<p>你可以在PC和手机进行访问。</p>
+
+<h4>截图：</h4>
+
+<p><img src="../images/post/screenshot.png" alt="ScreenShot" /></p>
+
+<h3>终于可以使用手机阅读了</h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[一个年轻程序员对版本管理的理解]]></title>
+    <link href="http://lijinma.github.io/blog/2013/04/09/version-control/"/>
+    <updated>2013-04-09T01:03:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2013/04/09/version-control</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/version_control.png" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+
+<p>版本管理是每一个项目中必不可少的环节，但这些知识却无法在学校中学到，常常需要在实践中学习，我总结了一些自己工作中版本管理的知识和经验，希望能给大家带来一起启发。
+本文章是有感于某外包公司因为人少竟然不用版本管理而发。部分内容参考网上资料。</p>
+
+<h2>为什么做版本管理</h2>
+
+<p>如果你不做版本管理：</p>
+
+<ol>
+<li>你有没有出现过误删程序代码？</li>
+<li>你有没有出现过程序刚刚还运行好好的，现在就不行了，但是忘记修改了什么？</li>
+<li>你是不是在某个时候也很想知道某个文件在某个时间段做过哪些修改？</li>
+<li>你有没有想过和别人合作？</li>
+</ol>
+
+
+<p>如果以上的答案是肯定的，那么你需要版本管理。</p>
+
+<p>注：即便是单人进行项目开发，比如某些自由职业者，使用版本管理也是非常有用的，没有版本管理你永远无法对项目有一个清晰的认识。</p>
+
+<!--more-->
+
+
+<h2>Git还是SVN?</h2>
+
+<p>现在比较常用的版本管理软件有git和svn，两者的区别我列一下（我以git作为标尺）：</p>
+
+<p><strong>Git优点：</strong></p>
+
+<pre><code>1. Git比SVN能更好的Merge，有木有？有木有？我要对SVN的Merge咆哮了！！
+2. Git比SVN快，比SVN更灵活。
+3. Git的库比SVN小太多，Mozilla项目小了30倍，Git的branch省很多资源。
+4. Git基于分布式设计，开发人员有代码的完全控制权，Git也完全具有SVN的集中式代码管理的能力。
+5. 基于分布式的设计，Git的每一次提交都是成功的，而且不依赖网络连接。
+6. Github有你需要的大多数开源项目。
+</code></pre>
+
+<p><strong>Git缺点：</strong></p>
+
+<pre><code>1. SVN允许从服务器中获取某个子目录；Git要求你必须clone整个库。
+2. SVN在windows上支持更好，中国使用windows编程的人更多。
+3. GUI方便SVN支持的更好，有更多的可视化选择。
+4. SVN中顺序的版本号非常人性化，Git中中使用SHA1最为commit唯一标志，复杂。
+5. SVN你可以更多的使用并学习，Git需要更长的时间去学习使用。
+</code></pre>
+
+<p><strong>我的建议</strong></p>
+
+<p>如果是没有接触过任何版本管理的新手，建议你直接学习Git，可能会花一段时间才能完全熟悉Git，但这是值得的，当你熟悉了Git，再使用SVN就很容易上手，况且使用Git的项目会越来越多，越多，多……</p>
+
+<h2>版本管理中的一些些总结</h2>
+
+<p>我使用的是Git，我使用的IDE是Xcode；</p>
+
+<h3>1. 尽量使用GUI</h3>
+
+<p>GUI能更好更快的以可视化展现你的 log、commit、diff等，如果你想更效率的工作，请使用GUI，比如 Mac上的 git gui和 gitk是两个很好很强大的工具，大大的提升了提交速度，也可以更直观的了解各个 branch的关系。</p>
+
+<h3>2. 尽快提交，经常提交</h3>
+
+<p>尽快提交和经常提交有如下好处：</p>
+
+<ol>
+<li>每一个提交都是一个新的版本，你又多了一个回滚的机会。</li>
+<li>经常提交可以更好的让与你合作者了解到你的工作进度，也为更少的Merge做准备。</li>
+<li>尽快提交让你降低出现代码未提交丢失的可能性。</li>
+</ol>
+
+
+<h3>3. 只提交可以work的代码</h3>
+
+<p>这条经验和第一条“尽快提交，经常提交”一样重要，与别人合作的时候，如果你check out到了他的某一个commit，你不希望在这个点是无法编译成功的。所以尽力让每一次提交都不影响整个项目。</p>
+
+<h3>4. 提交前请检查你的更改</h3>
+
+<p>有以下内容需要你去检查：</p>
+
+<ol>
+<li>是否提交了无关的内容？</li>
+<li>是否提交的内容是你想要提交的内容？这句话并不矛盾。</li>
+<li>提交内容的代码格式是否正确，我想每一个公司都会有自己的代码格式要求。</li>
+</ol>
+
+
+<h3>5. 认真填写“Commit messages”</h3>
+
+<p>你要了解 Commit messages就是你所提交的内容的中心思想，如果你写了一堆废话，不如不写。</p>
+
+<p>如果你不希望每次都查看提交细节，请认真书写你的commit messages，这对以后版本管理有太多好处了，这在团队合作中太重要了。</p>
+
+<p>即便你一个人写你一个人的代码，你也要为你自己的每一次提交负责，因为你不想在以后浪费更多的时间。</p>
+
+<h3>6. 做好你的.gitignore</h3>
+
+<p>请ignore掉不需要的文件或者编译生成的一些临时文件，比如mac目录下的.DS_Store，比如Android项目生成的bin中的内容。</p>
+
+<h3>7. 要注意IDE项目文件</h3>
+
+<p>两点需要你注意：</p>
+
+<ol>
+<li>xcode 的项目我会只提交一个 projectname.xcodeproj/project.pbxproj，其余的文件是一些类似个人配置文件，不需要提交。</li>
+<li>请把project.pbxproj的提交与源代码的提交分开，原因是project.pbxproj是无法merge的。</li>
+</ol>
+
+
+<p><strong>如果我说的部分有任何问题，请赐教，也希望能和你关于版本管理有一些交流。</strong></p>
+
+<h2>参考资料：</h2>
+
+<p><a href="http://boxysystems.com/index.php/5-fundamental-differences-between-git-svn/">5 Fundamental differences between GIT &amp; SVN</a></p>
+
+<p><a href="https://git.wiki.kernel.org/index.php/GitSvnComparison">GitSvnComparison</a></p>
+
+<p><a href="http://www.troyhunt.com/2011/05/10-commandments-of-good-source-control.html">10 commandments of good source control</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[金马的2012年总结]]></title>
+    <link href="http://lijinma.github.io/blog/2013/02/02/my-2012/"/>
+    <updated>2013-02-02T23:30:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2013/02/02/my-2012</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/2013.png" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+
+<p>明天要回家，虽然明天要5点起赶飞机，我依然决定要熬夜写下这篇博客，因为我想在年前把这篇文章发布了，2012年对于我来说是神奇的一年，也是充满感动的一年，婚姻，工作，信仰，家庭在这一年中都是收获满满，连昨天的年会抽奖也是幸运连连，我有点幸福…… 以下内容我想到哪写到哪，可能前言不搭后语，请大家凑合看，这篇博客的最终目的是期望你们会知道我的近况。</p>
+
+<!--more-->
+
+
+<h2>关于博客：</h2>
+
+<p><img src="../images/post/wodeblog.png" alt="Blog" /></p>
+
+<p>我是一个爱写东西但又写得很烂的人，所以常常在校内写了东西最后又没有发出去，我会忧虑很多。但今年下半年我最终还是决定要写一点点关于技术和思考的东西了，因为我觉得我是一个程序猿，就这样金马的Blog <a href="http://www.lijinma.com">www.lijinma.com</a>诞生了。</p>
+
+<p>博客开始使用Wordpress搭建，Wordpress是现在最流行的Blog程序，开始的时候它的theme和plugin都非常的吸引我，但可能我太过在乎外观和一些功能，导致我没有写多少东西，最后我决定使用octopress，一个简单的基于Jekyll的静态博客，可以让我把更多的精力花写东西上，具体博客搬家的原因大家可以参考文章：“博客搬家：从Wordpress迁移到octopress”</p>
+
+<p>我期望通过我的博客会更好的表达自己，和你会有更多且更深的交流。</p>
+
+<h2>关于我的工作：</h2>
+
+<p><img src="../images/post/yeeccologo.png" alt="Yeecco" /></p>
+
+<p>我们公司是做什么：我们公司是从ios移植app到android上的，我们提供你移植工具或移植服务，如果想了解更多的，请访问我们网站<a href="http://www.yeecco.com">www.yeecco.com</a>，服务器在国外，所以有点慢，另外网站大部分是我弄的，体验不够好，请大家轻喷；网站做的不好不代表公司不牛逼。</p>
+
+<p>我每天做什么：编程，讨论，写文档，编程……</p>
+
+<h2>关于读书：</h2>
+
+<p>我还是读的太少，现在在网上看别人博客的时间会比较多，但长时间的读一本书还是太少，最近看到了一句很好的话分享给大家：世上无难事，只怕一懒二拖三不读书。对于我，偶尔懒偶尔拖经常不读书，结果就是：我老婆从我身上永远闻不到书香；期待新的一年会有所改善。</p>
+
+<h2>关于婚姻：</h2>
+
+<p><img src="../images/post/hunying.png" alt="Marrige" /></p>
+
+<p>婚姻是一个常被人讨论的话题，我的感觉是：真的不容易；两个人组成一个家庭会遇见各种各样的问题，会冲突会吵架，但无论如何：你会在某一天某时刻感受到婚姻的甜美，甜美的滋味会让你觉得一切都是值得。很感谢参加教会的夫妻营，也很感谢这一年来教会中弟兄姊妹对我们夫妻的帮助，让我们能认识到彼此的差异，让我们能不求回报的去爱；我想在将来无数的日夜里我们还会遇到各种各样的难题，但我有充足的信心去解决（不包括吵架的时候）。</p>
+
+<p><img src="../images/post/laopo.png" alt="Laopo" /></p>
+
+<p>也在这样一个文章里感谢我妻子，我无房无车吊丝一枚，她为了我辞掉了大连的工作来到上海，一切从头开始，单单是为了我，我是幸运的。</p>
+
+<h2>关于朋友：</h2>
+
+<p><img src="../images/post/pengyou.jpg" alt="Friends" /></p>
+
+<p>我承认自己是一个很懒的人，我去到一个新环境后，很少去联系以前的朋友，我只想说，对不起，或许你没有收到我的电话或短信，但是，但我会经常想起你们，会怀念，会发呆。刚才在《ONE 一个》上看到这样一句话：<code>当头发已斑白的时候，你是否还依然能牢记我？（from 陈升《然而》）</code>我想说的是，我会的，我会忘记你的大名，但我会牢记你的绰号；我会忘记与你的不开心，但我会牢记与你一起的欢乐；我会忘记你的样子，但我会牢记你的笑容。</p>
+
+<p>愿我们能彼此纪念，互相勉励。</p>
+
+<h2>关于支教：</h2>
+
+<p><img src="../images/post/zhijiao.png" alt="Zhijiao" /></p>
+
+<p>去年听到了一些关于短期支教的批评声音，我想在这里说一些我对支教的认识，我个人觉得有些同学理解错了短期支教的该概念，短期支教真的能给孩子们带去很多吗？短期支教真的可以让孩子视野扩大吗？我觉得会有，但不会很多；但我依然很支持短期支教，为什么呢？因为我觉得支教过程对参与支教的大学生们改变很多，因为我们每个人都需要了解中国的教育现状，有一句话叫：<code>人对了，事情就对了。</code>如果将来某一天我们很多人都有这样一颗支教的心，而且付诸了行动，山区的孩子就会有接受更好教育的机会，教育的新鲜血液就会不断涌入，中国的教育也就会有希望。</p>
+
+<p>支教和教会中的服侍很相似，你服侍了教会中的弟兄姐妹，其实最终受益最多的是你自己，你的灵命得到了成长，你与神的关系也会越来越近，所以很多人做很多事情，表面上是在服务别人，其实从长远来看，其实都是服务自己，当然，被服务者应该是去感谢的。</p>
+
+<h2>关于公益与感动：</h2>
+
+<p><img src="../images/post/gongyi.png" alt="Gongyi" /></p>
+
+<p>毕业两年来，我公益方面都做了什么？几乎没有，就是前段时间在小王老师的带领下我们三位老师：小王老师，黄老师和我给以前支教教过的孩子们邮去了一些照片和书籍，内心得到了平安，和小王老师比起来，我的爱心远不够。</p>
+
+<p>分享一个感动的小事情，给孩子寄书时没有老师的电话，我就给其中一个学生打电话，结果是她妈妈接的电话，简单寒暄后就挂了电话，过了一会我收到了一个短信，很感动，短信分享给的：</p>
+
+<blockquote><p>李老师对不起哦、我不知道是你、小林这周考试没让他带手机、他经常那个在我面前提起你</p></blockquote>
+
+<p>简单的一个短信，我就满满的开心了一天。</p>
+
+<h2>关于财富：</h2>
+
+<p>黑客与画家的作者硅谷创业之父Paul Graham说过一句话，如果你想变得富有，最快的办法是去创造财富。秉承这样的一个原则，我在做事情的时候会问自己：这样做我会给自己或别人创造财富吗？如果答案是否定的，我会拒绝去做这件事情，我期望我做的事情会为自己为别人创造更多的财富。</p>
+
+<h2>关于健康：</h2>
+
+<p>长时间在电脑前的缘故，导致眼睛越来越不好，经常会酸痛流泪，甚至睁不开，有时候感觉会不会突然有一天我会瞎掉？或许瞎掉之后，我可以更专注的去做一件不需要眼睛的事情。这样想想觉得也不算太糟糕。</p>
+
+<h1>关于2013计划：</h1>
+
+<p><img src="../images/post/2013.png" alt="2013" /></p>
+
+<p>一般我们都很难实现年初的计划，但我依然想写下新的一年的打算，我会尝试降低完成难度：</p>
+
+<blockquote><ol>
+<li><p>博客不能放弃更新，但只更新有价值的文章，篇数随意；</p></li>
+<li><p>我要把更多的时间和精力聚集在家庭上；</p></li>
+<li><p>工作的一个目标就是：让老板觉得我是一个靠谱的人，我办事，他放心；</p></li>
+</ol>
+</blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[公司如何进行文档管理]]></title>
+    <link href="http://lijinma.github.io/blog/2013/01/28/how-to-manage-docs/"/>
+    <updated>2013-01-28T00:35:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2013/01/28/how-to-manage-docs</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/docs.jpeg" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+
+<p>我相信每个公司都会认为写文档是一件很重要的事情，但是文档的书写、管理、更新，备份等问题绝对不是一件简单的事情，我不知道别的公司是如何管理文档的，但是我以前在畅游工作，文档是通过word来书写，然后通过svn来管理就非常低效，我想先说一下我们公司文档是一步一步如何改进的，也许在这个一个改进的路上会看到你自己的影子。</p>
+
+<!--more-->
+
+
+<h2>第一阶段：使用pages（类似office的word工具），人工版本管理</h2>
+
+<p>开始的时候直接使用pages，然后制定好格式后，让每个人按照同意的格式书写，书写好通过邮件提交给管理人，管理人审核通过后，提交到文档服务器中进行统一的管理，如果没有通过，会把修改意见加到文档中，然后通过邮件发送给提交人来重新修改，如此过程重复，直到文档符合要求；</p>
+
+<p>这种管理是非常低效，原因有三：</p>
+
+<blockquote><ol>
+<li>人工管理最大的问题就是无法进行版本管理，历史修改无法记录，无法回滚。</li>
+<li>如果多个人对同一个文档进行修改，就会发现整个提交和审核文档的过程非常冗余和低效；</li>
+<li>管理人对文档的管理非常累，浪费了很多时间；</li>
+</ol>
+</blockquote>
+
+<h2>第二阶段：使用pages（类似office的word工具），使用git版本管理</h2>
+
+<p><img src="../images/post/git.png" alt="git" /></p>
+
+<p>使用git管理后解决了版本管理的问题，但是仍然有如下问题：</p>
+
+<blockquote><ol>
+<li>文档可以通过记录各个版本的修改，但是却无法通过git来比较出到底每个版本都有哪些修改，因为pages或word文档都不是纯文本格式的；</li>
+</ol>
+</blockquote>
+
+<h2>第三阶段，使用markdown进行文档书写，使用git进行版本管理；</h2>
+
+<p><img src="../images/post/markdown.jpeg" alt="markdown" /></p>
+
+<p>针对第一二阶段出现的问题，我们文档的书写进行了修改，使用了markdown，markdown是一种轻量级标记语言，书写内容几乎是纯文本，这就解决了第二阶段的问题，git可以通过diff轻松比较出来每个版本的区别；</p>
+
+<p>这一阶段我们也全部使用git进行版本管理，取消了管理人，所有文档的提交和修改与代码的管理完全一致，审核文档的过程与审核代码的过程完全一致；我们公司不使用git push和git pull，因为我们的主branch只会让审核过的commit进来，所以我们使用的是git fetch和git rebase等方法来进行统一的提交和管理。</p>
+
+<p>如果你写文档的全是技术人员，我觉得这个方法非常值得你去试用。</p>
+
+<p>但这样管理文档仍然有缺点：</p>
+
+<blockquote><ol>
+<li>整个过程还是需要有一些技术的基础，这对于非技术人员来说，学习成本比较大；</li>
+<li>虽然markdown是一套很简单的标记，但是不是所有人都愿意去学去用；</li>
+<li>git diff对比结果的显示仍然不够人性化；比如修改一行，git diff会显示删除了一行，增加了一行；</li>
+</ol>
+</blockquote>
+
+<h2>第四阶段：寻找一款php开源的文档管理应用，来解决第三阶段出现的问题；</h2>
+
+<p>这个阶段我一直在寻找，期望找到一款合适的文档管理的工具，但是没有找到合适的，因为如果涉及文档的多人合作书写，版本管理仍然是一个很难解决的问题；所以，此阶段未果；</p>
+
+<h2>第五阶段：使用Google doc 进行文档管理</h2>
+
+<p><img src="../images/post/GoogleDocs.jpg" alt="Google Docs" /></p>
+
+<p>针对第四阶段没有找到一款很好的内部局域网的web应用，只能使用一些外网的在线工具，Google Docs闪亮登场了，Google doc解决了我们第三个阶段出现的所有问题：</p>
+
+<blockquote><ol>
+<li>Google Docs和Pages或者word使用类似，技术人员和非技术人员都可以使用；</li>
+<li>一般人都会使用；</li>
+<li>Google Docs提供的查看修订历史记录功能，很人性化的显示出哪些内容是新增的，哪些内容是删除的；</li>
+<li>Google Docs会在文档中分配给每一个人一种颜色，这样就很容易区分是谁的修改；</li>
+<li>Goolge Doc很容易进行权限管理，分读写权限、读+评论权限和读权限；</li>
+</ol>
+</blockquote>
+
+<p>另外我非常喜欢Google doc的一个功能，就是如果多个人同时在编辑一篇文档的时候，你会即时的看到别人的每一个修改动作；Google Docs也提供了聊天功能；</p>
+
+<p>但Google Docs仍然有他的问题：</p>
+
+<blockquote><ol>
+<li>最严重的问题就是，Google Docs在国内被墙（偶尔可以使用），我们公司使用付费vpn来解决这个问题，还算稳定；</li>
+<li>可能会有一些人觉得Google Docs不安全；</li>
+</ol>
+</blockquote>
+
+<p>盼望：</p>
+
+<blockquote><ol>
+<li>某一天Google Docs在国内解封了（可能性不大）；</li>
+<li>某一天Google Docs开源了，我们可以在局域网中很容易搭建（Google 不会开源Google Docs，但我觉得会有类似的应用会开源，就像Github没有开源，但是Gitlab开源了一样）；</li>
+<li>某一天国内也有类似Google Docs的产品出现（有一定可能性，因为真的是一个很好的产品，我也相信我们的山寨能力）；</li>
+</ol>
+</blockquote>
+
+<p>求分享：</p>
+
+<p>非常希望看文章的你能分享你们公司的文档管理方法，我觉得只有不断的取长补短才能让文档管理变得既简单又高效，文档管理好了，知识就可以更好的传承，效率就可以大大的提升，最终我们会产生更多的财富，公主和王子从此过上了幸福快乐的生活。</p>
+
+<p><a href="http://www.lijinma.com">www.lijinma.com</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[我的博客到底应该写什么？]]></title>
+    <link href="http://lijinma.github.io/blog/2013/01/26/what-for-blog/"/>
+    <updated>2013-01-26T21:53:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2013/01/26/what-for-blog</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/blog.jpg" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+
+<p>前段时间脑子里面突然蹦出这个问题：我的博客到底应该写什么？博客可以写很多东西，可以写生活的琐事，可以写一些工作中遇到的技术小问题，可以分享身边的任何东西，当然还可以写自己的思考；从我开始<a href="">www.lijinma.com</a>博客后，我写了差不多8篇文章，其中大部分的文章是一些技术小问题，但当我再回头看自己写的文章的时候，我发现有价值的东西很少，所以从那天我就开始反省自己：我的博客到底要写些什么？想回答这个问题，我问了自己另外一个问题：我为什么要写博客?</p>
+
+<!--more-->
+
+
+<h2>我为什么要写博客？</h2>
+
+<p><img src="../images/post/blog_or_not.jpeg" alt="为什么要写博客" />
+我最开始写博客是因为我受到了<a href="http://mindhacks.cn/">刘未鹏</a>的启发，他说：</p>
+
+<blockquote><ol>
+<li>交到志同道合的朋友。</li>
+<li>书写了为了更好的思考</li>
+<li>教是最好的学。</li>
+<li>讨论是绝佳的反思。</li>
+<li>激励你去持续学习和思考。</li>
+<li>学会持之以恒做一件事情。</li>
+<li>一个长期的价值博客是一份很好的简历。</li>
+</ol>
+</blockquote>
+
+<p>我在<a href="http://www.gabrielweinberg.com/">Gabriel Weinberg</a>的博客<a href="http://www.gabrielweinberg.com/blog/2011/08/why-i-blog.html">Why I blog</a>认识到了他对写博客的看法：</p>
+
+<blockquote><ol>
+<li>有助于修正和完善对事物的认识</li>
+<li>增强自信心</li>
+<li>帮你找到志同道合的人</li>
+<li>使你脱颖而出</li>
+</ol>
+</blockquote>
+
+<p>我也在<a href="http://beiyuu.com/">BeiYuu</a>的文章<a href="http://beiyuu.com/why-blog/">我为什么写博客？</a>中受到了鼓舞，他说：</p>
+
+<blockquote><p>有一个个人的品牌，对于自己的发展只有好处，行走网络江湖，有同一个ID标识，无论在哪里都会让人看到你，这样长期的潜移默化，个人的品牌效力也就展现出来了。然后有一个自己独立的域名，并且用心去经营，肯定会有人欣赏的。而且经过我的一番研究，成本并不是很高。</p></blockquote>
+
+<p>我还在<a href="http://xumengyang.com/">xu meng yang</a>的博客<a href="http://xumengyang.com/2012/12/11/why-i-write-blog/">为什么我要写博客</a>中了解了他对博客的理解：</p>
+
+<blockquote><ol>
+<li>提醒自己，不能骄傲，因为博客记录了我们的成长，我们也是从菜鸟过来的；</li>
+<li>提高写作能力;</li>
+<li>提高自身的“价值”，认识更多的朋友;</li>
+</ol>
+</blockquote>
+
+<p><a href="http://mindhacks.cn/">刘未鹏</a>、<a href="http://www.gabrielweinberg.com/">Gabriel Weinberg</a>、<a href="http://beiyuu.com/">BeiYuu</a>和<a href="http://xumengyang.com/">xu meng yang</a>都给了很好的答案，但是我觉得其中对我最重要的是：博客让我给了自己一个独立思考的空间，老罗也说过：独立思考是一个人最重要的品格；工作和生活的惯性让我们落入俗套，循规蹈矩，没有思考的人生就像一个没有颜色的黑白网络游戏，索然无味。既然弄明白了为什么要写博客，那我的博客到底应该写什么也就不难回答了。</p>
+
+<h2>我的博客到底应该写什么？</h2>
+
+<p>我觉得应该写一些高质量的文章，文章中或者记录我的思考，或者分享对于别人可能有价值的知识或信息；避免自己简单贴一段代码，避免自己发牢骚碎碎念；
+我决定删除所有的自己觉得没有价值的博客文章，从这篇博客开始，写一些有价值的博客。</p>
+
+<p><a href="http://beiyuu.com/">BeiYuu</a>解释了什么是高质量的文章：</p>
+
+<blockquote><p>高质量的博文，肯定需要自己缜密的思考，并且需要一定的文笔才能将自己的想法完整清晰的表达出来;</p></blockquote>
+
+<p><a href="http://mindhacks.cn/">刘未鹏</a>关于这个问题是这样告诫的：</p>
+
+<blockquote><p>千万不要碎碎念，我能理解每个人都想偶尔发发牢骚的冲动，但是现在已经有了一个很好的窗口：twitter，所以立即停止在你的博客上碎碎念，阅读博客的人希望得到信息而非噪音。如果实在忍不住想碎碎念的话不妨换一下位置，这么来告诉自己：如果你看到别人博客来上这么一段，你会有兴趣看吗？</p></blockquote>
+
+<h2>如何写博客？</h2>
+
+<p><a href="http://www.gabrielweinberg.com/">Gabriel Weinberg</a>是这样写博客的：</p>
+
+<blockquote><ol>
+<li>追求质量，宁缺勿滥；</li>
+<li>以初学者角度看问题，不故作高深；</li>
+<li>不制造电子垃圾，不拾人牙慧；</li>
+<li>从实际问题出发，注重共性</li>
+</ol>
+</blockquote>
+
+<p>对于我来说，写东西还有很长的一段路要走，因为不单单是我思考不够，我的文笔也很差，写的东西会让别人读起来不舒服，但我觉得不断的尝试和练习总会有效果的，昨天读到了<a href="http://www.yangzhiping.com/">阳志平</a>的文章<a href="http://www.yangzhiping.com/psy/writers-model.html">快速写作模式谈</a>，收获很大，推荐大家去读，如果你也经常写东西，那么阳志平的方法不妨一试。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[博客搬家：从Wordpress迁移到octopress]]></title>
+    <link href="http://lijinma.github.io/blog/2013/01/23/move-from-wordpress-to-octopress/"/>
+    <updated>2013-01-23T23:59:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2013/01/23/move-from-wordpress-to-octopress</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/octopress.jpeg" alt="Octopress" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+
+<p>终于还是下定决心从Wordpress迁移到Octopress上了，Wordpress的便利导致了他越来越庞大的身躯，但他的臃肿常常会打消我写文章的念头，也真的是不想再花心思在Wordpress主题和插件上了，我们要更专注于写而不是别的花里胡哨的东西，从复杂中解脱，回归简单。</p>
+
+<!--more-->
+
+
+<h2>为什么使用放弃Wordpress而转向Octopress?</h2>
+
+<ol>
+<li>Wordpress是动态的，加载慢，尽管我的服务器是Amazon EC2在日本的主机，但是在国内访问依然不快，然后Octopress是静态页面，自然要快一些；</li>
+<li>不喜欢Wordpress发布文章的编辑器，喜欢用markdown来文章，这样子我会更专注于内容，而不是格式；</li>
+<li>Amazon EC2的 Instance偶尔mysql会宕机，导致Wordpress无法访问；</li>
+<li><a href="http://www.stdyun.com">www.stdyun.com</a>免费提供Octopress托管，只需要一个域名就可以搭建网站，而Amazon EC2是要收费的，而且不便宜；</li>
+</ol>
+
+
+<h2>什么是Octopress?</h2>
+
+<p>Wordpress大家都知道，但是Octopress可能只有程序猿比较了解，</p>
+
+<blockquote><p>Octopress is a framework designed by <a href="http://brandonmathis.com/">Brandon Mathis</a> for <a href="http://github.com/mojombo/jekyll">Jekyll</a>, the blog aware static site generator powering <a href="http://pages.github.com/">Github Pages</a>. To start blogging with Jekyll, you have to write your own HTML templates, CSS, Javascripts and set up your configuration. But with Octopress All of that is already taken care of. Simply <a href="https://github.com/imathis/octopress">clone or fork Octopress</a>, install dependencies and the theme, and you’re set.</p></blockquote>
+
+<h2>部署Octopress需要什么技能？</h2>
+
+<ol>
+<li>你需要懂一些基本的git知识，了解github；</li>
+<li>你需要熟悉一门轻量级标记语言,比如markdown； 如果你不熟悉markdown，请参考阳志平的文章：<a href="http://www.yangzhiping.com/tech/r-markdown-knitr.html">Markdown写作浅谈</a>，你就会明白markdown是多么的简单迷人。</li>
+</ol>
+
+
+<h2>如何迁移wordpress的文章到Octopress？</h2>
+
+<p>我的博客本来就没有多少文章，所以我直接手动迁移过来，如果你的文章非常多，请参考大眼夹的文章<a href="http://blog.dayanjia.com/2012/04/migration-to-octopress-from-wordpress/">从Wordpress迁移到Octopress</a>，讲得非常清楚;</p>
+
+<h2>如何使用stdyun的octopress的免费托管服务？</h2>
+
+<p>使用github pages很容易部署一个免费的网站，但是介于github在中国经常被屏蔽的缘故，我选择了stdyun提供的octopress免费托管服务，在中国访问速度非常之快，托管介绍请参考：<a href="https://blog.stdyun.com/octopress">为中国的hacker准备的octopress托管</a>，如何部署请参考文章：<a href="http://blog.stdyun.com/2012/12/27/octopress-plus-stdyun-equals-stdyun-octopress-tuo-guan-fu-wu/">octopress+stdyun=stdyun octopress托管服务</a>.</p>
+
+<h2>如何使用github pages部署octopress？</h2>
+
+<p>我没有部署在github上，所以请大家在网上搜索资料，推荐参考阳志平的文章：<a href="http://www.yangzhiping.com/tech/octopress.html">Ruby开源项目介绍(1)：octopress——像黑客一样写博客</a>.</p>
+
+<blockquote><p>有任何与octopress相关的问题，请留言，我会尽可能帮助大家。</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【用objective-c写android游戏】初次使用Stella SDK]]></title>
+    <link href="http://lijinma.github.io/blog/2012/11/17/what_is_stella_sdk/"/>
+    <updated>2012-11-17T23:30:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2012/11/17/what_is_stella_sdk</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/yeecco.png" alt="StellaSDK" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+
+<p>现在跨平台开发的工具越来越多，比如使用html5的Phone Gap，比如某姓王的提出来的Cocos2d-x等等，还有很多很多，这些平台都可以直接开发ios和android平台的应用，但是对于我却不满意，因为我只会写Objective-c，不会用javascript、c++等，我也不愿意再花大量的时间去学习js、c++、lua等，那怎么办？Stella SDK解决了我的问题。</p>
+
+<!--more-->
+
+
+<h2>什么是 Stella SDK?</h2>
+
+<p>打开Stella SDK的官网：<a href="www.yeecco.com">www.yeecco.com</a>，我们可以了解到，Stella SDK是一整套开发工具，类似苹果的ios sdk一样，通过它我们可以使用Objective-c来编写的App，并且可以同时生成在ios平台的ipa和android平台的apk。</p>
+
+<h2>为什么可以使用objective-c来写android游戏？</h2>
+
+<p>打开产品介绍<a href="http://www.yeecco.com/product/stella">http://www.yeecco.com/product/stella</a>，我们发现：</p>
+
+<blockquote><p>Stella SDK使用纯Objective-C语言在Android NDK上编译而成，如此来避免使用Java。在运行时，无需对代码进一步解析，直接运行在CPU上。正因为多线程框架，Stella SDK充分利用系统资源来保证App在Android设备上性能有最佳表现。</p></blockquote>
+
+<p>通过介绍，我了解到，他们使用android的NDK来实现的，但就我所知，现在的开发者开发android App的时候，只会用c或c++来开发比较需要高效率的模块，然后使用NDK JNI来集成到android App中，难道整个android app都可以使用NDK来实现？</p>
+
+<p>在进一步学习Stella SDK前，我要简单介绍一下Android NDK。</p>
+
+<h2>什么是 Android NDK?</h2>
+
+<p>打开<a href="http://http//developer.android.com/tools/sdk/ndk/overview.html">Android NDK的介绍页面</a>，我了解到：</p>
+
+<blockquote><p>The Android NDK is a toolset that lets you embed components that make use of native code in your Android applications.</p>
+
+<p>Android applications run in the Dalvik virtual machine. The NDK allows you to implement parts of your applications >using native-code languages such as C and C++. This can provide benefits to certain classes of applications, in the >form of reuse of existing code and in some cases increased speed.</p></blockquote>
+
+<p>我们一般编写Android App是使用Android SDK，通过java语言来编写程序，而上面提到的是，一些经常被使用的模块，我们可以使用c或c++（objective-c也可以）来编写，这样的好处是可以提交效率。Native code的效率肯定要比Virtual machine快，这是毋庸置疑的。Android NDK的更多信息请大家浏览它的介绍页面。</p>
+
+<h2>Stella SDK的优势是什么？</h2>
+
+<p>如果你已经用objective-c开发了几款游戏希望跨平台，如果你只会objective-c且没有更多时间更多精力去学习一门新的语言，比如java、js、lua等，如果你希望只维护一套代码objective-c代码但是想运行在多个平台上？Stella SDK是你最佳的选择，这就是Stella SDK的优势，Stella SDK节省学习新语言的时间，Stella SDK为你节省维护代码的成本。</p>
+
+<h2>Stella SDK是免费获得吗？</h2>
+
+<p>登陆<a href="www.yeecco.com">www.yeecco.com官网</a>，我们免费注册后，就可以直接下载Stlla SDK，我看了一下他们的服务，好像企业定制使用是需要收费的，先下载下来用一下再说，反正是免费的，现在的版本是：StellaSDK_1A3303_samsung.dmg，dmg大小是180多M，看来里面的东西还是不少。</p>
+
+<p>今天就先写到这里，下一篇我把我使用Stella SDK的情况写出来和大家分享，非常好用的一套工具。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[读刘未鹏《暗时间》]]></title>
+    <link href="http://lijinma.github.io/blog/2012/09/14/liuweipeng_mindhacks_dark_time/"/>
+    <updated>2012-09-14T23:21:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2012/09/14/liuweipeng_mindhacks_dark_time</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/dark_time.jpeg" alt="暗时间" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+
+<!-- ![暗时间](../images/post/dark_time.jpeg) -->
+
+
+<p>花了两个晚上读完了刘未鹏的暗时间，心中窃喜。今天再次翻看这本书进行浏览总结并思考，通过这本书我到底学到了什么？</p>
+
+<!--more-->
+
+
+<h2>1. 为什么人人都应该学点心理学？</h2>
+
+<blockquote><p>我们的思维很多弱点和陷阱，我们解决日常生活中的思维方式并不是最优的，我们直觉觉得是正确的事情其实很多是错的。而去学习心理学，就会认识到以上的谬误，从而去避免它。</p></blockquote>
+
+<p>通过一个简单的道理，说服了我，至少我会去关注心理学的东西。而且刘未鹏在他的文章中推荐了大量的心理学的书籍，都是经过他筛选后的经典之作，所以对我们这些新手，真是一个非常好的小心。具体他推荐的书可以参考他的<a href="http://book.douban.com/doulist/46003/">豆瓣书单</a>。</p>
+
+<h2>2.如何设计自己的进度条？</h2>
+
+<blockquote><ol>
+<li>过早退出是一切失败的根源。</li>
+<li>谁都有兴趣，但是专注和持之以恒才是真正稀缺的。</li>
+<li>生活中的选择太多，细微的选择差异造就不同的人生。</li>
+<li>靠专业技能的成功是最具可复制性的，但要专注。</li>
+<li>反思是让自己成长最重要的品质。</li>
+</ol>
+</blockquote>
+
+<p>在他讲解这一章节的时候，最启发我的是第二点 “谁都有兴趣，但是专注和持之以恒才是真正稀缺的”，我们每个人都会对一个事物一颗好奇心，因为有了好奇心，我们决定对这个事物进行一探究竟，暂且我可以把这个称之为兴趣，有了兴趣是一件好事，但常常、大部分时间我们没有坚持下来自己的兴趣，短暂的关注不会带来质的变化，只有长久的积淀才能柳暗花明，才能豁然开朗，才能成为一个真正了解这个事物的人。</p>
+
+<h2>3.如何有效的记忆和学习？</h2>
+
+<blockquote><ol>
+<li>你拥有的知识不取决于你记住了多少，而在于它们是否在恰当的时候蹦出来。</li>
+<li>要尽可能多的编码各种线索来进行记忆。</li>
+<li>经常回顾学过的知识。</li>
+<li>和别人讨论，整理笔记，书写等来创造回忆的机会。</li>
+<li>虚拟经历别人经历过的事情。</li>
+<li>抽象和推广。</li>
+<li>联系和比较自身的经历。</li>
+</ol>
+</blockquote>
+
+<p>针对他讲解的如何记忆，对我最大的改变是我现在如果想对某个东西进行记忆，我就会把这个东西相关的事物尽可能多的编码，最终通过多种编码实现在我使用的时候可以更快的回忆起来。另一点就是温故，从小到大一直在被别人教育需要温故知新，但是一直都没有坚持下来，我需要思考一下为什么我没有坚持下来？</p>
+
+<h2>4.刘未鹏有哪些学习习惯我可以模仿的？</h2>
+
+<blockquote><ol>
+<li>看书挑剔，只看经典（这一观点和我之前的观点完全不同，我认识到了自己的错误）</li>
+<li>做读书笔记，然后在博客进行书写读书笔记和思考。</li>
+<li>讲问题放到潜意识层面。</li>
+<li>多看心理学和思维的书，因为它们是跨学科的。</li>
+<li>学习一项知识，必须问自己三个重要问题（本质，第一原则，知识结构）</li>
+<li>学习和思考中常温自己几个问题：
+1）你的问题到底是什么？不要偏离问题。
+2）到现在，我有什么收获？整理和总结。
+3）设想自己正在将东西讲给比人听？能否讲出来是判断是否真正理解的标准。
+4）设想你要讲给一个不懂的人听？挖掘知识背后最本质的东西。
+5）时常反省和注意自己的思维过程。（尽力讲自己的思维过程写出来）
+6）养成反驳自己想法的习惯。
+7）人天生就是只去理解表面，所以要不断问自己是否真的理解了？？？</li>
+</ol>
+</blockquote>
+
+<p>时间和效率</p>
+
+<blockquote><ol>
+<li>趁着热情，把开头难度过。</li>
+<li>重要的事情优先（你完全可以不去做不重要的事情，你可以吗？）</li>
+<li>重要的事情营造较大的时间块来完成。</li>
+<li>同时善于利用小块时间。</li>
+<li>重视知识的本质（抓住不变量）：程序猿的底层知识永远不会过时，算法数据结构永远不会过时，基本的程序设计理论永远不会过时，良好的编码习惯永远不会过时，分析问题和解决问题的能力永远不会过时，强大的学习能力和旺盛的求知欲永远不会过时。
+重视提前积累的强大力量。</li>
+<li>有时间吗？总结一下最近学习的新知识吧。</li>
+<li>有时间吗？读一本书吧。阅读和思考永远优于所谓的互联网上吸取新知识。</li>
+<li>制定简单的阅读计划。</li>
+<li>根据主题来查资料，而不是资料来查主题（非常同意）</li>
+<li>好资料从问题开始。</li>
+<li>只读经典的书。</li>
+</ol>
+</blockquote>
+
+<p>我认真的分析了刘未鹏的每一个习惯，我认为以上几点对我自己的成长有很大的帮助。第一，读书只读经典。因为一直不太喜欢读书，所以上学期间一直没真正读过多少书，工作时候觉得读书很重要，所以我就尽可能的去读书，这也导致了我没有选择性的读书，结果就是导致看了很多书但是知识结构却没有联系，更重要的是，读书的时间很少，我们哪有时间去读烂书？</p>
+
+<p>另外一点启发我很深的是，重视知识的本质。我使用过的语言也不少，C++, C#, Objective C, PHP，javascript等，用了这么多语言，但是却只是用这些语言去实现一个什么东西，从来没有想过编程语言、编程范式的本质，也没有去了解过每一门语言的本质是什么，所以以后在接触任何一个新知识的时候，一定要尝试去理解它的本质，刘未鹏也提到了理解本质的方法，就是尝试把这个东西讲给一个不懂的人听。</p>
+
+<h2>5.作为一个程序员，什么是我们的基本的知识结构？（这部分程序猿要关注一下）</h2>
+
+<blockquote><ol>
+<li>硬件体系结构是本质的</li>
+<li>操作系统的一些重要实现机制是本质的（参考书籍 《Computer Systems: A programmer’s Perspective》中文译名 《深入理解计算机系统》）</li>
+<li>主流变成范式（OO, FP）是为了满足什么需求出现的，出现是为了解决什么问题，是怎么解决的，自身又引入了哪些新的问题，从而适用哪些场景。</li>
+</ol>
+</blockquote>
+
+<p>以上的知识结构只是他提到的一部分，在这里我推荐刘未鹏前不久写的一篇日志：<a href="http://mindhacks.cn/2011/11/04/how-to-interview-a-person-for-two-years/">怎样花两年时间去面试一个人</a>，这篇文章结尾推荐了程序猿应该读哪些书，对我帮助很大。</p>
+
+<h2>6.为什么我从现在开始应该写博客？</h2>
+
+<blockquote><ol>
+<li>交到志同道合的朋友。</li>
+<li>书写了为了更好的思考</li>
+<li>教是最好的学。</li>
+<li>讨论是绝佳的反思。</li>
+<li>激励你去持续学习和思考。</li>
+<li>学会持之以恒做一件事情。</li>
+<li>一个长期的价值博客是一份很好的简历。</li>
+<li>如何做到？让你自己成为一个持续学习和思考的人，并只写你真正思考和总结之后的产物，其它一切就会随之而来。
+首先想说明的是，搭建我的博客 www.lijinma.com也是受到了刘未鹏话语的影响，我也深深的认识到博客的重要性，所以我以后会坚持把自己的学习和思考用博客的方式表达出来和大家分享，希望大家能给和我进行沟通，你的评论是我很大的鼓励。</li>
+</ol>
+</blockquote>
+
+<h2>7.遇到问题为什么应该自己动手？</h2>
+
+<blockquote><ol>
+<li>我们经常把困难评估得过高了。</li>
+<li>遇到问题寻找捷径是小聪明，因为你得到了局部最优，但没有得到全局最优。</li>
+</ol>
+</blockquote>
+
+<p>这个是很有意思的一个观点，他用计算机俗语来解释了我们耍小聪明其实最终损失的是我们自己，所以，请我、你和他都不要在耍小聪明了，踏踏实实的去解决问题去吧。</p>
+
+<h2>8.什么才是你的不可替代的核心竞争力？</h2>
+
+<blockquote><ol>
+<li>专业领域技能。</li>
+<li>跨领域的技能：解决问题的能力，创新思维，判断和决策能力，批判性思维，沟通能力等。</li>
+<li>学习能力：如何培养？最有效的办法是持续学习和思考新知识。</li>
+<li>性格要素：专注、持之以恒、自省、好奇心、自信、谦卑</li>
+</ol>
+</blockquote>
+
+<p>我个人是非常同意刘未鹏对核心竞争力的解释，他单独的把‘学习能力’从‘能力’中取出来就是想说明学习能力是多么的重要，他提出培养学习能力最有效的办法是持续学习和思考新知识，我个人觉得学习能力更多的在自己对学习方法的总结。</p>
+
+<p>之后的关于数学的东西，我只是泛读了一下，感兴趣的请精读，刘未鹏已经尽了很大的力气来让数学读起来不深奥晦涩，所以他这本书值得大家一读。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用Amazon EC2搭建WordPress全过程]]></title>
+    <link href="http://lijinma.github.io/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2/"/>
+    <updated>2012-09-13T01:24:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/amazon_ec2.jpg" alt="Amazon EC2" target="_blank" style="float:right;width:150px;margin-left:20px;" />
+一直就想见识一下Amazon EC2，因为可以免费使用一年，但由于我一直没有 Visa 卡，所以一直等到现在，网上已经有很多关于如何申请Amazon EC2 的帖子，我在这里不多说，不过我要提醒各位的有如下几点：</p>
+
+<!--more-->
+
+
+<ol>
+<li>免费使用一年是从你的账号注册那天算起，所以如果你想免费使用一年，最好注册一个新账号。</li>
+<li><p>如果你一不小心使用了一个老账号，你无法确认是否可以免费使用，请登陆Amazon->右上角查看 Account Activity, 如果显示</p>
+
+<p> <img src="../images/post/eligible.png" alt="你可以享受免费试用一年的机会" />
+证明你是可以使用的。</p></li>
+<li>我本来是参考了老N的博客<a href="http://neolee.com/web/use-amazon-ec2-for-wordpress-and-ssh/">用Amazon EC2搭建免费WordPress博客及SSH</a>，但是有一个问题，就是如果不通过Quick Start来选择实例，搜索出来的已经安装好WordPress的实例都不是免费的。基于这一点，你只能通过Quick Start来选一个未安装Wordpress的实例（我用的Ubuntu）,自己进行wordpress下载安装等。</li>
+<li>网上大部分的教程都是比较旧的，现在Amazon EC2 免费部分的 storage 已经由以前的10G 增加到了现在的30G，所以现在的部分Windows 2008的实例也是可以选择的，这样就更方便不熟悉linux的用户使用。</li>
+</ol>
+
+
+<h2>我出现的问题</h2>
+
+<blockquote><p>Q: sudo apt-get 安装LAMP时候报错，指令使用正确</p></blockquote>
+
+<p><strong>A</strong>: 在你第一次使用 ubuntu 的时候， apt-get 比较旧，所以一定要进行 <code>sudo apt-get upgrade</code> 和 <code>sudo apt-get update</code></p>
+
+<blockquote><p>Q: 不能安装插件，不能下载主题，不能上传图片</p></blockquote>
+
+<p><strong>A</strong>: 进入你的WordPress的文件夹（我的是 /var/www/）,更改wp-content的权限777（我老是感觉不安全）</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chmod 777 wp-content</span></code></pre></td></tr></table></div></figure>
+
+
+<p>因为用户www-data(ubuntu)需要对wp-content 文件夹有写的操作，或者你直接把wp-content的group和user 改为 www-data:www-data ,</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chown -R www-data:www-data wp-content</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>Q: 无法定位 WordPress 内容目录（wp-content）</p></blockquote>
+
+<p><strong>A</strong>: 在wp-content结尾加上</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="cm">/** Override default file permissions */</span>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nx">is_admin</span><span class="p">())</span> <span class="p">{</span>
+</span><span class='line'><span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;filesystem_method&#39;</span><span class="p">,</span> <span class="nx">create_function</span><span class="p">(</span><span class="s1">&#39;$a&#39;</span><span class="p">,</span> <span class="s1">&#39;return &quot;direct&quot;;&#39;</span> <span class="p">));</span>
+</span><span class='line'><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;FS_CHMOD_DIR&#39;</span><span class="p">,</span> <span class="mi">0751</span> <span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[金马博客开启]]></title>
+    <link href="http://lijinma.github.io/blog/2012/09/13/jinma_blog_opened/"/>
+    <updated>2012-09-13T00:57:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2012/09/13/jinma_blog_opened</id>
+    <content type="html"><![CDATA[<p><img src="../images/post/jinma.jpg" alt="金马的blog" target="_blank" style="float:right;width:150px;margin-left:20px;" />
+经过一晚上的折腾，终于开启了我的博客。</p>
+
+<p>我在csdn的博客是：<a href="http://blog.csdn.net/handsomerocco">http://blog.csdn.net/handsomerocco</a>, 在csdn写的主要是一些技术上解决问题的文章，比较杂，总体来说也算一个技术博客。一直以来就期望自己能建立一个独立的博客，一方面方便自己来积累技术上遇到的一些问题并与大家分享，另一方面也是给自己一个平台来总结自己最近的思考。</p>
+
+<!--more-->
+
+
+<p>最近读了刘未鹏的《暗时间》，也深刻的理解了他为什么会整整花费一个章节来讲述一个博客的重要性，沉淀、思考、讨论等等都会在一个博客中呈现出来。没有读过的同学推荐去读一下，他书的内容大部分都可以在他博客中找到，不过还是推荐大家购买他的书，安静的晚上，捧起一本书的感觉是无以言表的。</p>
+
+<p>我的博客空间是使用 Amazon EC2，使用的是放在日本的实例，感觉速度还算可以。希望我的博客可以把我想写的东西写出来，也更希望能帮到大家。</p>
+]]></content>
+  </entry>
+  
 </feed>

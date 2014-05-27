@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>博客搬家：从Wordpress迁移到octopress - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="终于还是下定决心从Wordpress迁移到Octopress上了，Wordpress的便利导致了他越来越庞大的身躯，但他的臃肿常常会打消我写文章的念头，也真的是不想再花心思在Wordpress主题和插件上了，我们要更专注于写而不是别的花里胡哨的东西，从复杂中解脱，回归简单。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lijinma.github.io/blog/2013/01/23/move-from-wordpress-to-octopress">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lijinma.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">博客搬家：从Wordpress迁移到octopress</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-23T23:59:00+08:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="../images/post/octopress.jpeg" alt="Octopress" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+
+<p>终于还是下定决心从Wordpress迁移到Octopress上了，Wordpress的便利导致了他越来越庞大的身躯，但他的臃肿常常会打消我写文章的念头，也真的是不想再花心思在Wordpress主题和插件上了，我们要更专注于写而不是别的花里胡哨的东西，从复杂中解脱，回归简单。</p>
+
+<!--more-->
+
+
+<h2>为什么使用放弃Wordpress而转向Octopress?</h2>
+
+<ol>
+<li>Wordpress是动态的，加载慢，尽管我的服务器是Amazon EC2在日本的主机，但是在国内访问依然不快，然后Octopress是静态页面，自然要快一些；</li>
+<li>不喜欢Wordpress发布文章的编辑器，喜欢用markdown来文章，这样子我会更专注于内容，而不是格式；</li>
+<li>Amazon EC2的 Instance偶尔mysql会宕机，导致Wordpress无法访问；</li>
+<li><a href="http://www.stdyun.com">www.stdyun.com</a>免费提供Octopress托管，只需要一个域名就可以搭建网站，而Amazon EC2是要收费的，而且不便宜；</li>
+</ol>
+
+
+<h2>什么是Octopress?</h2>
+
+<p>Wordpress大家都知道，但是Octopress可能只有程序猿比较了解，</p>
+
+<blockquote><p>Octopress is a framework designed by <a href="http://brandonmathis.com/">Brandon Mathis</a> for <a href="http://github.com/mojombo/jekyll">Jekyll</a>, the blog aware static site generator powering <a href="http://pages.github.com/">Github Pages</a>. To start blogging with Jekyll, you have to write your own HTML templates, CSS, Javascripts and set up your configuration. But with Octopress All of that is already taken care of. Simply <a href="https://github.com/imathis/octopress">clone or fork Octopress</a>, install dependencies and the theme, and you’re set.</p></blockquote>
+
+<h2>部署Octopress需要什么技能？</h2>
+
+<ol>
+<li>你需要懂一些基本的git知识，了解github；</li>
+<li>你需要熟悉一门轻量级标记语言,比如markdown； 如果你不熟悉markdown，请参考阳志平的文章：<a href="http://www.yangzhiping.com/tech/r-markdown-knitr.html">Markdown写作浅谈</a>，你就会明白markdown是多么的简单迷人。</li>
+</ol>
+
+
+<h2>如何迁移wordpress的文章到Octopress？</h2>
+
+<p>我的博客本来就没有多少文章，所以我直接手动迁移过来，如果你的文章非常多，请参考大眼夹的文章<a href="http://blog.dayanjia.com/2012/04/migration-to-octopress-from-wordpress/">从Wordpress迁移到Octopress</a>，讲得非常清楚;</p>
+
+<h2>如何使用stdyun的octopress的免费托管服务？</h2>
+
+<p>使用github pages很容易部署一个免费的网站，但是介于github在中国经常被屏蔽的缘故，我选择了stdyun提供的octopress免费托管服务，在中国访问速度非常之快，托管介绍请参考：<a href="https://blog.stdyun.com/octopress">为中国的hacker准备的octopress托管</a>，如何部署请参考文章：<a href="http://blog.stdyun.com/2012/12/27/octopress-plus-stdyun-equals-stdyun-octopress-tuo-guan-fu-wu/">octopress+stdyun=stdyun octopress托管服务</a>.</p>
+
+<h2>如何使用github pages部署octopress？</h2>
+
+<p>我没有部署在github上，所以请大家在网上搜索资料，推荐参考阳志平的文章：<a href="http://www.yangzhiping.com/tech/octopress.html">Ruby开源项目介绍(1)：octopress——像黑客一样写博客</a>.</p>
+
+<blockquote><p>有任何与octopress相关的问题，请留言，我会尽可能帮助大家。</p></blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-23T23:59:00+08:00" pubdate data-updated="true">Jan 23<span>rd</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://lijinma.github.io/blog/2013/01/23/move-from-wordpress-to-octopress/" data-via="" data-counturl="http://lijinma.github.io/blog/2013/01/23/move-from-wordpress-to-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/17/what_is_stella_sdk/" title="Previous Post: 【用objective-c写android游戏】初次使用Stella SDK">&laquo; 【用objective-c写android游戏】初次使用Stella SDK</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/26/what-for-blog/" title="Next Post: 我的博客到底应该写什么？">我的博客到底应该写什么？ &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/11/mei-ri-yu-zhu-tong-xing/">《每日与主同行》手机端网站</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/09/version-control/">一个年轻程序员对版本管理的理解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/02/my-2012/">金马的2012年总结</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/28/how-to-manage-docs/">公司如何进行文档管理</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/26/what-for-blog/">我的博客到底应该写什么？</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
