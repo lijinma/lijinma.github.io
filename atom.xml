@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-05-28T00:23:39+08:00</updated>
+  <updated>2014-05-29T06:27:32+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -45,6 +45,649 @@
 <p><img src="../images/post/screenshot.png" alt="ScreenShot" /></p>
 
 <h3>终于可以使用手机阅读了</h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[《每日与主同行》手机端网站]]></title>
+    <link href="http://lijinma.github.io/blog/2013/05/29/amazing-xor/"/>
+    <updated>2013-05-29T06:26:00+08:00</updated>
+    <id>http://lijinma.github.io/blog/2013/05/29/amazing-xor</id>
+    <content type="html"><![CDATA[<h1>感受异或的神奇</h1>
+
+<h2>什么是异或？</h2>
+
+<p>Wikipedia的解释：</p>
+
+<blockquote><p>在逻辑学中，逻辑算符异或（<code>exclusive or</code>）是对两个运算元的一种逻辑析取类型，符号为 XOR 或 EOR 或 ⊕（编程语言中常用<code>^</code>）。但与一般的逻辑或不同，异或算符的值为真仅当两个运算元中恰有一个的值为真，而另外一个的值为非真。转化为命题，就是：“两者的值不同。”或“有且仅有一个为真。”</p></blockquote>
+
+<p>定义：</p>
+
+<blockquote><p>1 ⊕ 1 = 0</p>
+
+<p>0 ⊕ 0 = 0</p>
+
+<p>1 ⊕ 0 = 1</p>
+
+<p>0 ⊕ 1 = 1</p></blockquote>
+
+<p>真值表：</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"> Y      </th>
+<th align="center">     B = 0 </th>
+<th align="center">   B = 1   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="left"> A = 0    </td>
+<td align="center">   0 </td>
+<td align="center">  1  |</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"> A = 1    </td>
+<td align="center">   1 </td>
+<td align="center">  0  |</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>表达式：</p>
+
+<p>Y = A&#8217; · B + A · B&#8217;</p>
+
+<blockquote><p>解释：我使用<code>·</code>作为<code>与</code>，我使用<code>+</code>作为<code>或</code>，我使用<code>'</code>作为<code>否</code>(本来应该使用<code>头上一横</code>，但是太难编辑了，就使用了<code>'</code>）；</p></blockquote>
+
+<h2>异或有什么特性？</h2>
+
+<p>根据定义我们很容易获得<code>异或</code>两个特性：</p>
+
+<blockquote><p>恒等律：<code>X ⊕ 0 = X</code>
+归零律：<code>X ⊕ X = 0</code></p></blockquote>
+
+<p>然后我们使用<code>真值表</code>可以证明：</p>
+
+<p>（1）交换律</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>A ⊕ B = A' · B + A · B'
+</span><span class='line'>
+</span><span class='line'>B ⊕ A = B' · A + B · A'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>因为<code>·与</code>和<code>+或</code>两个操作满足交换律，所以：</p>
+
+<p>A ⊕ B = B ⊕ A</p>
+
+<p>（2）结合律</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(A ⊕ B) ⊕ C
+</span><span class='line'>
+</span><span class='line'>= (A' · B + A · B') ⊕ C
+</span><span class='line'>
+</span><span class='line'>= (A' · B + A · B')' · C + (A' · B + A · B') · C '
+</span><span class='line'>
+</span><span class='line'>= ((A' · B)' · (A · B')')· C + A' · B · C ' + A · B' · C '
+</span><span class='line'>
+</span><span class='line'>= ((A + B') · (A' + B))· C + A' · B · C ' + A · B' · C '
+</span><span class='line'>
+</span><span class='line'>= (A · B + A' · B') · C + A' · B · C ' + A · B' · C '
+</span><span class='line'>
+</span><span class='line'>= A · B · C + A' · B' · C + A' · B · C ' + A · B' · C '
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>你可以使用同样推导方法得出（请允许我偷懒一下，数学公式敲起来不容易 +_+）：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>A ⊕ (B ⊕ C)
+</span><span class='line'>
+</span><span class='line'>= A · B · C + A' · B' · C + A' · B · C ' + A · B' · C '</span></code></pre></td></tr></table></div></figure>
+
+
+<p>证明过程中使用了如下几个方法（<code>·与</code> <code>+或</code> <code>'否</code>）：</p>
+
+<p><code>·与</code> <code>+或</code>交换律：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>A · B = B · A
+</span><span class='line'>
+</span><span class='line'>A + B = B + A</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>·与</code> <code>+或</code>结合律：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(A · B) · C = A · (B · C)
+</span><span class='line'>
+</span><span class='line'>(A + B) + C = A + (B + C)　</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>·与</code> <code>+或</code>分配律：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>A · (B + C)= A · B + A · C
+</span><span class='line'>
+</span><span class='line'>A + B · C = (A + B) · (A + C)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>摩尔定理：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(A · B)' = A' + B'
+</span><span class='line'>
+</span><span class='line'>(A + B)' = A' · B'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>结论：</p>
+
+<blockquote><p>交换律：<code>A ⊕ B = B ⊕ A</code>
+结合律：<code>A ⊕ (B ⊕ C) = (A ⊕ B) ⊕ C</code></p></blockquote>
+
+<p>有了<code>归零率</code>和<code>结合律</code>，我们就可以轻松证明：</p>
+
+<blockquote><p>自反：<code>A ⊕ B ⊕ B = A ⊕ 0 = A</code></p></blockquote>
+
+<p>可能这些特性会很顺其自然的理解，但是如果你在解决问题的时候，你可能会忘记异或的这些特性，所以适当的应用可以让我们加深对异或的理解；</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>A ⊕ 1 = A';
+</span><span class='line'>A ⊕ 0 = A;
+</span><span class='line'>A ⊕ A = 0;
+</span><span class='line'>A ⊕ A' = 1;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>异或有什么神奇之处（应用）？</h2>
+
+<blockquote><p>说明：以下的的<code>异或</code>全部使用符号<code>^</code></p></blockquote>
+
+<p>可能你已经被乱七八糟的公式和演算搞的有点烦了，不就是很简单的异或运算吗？还解释的那么复杂，嘿嘿，不要着急，打好了基础，你就站在了巨人的肩膀，让我们开始异或的神奇之旅吧；</p>
+
+<h3>（1）快速比较两个值</h3>
+
+<p>先让我们来一个简单的问题；判断两个int数字a，b是否相等，你肯定会想到判断<code>a - b == 0</code>，但是如果判断<code>a ^ b == 0</code>效率将会更高，但是为什么效率高呢？就把这个给你当家庭作业吧，考虑下减法是如何实现的；
+让我们看看ipv6中的比较；</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>static inline int ipv6_addr_equal(const struct in6_addr *a1, const struct in6_addr *a2)
+</span><span class='line'>    {
+</span><span class='line'>    return (((a1-&gt;s6_addr32[0] ^ a2-&gt;s6_addr32[0]) |
+</span><span class='line'>        (a1-&gt;s6_addr32[1] ^ a2-&gt;s6_addr32[1]) |
+</span><span class='line'>        (a1-&gt;s6_addr32[2] ^ a2-&gt;s6_addr32[2]) |
+</span><span class='line'>        (a1-&gt;s6_addr32[3] ^ a2-&gt;s6_addr32[3])) == 0);
+</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>（2）在汇编语言中经常用于将变量置零：<code>xor a，a</code>；</h3>
+
+<h3>（3）我们可以使用<code>异或</code>来使某些特定的位翻转，因为不管是0或者是1与1做异或将得到原值的相反值；</h3>
+
+<p>0 ^ 1 = 1
+1 ^ 1 = 0</p>
+
+<p>例如：翻转<code>10100001</code>的第6位，
+答案：可以将该数与<code>00100000</code>进行按位异或运算;<code>10100001 ^ 00100000 = 10000001</code></p>
+
+<p>我们给出一段常用的代码：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>unsigned int a, b, mask = 1 &lt;&lt; 6;
+</span><span class='line'>a = 0xB1; // 10100001
+</span><span class='line'>b = a ^ mask; /* flip the 6th bit */</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>（4）我们使用<code>异或</code>来判断一个二进制数中1的数量是奇数还是偶数</h3>
+
+<p>例如：求<code>10100001</code>中1的数量是奇数还是偶数；
+答案：<code>1 ^ 0 ^ 1 ^ 0 ^ 0 ^ 0 ^ 0 ^ 1 = 1</code>,结果为<code>1</code>就是奇数个1，结果为<code>0</code>就是偶数个1；
+应用：这条性质可用于奇偶校验（Parity Check），比如在串口通信过程中，每个字节的数据都计算一个校验位，数据和校验位一起发送出去，这样接收方可以根据校验位粗略地判断接收到的数据是否有误</p>
+
+<h3>（5）校验和恢复</h3>
+
+<p>校验和恢复主要利用的了异或的特性：<code>IF a ^ b = c THEN a ^ c = b</code>
+应用：一个很好的应用实例是<code>RAID5</code>，使用3块磁盘（A、B、C）组成<code>RAID5</code>阵列，当用户写数据时，将数据分成两部分，分别写到磁盘A和磁盘B，<code>A ^ B</code>的结果写到磁盘C；当读取A的数据时，通过<code>B ^ C</code>可以对A的数据做校验，当A盘出错时，通过<code>B ^ C</code>也可以恢复A盘的数据。</p>
+
+<p>RAID5的实现比上述的描述复杂多了，但是原理就是使用 异或，有兴趣的同学看下<a href="http://baike.baidu.com/view/645826.htm?fromId=969385">RAID5</a></p>
+
+<h3>（6）经典题目：不使用其他空间，交换两个值</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>a = a ^ b;
+</span><span class='line'>b = a ^ b; //a ^ b ^ b = a ^ 0 = a;
+</span><span class='line'>a = a ^ b;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这个题目就不用解释了吧，太大众题目了，哈哈，但是非常好的使用的了<code>异或</code>的特性；</p>
+
+<h3>（7）面试题：互换二进制数的奇偶位；</h3>
+
+<p><strong>题目</strong>：写一个宏定义，实现的功能是将一个int型的数的奇偶位互换，例如6的2进制为<code>00000110</code>，(从右向左)第一位与第二位互换，第三位与第四位互换，其余都是0不需要交换，得到<code>00001001</code>，输出应该为9；</p>
+
+<p><strong>思路</strong>：我们可以把我们的问题分为三步（难道这也是分治法吗 -。-），第一步，根据原值的偶数位获取到目标值的奇数位，并把不需要的位清零；第二步，根据原值的奇数位获取到目标值的偶数位，并把不需要的位清零；第三步：把上述两个残缺的目标值合并成一个完整的目标值；</p>
+
+<p>代码为：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//假设 int 占两个字节，16位；
+</span><span class='line'>#include&lt;iostream&gt;
+</span><span class='line'>#include&lt;string&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>#define N(n) ((n&lt;&lt;1)&(0xAAAA))|((n&gt;&gt;1)&(0x5555))
+</span><span class='line'>void main(){
+</span><span class='line'>    int k = N(6);
+</span><span class='line'>    cout &lt;&lt; k &lt;&lt; endl;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>解释</strong>：
+1.为简化说明，我们以4位二进制码为例，0xAAAA 我们用 1010 代替；0x5555 我们用 0101 代替；
+2.(n&lt;&lt;1)&amp;(1010) 把n先左移1位，再与1010做与运算，只保留移位之后的偶数位的值，奇数位全为0，实际上是只保留了n的奇数位的值，并把它们交换到了偶数位上。比如 n = 0110 , n&lt;<1 = 1100, (n<<1) & 1010 = 1000 ;
+3.(n>>1)&amp;(0101)
+把n右移一位，再与 0101 做与运算，只保留移位之后的奇数位的值，偶数位全为0，实际是只保留n 的偶数位的值，并把它们交换到对应的奇数位上。n = 0110； n>>1 = 0011； (n>>1) &amp; 0101 = 0001；
+4.最后做或运算（相加），得到1001。</p>
+
+<h3>（7）最最常出现的面试题：一个整型数组里除了N个数字之外，其他的数字都出现了两次，找出这N个数字；</h3>
+
+<p>比如，从<code>{1, 2, 3, 4, 5, 3, 2, 4, 5}</code>中找出单个的数字： <code>1</code></p>
+
+<p>让我们从最简单的，找一个数字开始；</p>
+
+<p><strong>题目</strong>：（LeetCode 中通过率最高的一道题）
+Single Number: Given an array of integers, every element appears twice except for one. Find that single one.
+Note:Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+<strong>思路</strong>：
+拿到这个题目，本能的你会使用排序（数字文字我们常常需要排序），排序后可以来判断是否数字成对出现，思路很明显，但是排序的算法上限是 O(nlogn)，不符合题目要求；</p>
+
+<p>学习了强大的<code>异或</code>，我们可以轻松的使用它的特性来完成这道题目：
+（1）A ^ A = 0;
+（2）异或满足交换律、结合律；
+所有假设有数组：<code>A B C B C D A</code>
+使用异或：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>A ^ B ^ C ^ B ^ C ^ D ^ A
+</span><span class='line'>= A ^ A ^ B ^ B ^ C ^ C ^ D
+</span><span class='line'>= 0 ^ 0 ^ 0 ^ D
+</span><span class='line'>= 0 ^ D
+</span><span class='line'>= D</span></code></pre></td></tr></table></div></figure>
+
+
+<p>是不是很神奇？时间复杂度为<code>O(n)</code>，当然是线性的，空间复杂度<code>O(1)</code>；</p>
+
+<p><strong>代码</strong>：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>class Solution {
+</span><span class='line'>public:
+</span><span class='line'>    int singleNumber(int A[], int n) {  
+</span><span class='line'>        //特殊情况1,2  
+</span><span class='line'>        if(n&lt;=0) return -1;  
+</span><span class='line'>        if(n==1) return A[0];  
+</span><span class='line'>  
+</span><span class='line'>        int result = 0;
+</span><span class='line'>        for (int i = 0; i &lt; n; i ++) {
+</span><span class='line'>            result = result ^ A[i];
+</span><span class='line'>        }
+</span><span class='line'>        return result;
+</span><span class='line'>    }  
+</span><span class='line'>};</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接下来让我们增加一些难度：</p>
+
+<p><strong>题目</strong>：一个整型数组里除了<code>两</code>个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字？</p>
+
+<p><strong>思路</strong>：
+<strong>第一步</strong>：肯定还是像我们上面的解法一样，所有数进行<code>异或</code>，不过最终得到的结果是 a 和 b（假设 a 和 b 是落单的数字）两个值的异或结果 aXORb，没有直接得到 a 和 b 的值；</p>
+
+<p><strong>第二步</strong>：想办法得到 a 或者 b，假设 aXORb 为 <code>00001001</code>（F肯定不为0），根君 aXORb 的值我们发现，<code>值为1的位</code>（比如从右向左第一位）表示在此位上 a 和 b 的值不同；所以，根据这个特点，我们找出来所有第一位为1的数进行异或，得到的就是 a 或者 b；</p>
+
+<p><strong>第三步</strong>：aXORb = a ^ b，假设我们已经找到了 a，根据<code>异或</code>特性，我们知道，b = aXORb ^ a；这样我们就可以找出 b；所以我们只需要循环两次；</p>
+
+<p>这样我们的时间复杂度是 O(n)，空间复杂度是 O(1)
+<strong>代码</strong>：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;iostream&gt;
+</span><span class='line'>#include &lt;assert.h&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>
+</span><span class='line'>int getFirstOneBit(int num) //输出 num 的低位中的第一个 1 的位置  
+</span><span class='line'>{  
+</span><span class='line'>    return num & ~(num - 1);  // num 与 -num 相与找到
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void findTwo(int *array, int length){
+</span><span class='line'>    int aXORb = 0;
+</span><span class='line'>    int firstOneBit = 0;
+</span><span class='line'>    int a = 0;
+</span><span class='line'>    int b = 0;
+</span><span class='line'>    for (int i = 0; i &lt; length; i++) {
+</span><span class='line'>        aXORb ^= array[i];
+</span><span class='line'>    }
+</span><span class='line'>    assert(aXORb != 0); //保证题目要求，有两个single的数字
+</span><span class='line'>    firstOneBit = getFirstOneBit(aXORb);
+</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
+</span><span class='line'>        if(array[i] & firstOneBit) {
+</span><span class='line'>            a ^= array[i];
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>    b = aXORb ^ a;
+</span><span class='line'>    cout &lt;&lt; "a: " &lt;&lt; a &lt;&lt; endl; 
+</span><span class='line'>    cout &lt;&lt; "b: " &lt;&lt; b &lt;&lt; endl;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>int main()
+</span><span class='line'>{
+</span><span class='line'>    int array1[] = {2, 5, 8, 2, 5, 8, 6, 7};
+</span><span class='line'>    findTwo(array1, 8);
+</span><span class='line'>    return 0;
+</span><span class='line'>}
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接下来让我们再增加一些难度：</p>
+
+<p><strong>题目</strong>：一个整型数组里除了<code>三</code>个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字？</p>
+
+<p><strong>思路</strong>：</p>
+
+<p><strong>第一步</strong>：肯定还是像我们上面的解法一样，所有数进行<code>异或</code>，不过最终得到的结果是 a、b 和 c（假设 a、b 和 c 是落单的数字）三个值的异或结果 aXORbXORc，没有直接得到 a、b 和 c 的值；</p>
+
+<p><strong>第二步</strong>：想办法得到 a、b 和 c 中的一个，让偶们把问题简化一下；</p>
+
+<p><code>假设一个数组中有3个不同的数字 a、b 和 c，已知 aXORbXORc = a ^ b ^ c ，求 a、b 和 c 。</code></p>
+
+<p>思路：
+1. 根据题目
+aXORbXORc ^ a = b ^ c;
+aXORbXORc ^ b = a ^ c;
+aXORbXORc ^ c = a ^ b;
+因为：(b ^ c) ^ (a ^ c) ^ (a ^ b) = 0;
+所以：(aXORbXORc ^ a) ^ (aXORbXORc ^ b) ^ (aXORbXORc ^ c) = 0;</p>
+
+<ol>
+<li><p>下一步是关键：
+假设 X ^ Y ^ Z = 0，则 X Y Z 三个数的低位第一位为1的位置两个相同，一个不同；
+比如 X: 00001000, Y: 00000100, Z: 00001100
+Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
+这一步可以使用倒推法证明：
+已知：三个数的低位第一位为1的位置有三种情况，一种就是全相同，一种就是两个不同，一个不同，一种就是三个不同；
+（1）如果是全相同，则 X ^ Y ^ Z != 0 (1 ^ 1 ^ 1 = 1)，与前提X ^ Y ^ Z = 0矛盾，不成立；
+（2）如果三个不同，则 X ^ Y ^ Z != 0 (1 ^ 0 ^ 0 = 1)，与前提X ^ Y ^ Z = 0矛盾，不成立；
+所以结果是：两个不同，一个不同</p></li>
+<li><p>(aXORbXORc ^ a) ^ (aXORbXORc ^ b) ^ (aXORbXORc ^ c) = 0; 所以三个数(aXORbXORc ^ a)、(aXORbXORc ^ b) 和 (aXORbXORc ^ c) 的低位第一位为1的位置两个相同，一个不同；那么我们获取到这三个数的低位第一位为1的位置后，进行异或并取低位第一位为1的位置，就可以找到三个中“一个不同”的低位第一位为1的位置，假设这个值为 firstOneBit。</p></li>
+<li><p>遍历这三个数(aXORbXORc ^ a)、(aXORbXORc ^ b) 和 (aXORbXORc ^ c)，如果发现某个数异或 aXORbXORc 等于 firstOneBit，这个数就是“一个不同”的那个数；</p></li>
+<li><p>找到了一个数，剩下的两个数，我们就可以通过上面的方法找出来；</p></li>
+</ol>
+
+
+<p><strong>第三步</strong>：完成了第二步的简化题，我们回到我们的问题，我们的问题比简化的问题多了一个成对的干扰数据，我们可以使用异或要去除干扰数据（记住，我们这个题目都是用异或i去除干扰数据的）；</p>
+
+<p>这样我们的时间复杂度还是 O(n)，空间复杂度是 O(1)</p>
+
+<p>代码如下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;iostream&gt;
+</span><span class='line'>#include &lt;assert.h&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>
+</span><span class='line'>int getFirstOneBit(int num) //输出 num 的低位中的第一个 1 的位置  
+</span><span class='line'>{  
+</span><span class='line'>    return num & ~(num - 1);  // num 与 -num 相与找到
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void findTwo(int *array, int length){
+</span><span class='line'>    int aXORb = 0;
+</span><span class='line'>    int firstOneBit = 0;
+</span><span class='line'>    int a = 0;
+</span><span class='line'>    int b = 0;
+</span><span class='line'>    for (int i = 0; i &lt; length; i++) {
+</span><span class='line'>        aXORb ^= array[i];
+</span><span class='line'>    }
+</span><span class='line'>    assert(aXORb != 0); //保证题目要求，有两个single的数字
+</span><span class='line'>    firstOneBit = getFirstOneBit(aXORb);
+</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
+</span><span class='line'>        if(array[i] & firstOneBit) {
+</span><span class='line'>            a ^= array[i];
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>    b = aXORb ^ a;
+</span><span class='line'>    cout &lt;&lt; "a: " &lt;&lt; a &lt;&lt; endl; 
+</span><span class='line'>    cout &lt;&lt; "b: " &lt;&lt; b &lt;&lt; endl;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>int findOne(int *array, int length) {
+</span><span class='line'>    int aXORbXORc = 0;
+</span><span class='line'>    int c = 0;
+</span><span class='line'>    int firstOneBit = 0;
+</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
+</span><span class='line'>        aXORbXORc ^= array[i];
+</span><span class='line'>    }
+</span><span class='line'>
+</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
+</span><span class='line'>        firstOneBit ^= getFirstOneBit(aXORbXORc ^ array[i]); //使用异或会排除掉不相干的元素
+</span><span class='line'>    }
+</span><span class='line'>    // firstOneBit = getFirstOneBit(a ^ b) ^ getFirstOneBit(a ^ c) ^ getFirstOneBit(b ^ c);
+</span><span class='line'>
+</span><span class='line'>    firstOneBit = getFirstOneBit(firstOneBit); //获取到最低位下面要用
+</span><span class='line'>
+</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
+</span><span class='line'>        if (getFirstOneBit(aXORbXORc ^ array[i]) == firstOneBit) {
+</span><span class='line'>            c ^= array[i]; //使用异或会排除掉不相干的元素
+</span><span class='line'>        }
+</span><span class='line'>    }
+</span><span class='line'>    cout &lt;&lt; "c: " &lt;&lt; c &lt;&lt; endl;
+</span><span class='line'>    return c;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>int main()
+</span><span class='line'>{
+</span><span class='line'>    int array1[] = {2, 5, 8, 2, 5, 8, 6, 7, 1};
+</span><span class='line'>    int c = findOne(array1, 9);
+</span><span class='line'>    int array2[] = {2, 5, 8, 2, 5, 8, 6, 7, 1, c}; //为了更好重用函数，我重新定义了一个数组让大家理解
+</span><span class='line'>    findTwo(array2, 10);
+</span><span class='line'>    return 0;
+</span><span class='line'>}
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>写这篇文档参考了《离散数学与应用》课本，参考了别人多个博客，如果我参考了你的博客，但没有注明出处，请联系告知，有错误的地方，希望可以指出来，也希望大家有更多的补充，非常感谢。</p>
+
+<p>参考：</p>
+
+<p><a href="http://zh.wikipedia.org/wiki/%E9%80%BB%E8%BE%91%E5%BC%82%E6%88%96">http://zh.wikipedia.org/wiki/%E9%80%BB%E8%BE%91%E5%BC%82%E6%88%96</a></p>
+
+<p><a href="http://yjq24.blogbus.com/logs/41863963.html">http://yjq24.blogbus.com/logs/41863963.html</a></p>
+
+<p><a href="http://wzw19191.blog.163.com/blog/static/131135470200992610551971/">http://wzw19191.blog.163.com/blog/static/131135470200992610551971/</a></p>
+
+<p><a href="http://kapok.blog.51cto.com/517862/129941">http://kapok.blog.51cto.com/517862/129941</a></p>
+
+<p><a href="http://blog.csdn.net/huxian370/article/details/8024416">http://blog.csdn.net/huxian370/article/details/8024416</a></p>
+
+<p><a href="http://www.cnblogs.com/Ivony/archive/2009/07/23/1529254.html">http://www.cnblogs.com/Ivony/archive/2009/07/23/1529254.html</a></p>
+
+<p><a href="http://blog.chinaunix.net/uid-20937170-id-3407361.html">http://blog.chinaunix.net/uid-20937170-id-3407361.html</a></p>
+
+<p><a href="http://blog.csdn.net/yfkiss/article/details/11775569">http://blog.csdn.net/yfkiss/article/details/11775569</a></p>
+
+<p><a href="http://blog.sina.com.cn/s/blog_88c9ddc50101810p.html">http://blog.sina.com.cn/s/blog_88c9ddc50101810p.html</a></p>
+
+<p><a href="http://blog.csdn.net/pathuang68/article/details/7567027">http://blog.csdn.net/pathuang68/article/details/7567027</a></p>
+
+<p><a href="http://blog.csdn.net/qingen1/article/details/12656763">http://blog.csdn.net/qingen1/article/details/12656763</a></p>
 ]]></content>
   </entry>
   
