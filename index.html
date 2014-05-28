@@ -9,7 +9,7 @@
   <meta name="author" content="lijinma">
 
   
-  <meta name="description" content="在阿牛哥的带领下，我现在每天都会读圣经，参考的资料就是苏颖智牧师的《每日与主同行》，经常需要在网上读一下每天的章节，但是网上大部分版本都没有做很好的手机兼容，所以在手机上读的很累，我就自己做了一个简单的网站来进行每天的阅读。 简介 网址： http://mryztx.duapp.com ( &hellip;">
+  <meta name="description" content="感受异或的神奇 什么是异或？ Wikipedia的解释： 在逻辑学中，逻辑算符异或（exclusive or）是对两个运算元的一种逻辑析取类型，符号为 XOR 或 EOR 或 ⊕（编程语言中常用^）。但与一般的逻辑或不同，异或算符的值为真仅当两个运算元中恰有一个的值为真，而另外一个的值为非真。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,7 +71,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/09/11/mei-ri-yu-zhu-tong-xing/">《每日与主同行》手机端网站</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/05/29/amazing-xor/">感受异或的神奇</a></h1>
     
     
       <p class="meta">
@@ -87,69 +87,7 @@
   
 
 
-<time datetime="2013-09-11T01:03:00+08:00" pubdate data-updated="true">Sep 11<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="../images/post/meiriyuzhutongxing.jpg" alt="每日与主同行" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
-
-<p>在阿牛哥的带领下，我现在每天都会读圣经，参考的资料就是苏颖智牧师的《每日与主同行》，经常需要在网上读一下每天的章节，但是网上大部分版本都没有做很好的手机兼容，所以在手机上读的很累，我就自己做了一个简单的网站来进行每天的阅读。</p>
-
-<h2>简介</h2>
-
-<h4>网址：</h4>
-
-<p><a href="http://mryztx.duapp.com">http://mryztx.duapp.com</a>  (mryztx是《每日与主同行》的首字母)</p>
-
-<h4>平台：</h4>
-
-<p>百度BAE</p>
-
-<h4>方法：</h4>
-
-<p>抓取网站<a href="http://www.jonahome.net/files02/PI_SGrowth-Day-Walk/gb/">http://www.jonahome.net/files02/PI_SGrowth-Day-Walk/gb/</a>的html存下来，然后重新设计为responsive的页面；使用了一点点bootstrap.min.css。</p>
-
-<h4>访问：</h4>
-
-<p>你可以在PC和手机进行访问。</p>
-
-<h4>截图：</h4>
-
-<p><img src="../images/post/screenshot.png" alt="ScreenShot" /></p>
-
-<h3>终于可以使用手机阅读了</h3>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/29/amazing-xor/">《每日与主同行》手机端网站</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-29T06:26:00+08:00" pubdate data-updated="true">May 29<span>th</span>, 2013</time>
+<time datetime="2014-05-29T06:26:00+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
         
       </p>
     
@@ -346,20 +284,21 @@
 <p>先让我们来一个简单的问题；判断两个int数字a，b是否相等，你肯定会想到判断<code>a - b == 0</code>，但是如果判断<code>a ^ b == 0</code>效率将会更高，但是为什么效率高呢？就把这个给你当家庭作业吧，考虑下减法是如何实现的；
 让我们看看ipv6中的比较；</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>static inline int ipv6_addr_equal(const struct in6_addr *a1, const struct in6_addr *a2)
-</span><span class='line'>    {
-</span><span class='line'>    return (((a1-&gt;s6_addr32[0] ^ a2-&gt;s6_addr32[0]) |
-</span><span class='line'>        (a1-&gt;s6_addr32[1] ^ a2-&gt;s6_addr32[1]) |
-</span><span class='line'>        (a1-&gt;s6_addr32[2] ^ a2-&gt;s6_addr32[2]) |
-</span><span class='line'>        (a1-&gt;s6_addr32[3] ^ a2-&gt;s6_addr32[3])) == 0);
-</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">static</span> <span class="kr">inline</span> <span class="kt">int</span> <span class="nf">ipv6_addr_equal</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="n">in6_addr</span> <span class="o">*</span><span class="n">a1</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">in6_addr</span> <span class="o">*</span><span class="n">a2</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">(((</span><span class="n">a1</span><span class="o">-&gt;</span><span class="n">s6_addr32</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^</span> <span class="n">a2</span><span class="o">-&gt;</span><span class="n">s6_addr32</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">|</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">a1</span><span class="o">-&gt;</span><span class="n">s6_addr32</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">^</span> <span class="n">a2</span><span class="o">-&gt;</span><span class="n">s6_addr32</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">|</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">a1</span><span class="o">-&gt;</span><span class="n">s6_addr32</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">^</span> <span class="n">a2</span><span class="o">-&gt;</span><span class="n">s6_addr32</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">|</span>
+</span><span class='line'>        <span class="p">(</span><span class="n">a1</span><span class="o">-&gt;</span><span class="n">s6_addr32</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">^</span> <span class="n">a2</span><span class="o">-&gt;</span><span class="n">s6_addr32</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>（2）在汇编语言中经常用于将变量置零：<code>xor a，a</code>；</h3>
@@ -374,12 +313,13 @@
 
 <p>我们给出一段常用的代码：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>unsigned int a, b, mask = 1 &lt;&lt; 6;
-</span><span class='line'>a = 0xB1; // 10100001
-</span><span class='line'>b = a ^ mask; /* flip the 6th bit */</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span><span class="p">;</span>
+</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="mh">0xB1</span><span class="p">;</span> <span class="c1">// 10100001</span>
+</span><span class='line'><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">mask</span><span class="p">;</span> <span class="cm">/* flip the 6th bit */</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>（4）我们使用<code>异或</code>来判断一个二进制数中1的数量是奇数还是偶数</h3>
@@ -397,12 +337,13 @@
 
 <h3>（6）经典题目：不使用其他空间，交换两个值</h3>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>a = a ^ b;
-</span><span class='line'>b = a ^ b; //a ^ b ^ b = a ^ 0 = a;
-</span><span class='line'>a = a ^ b;</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">;</span>
+</span><span class='line'><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">;</span> <span class="c1">//a ^ b ^ b = a ^ 0 = a;</span>
+</span><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">b</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>这个题目就不用解释了吧，太大众题目了，哈哈，但是非常好的使用的了<code>异或</code>的特性；</p>
@@ -415,7 +356,7 @@
 
 <p>代码为：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -424,15 +365,16 @@
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>//假设 int 占两个字节，16位；
-</span><span class='line'>#include&lt;iostream&gt;
-</span><span class='line'>#include&lt;string&gt;
-</span><span class='line'>using namespace std;
-</span><span class='line'>#define N(n) ((n&lt;&lt;1)&(0xAAAA))|((n&gt;&gt;1)&(0x5555))
-</span><span class='line'>void main(){
-</span><span class='line'>    int k = N(6);
-</span><span class='line'>    cout &lt;&lt; k &lt;&lt; endl;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="c1">//假设 int 占两个字节，16位；</span>
+</span><span class='line'><span class="cp">#include&lt;iostream&gt;</span>
+</span><span class='line'><span class="cp">#include&lt;string&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'><span class="cp">#define N(n) ((n&lt;&lt;1)&amp;(0xAAAA))|((n&gt;&gt;1)&amp;(0x5555))</span>
+</span><span class='line'><span class="kt">void</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">N</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">k</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p><strong>解释</strong>：
@@ -460,23 +402,24 @@ Note:Your algorithm should have a linear runtime complexity. Could you implement
 所有假设有数组：<code>A B C B C D A</code>
 使用异或：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>A ^ B ^ C ^ B ^ C ^ D ^ A
-</span><span class='line'>= A ^ A ^ B ^ B ^ C ^ C ^ D
-</span><span class='line'>= 0 ^ 0 ^ 0 ^ D
-</span><span class='line'>= 0 ^ D
-</span><span class='line'>= D</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="n">A</span> <span class="o">^</span> <span class="n">B</span> <span class="o">^</span> <span class="n">C</span> <span class="o">^</span> <span class="n">B</span> <span class="o">^</span> <span class="n">C</span> <span class="o">^</span> <span class="n">D</span> <span class="o">^</span> <span class="n">A</span>
+</span><span class='line'><span class="o">=</span> <span class="n">A</span> <span class="o">^</span> <span class="n">A</span> <span class="o">^</span> <span class="n">B</span> <span class="o">^</span> <span class="n">B</span> <span class="o">^</span> <span class="n">C</span> <span class="o">^</span> <span class="n">C</span> <span class="o">^</span> <span class="n">D</span>
+</span><span class='line'><span class="o">=</span> <span class="mi">0</span> <span class="o">^</span> <span class="mi">0</span> <span class="o">^</span> <span class="mi">0</span> <span class="o">^</span> <span class="n">D</span>
+</span><span class='line'><span class="o">=</span> <span class="mi">0</span> <span class="o">^</span> <span class="n">D</span>
+</span><span class='line'><span class="o">=</span> <span class="n">D</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>是不是很神奇？时间复杂度为<code>O(n)</code>，当然是线性的，空间复杂度<code>O(1)</code>；</p>
 
 <p><strong>代码</strong>：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -490,20 +433,21 @@ Note:Your algorithm should have a linear runtime complexity. Could you implement
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>class Solution {
-</span><span class='line'>public:
-</span><span class='line'>    int singleNumber(int A[], int n) {  
-</span><span class='line'>        //特殊情况1,2  
-</span><span class='line'>        if(n&lt;=0) return -1;  
-</span><span class='line'>        if(n==1) return A[0];  
-</span><span class='line'>  
-</span><span class='line'>        int result = 0;
-</span><span class='line'>        for (int i = 0; i &lt; n; i ++) {
-</span><span class='line'>            result = result ^ A[i];
-</span><span class='line'>        }
-</span><span class='line'>        return result;
-</span><span class='line'>    }  
-</span><span class='line'>};</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</span><span class='line'><span class="k">public</span><span class="o">:</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">singleNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="c1">//特殊情况1,2  </span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">^</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>接下来让我们增加一些难度：</p>
@@ -520,7 +464,7 @@ Note:Your algorithm should have a linear runtime complexity. Could you implement
 <p>这样我们的时间复杂度是 O(n)，空间复杂度是 O(1)
 <strong>代码</strong>：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -556,44 +500,42 @@ Note:Your algorithm should have a linear runtime complexity. Could you implement
 <span class='line-number'>34</span>
 <span class='line-number'>35</span>
 <span class='line-number'>36</span>
-<span class='line-number'>37</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;iostream&gt;
-</span><span class='line'>#include &lt;assert.h&gt;
-</span><span class='line'>using namespace std;
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;assert.h&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>int getFirstOneBit(int num) //输出 num 的低位中的第一个 1 的位置  
-</span><span class='line'>{  
-</span><span class='line'>    return num & ~(num - 1);  // num 与 -num 相与找到
-</span><span class='line'>}
+</span><span class='line'><span class="kt">int</span> <span class="n">getFirstOneBit</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="c1">//输出 num 的低位中的第一个 1 的位置  </span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">num</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>  <span class="c1">// num 与 -num 相与找到</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>void findTwo(int *array, int length){
-</span><span class='line'>    int aXORb = 0;
-</span><span class='line'>    int firstOneBit = 0;
-</span><span class='line'>    int a = 0;
-</span><span class='line'>    int b = 0;
-</span><span class='line'>    for (int i = 0; i &lt; length; i++) {
-</span><span class='line'>        aXORb ^= array[i];
-</span><span class='line'>    }
-</span><span class='line'>    assert(aXORb != 0); //保证题目要求，有两个single的数字
-</span><span class='line'>    firstOneBit = getFirstOneBit(aXORb);
-</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
-</span><span class='line'>        if(array[i] & firstOneBit) {
-</span><span class='line'>            a ^= array[i];
-</span><span class='line'>        }
-</span><span class='line'>    }
-</span><span class='line'>    b = aXORb ^ a;
-</span><span class='line'>    cout &lt;&lt; "a: " &lt;&lt; a &lt;&lt; endl; 
-</span><span class='line'>    cout &lt;&lt; "b: " &lt;&lt; b &lt;&lt; endl;
-</span><span class='line'>}
+</span><span class='line'><span class="kt">void</span> <span class="n">findTwo</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">aXORb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">firstOneBit</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">aXORb</span> <span class="o">^=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">assert</span><span class="p">(</span><span class="n">aXORb</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//保证题目要求，有两个single的数字</span>
+</span><span class='line'>    <span class="n">firstOneBit</span> <span class="o">=</span> <span class="n">getFirstOneBit</span><span class="p">(</span><span class="n">aXORb</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">firstOneBit</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">a</span> <span class="o">^=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">b</span> <span class="o">=</span> <span class="n">aXORb</span> <span class="o">^</span> <span class="n">a</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;a: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;b: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>int main()
-</span><span class='line'>{
-</span><span class='line'>    int array1[] = {2, 5, 8, 2, 5, 8, 6, 7};
-</span><span class='line'>    findTwo(array1, 8);
-</span><span class='line'>    return 0;
-</span><span class='line'>}
-</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">array1</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+</span><span class='line'>    <span class="n">findTwo</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -639,7 +581,7 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 
 <p>代码如下：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -700,69 +642,67 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 <span class='line-number'>59</span>
 <span class='line-number'>60</span>
 <span class='line-number'>61</span>
-<span class='line-number'>62</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;iostream&gt;
-</span><span class='line'>#include &lt;assert.h&gt;
-</span><span class='line'>using namespace std;
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;assert.h&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>int getFirstOneBit(int num) //输出 num 的低位中的第一个 1 的位置  
-</span><span class='line'>{  
-</span><span class='line'>    return num & ~(num - 1);  // num 与 -num 相与找到
-</span><span class='line'>}
+</span><span class='line'><span class="kt">int</span> <span class="n">getFirstOneBit</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="c1">//输出 num 的低位中的第一个 1 的位置  </span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">num</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>  <span class="c1">// num 与 -num 相与找到</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>void findTwo(int *array, int length){
-</span><span class='line'>    int aXORb = 0;
-</span><span class='line'>    int firstOneBit = 0;
-</span><span class='line'>    int a = 0;
-</span><span class='line'>    int b = 0;
-</span><span class='line'>    for (int i = 0; i &lt; length; i++) {
-</span><span class='line'>        aXORb ^= array[i];
-</span><span class='line'>    }
-</span><span class='line'>    assert(aXORb != 0); //保证题目要求，有两个single的数字
-</span><span class='line'>    firstOneBit = getFirstOneBit(aXORb);
-</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
-</span><span class='line'>        if(array[i] & firstOneBit) {
-</span><span class='line'>            a ^= array[i];
-</span><span class='line'>        }
-</span><span class='line'>    }
-</span><span class='line'>    b = aXORb ^ a;
-</span><span class='line'>    cout &lt;&lt; "a: " &lt;&lt; a &lt;&lt; endl; 
-</span><span class='line'>    cout &lt;&lt; "b: " &lt;&lt; b &lt;&lt; endl;
-</span><span class='line'>}
+</span><span class='line'><span class="kt">void</span> <span class="n">findTwo</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">aXORb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">firstOneBit</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">aXORb</span> <span class="o">^=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">assert</span><span class="p">(</span><span class="n">aXORb</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//保证题目要求，有两个single的数字</span>
+</span><span class='line'>    <span class="n">firstOneBit</span> <span class="o">=</span> <span class="n">getFirstOneBit</span><span class="p">(</span><span class="n">aXORb</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">firstOneBit</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">a</span> <span class="o">^=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">b</span> <span class="o">=</span> <span class="n">aXORb</span> <span class="o">^</span> <span class="n">a</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;a: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;b: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>int findOne(int *array, int length) {
-</span><span class='line'>    int aXORbXORc = 0;
-</span><span class='line'>    int c = 0;
-</span><span class='line'>    int firstOneBit = 0;
-</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
-</span><span class='line'>        aXORbXORc ^= array[i];
-</span><span class='line'>    }
+</span><span class='line'><span class="kt">int</span> <span class="n">findOne</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">aXORbXORc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">firstOneBit</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">aXORbXORc</span> <span class="o">^=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
-</span><span class='line'>        firstOneBit ^= getFirstOneBit(aXORbXORc ^ array[i]); //使用异或会排除掉不相干的元素
-</span><span class='line'>    }
-</span><span class='line'>    // firstOneBit = getFirstOneBit(a ^ b) ^ getFirstOneBit(a ^ c) ^ getFirstOneBit(b ^ c);
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">firstOneBit</span> <span class="o">^=</span> <span class="n">getFirstOneBit</span><span class="p">(</span><span class="n">aXORbXORc</span> <span class="o">^</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="c1">//使用异或会排除掉不相干的元素</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="c1">// firstOneBit = getFirstOneBit(a ^ b) ^ getFirstOneBit(a ^ c) ^ getFirstOneBit(b ^ c);</span>
 </span><span class='line'>
-</span><span class='line'>    firstOneBit = getFirstOneBit(firstOneBit); //获取到最低位下面要用
+</span><span class='line'>    <span class="n">firstOneBit</span> <span class="o">=</span> <span class="n">getFirstOneBit</span><span class="p">(</span><span class="n">firstOneBit</span><span class="p">);</span> <span class="c1">//获取到最低位下面要用</span>
 </span><span class='line'>
-</span><span class='line'>    for (int i = 0; i &lt; length; ++i) {
-</span><span class='line'>        if (getFirstOneBit(aXORbXORc ^ array[i]) == firstOneBit) {
-</span><span class='line'>            c ^= array[i]; //使用异或会排除掉不相干的元素
-</span><span class='line'>        }
-</span><span class='line'>    }
-</span><span class='line'>    cout &lt;&lt; "c: " &lt;&lt; c &lt;&lt; endl;
-</span><span class='line'>    return c;
-</span><span class='line'>}
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">getFirstOneBit</span><span class="p">(</span><span class="n">aXORbXORc</span> <span class="o">^</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">==</span> <span class="n">firstOneBit</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">c</span> <span class="o">^=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="c1">//使用异或会排除掉不相干的元素</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;c: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>int main()
-</span><span class='line'>{
-</span><span class='line'>    int array1[] = {2, 5, 8, 2, 5, 8, 6, 7, 1};
-</span><span class='line'>    int c = findOne(array1, 9);
-</span><span class='line'>    int array2[] = {2, 5, 8, 2, 5, 8, 6, 7, 1, c}; //为了更好重用函数，我重新定义了一个数组让大家理解
-</span><span class='line'>    findTwo(array2, 10);
-</span><span class='line'>    return 0;
-</span><span class='line'>}
-</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">array1</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">findOne</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="mi">9</span><span class="p">);</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">array2</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">};</span> <span class="c1">//为了更好重用函数，我重新定义了一个数组让大家理解</span>
+</span><span class='line'>    <span class="n">findTwo</span><span class="p">(</span><span class="n">array2</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -791,6 +731,68 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 <p><a href="http://blog.csdn.net/pathuang68/article/details/7567027">http://blog.csdn.net/pathuang68/article/details/7567027</a></p>
 
 <p><a href="http://blog.csdn.net/qingen1/article/details/12656763">http://blog.csdn.net/qingen1/article/details/12656763</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/11/mei-ri-yu-zhu-tong-xing/">《每日与主同行》手机端网站</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-11T01:03:00+08:00" pubdate data-updated="true">Sep 11<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="../images/post/meiriyuzhutongxing.jpg" alt="每日与主同行" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+
+<p>在阿牛哥的带领下，我现在每天都会读圣经，参考的资料就是苏颖智牧师的《每日与主同行》，经常需要在网上读一下每天的章节，但是网上大部分版本都没有做很好的手机兼容，所以在手机上读的很累，我就自己做了一个简单的网站来进行每天的阅读。</p>
+
+<h2>简介</h2>
+
+<h4>网址：</h4>
+
+<p><a href="http://mryztx.duapp.com">http://mryztx.duapp.com</a>  (mryztx是《每日与主同行》的首字母)</p>
+
+<h4>平台：</h4>
+
+<p>百度BAE</p>
+
+<h4>方法：</h4>
+
+<p>抓取网站<a href="http://www.jonahome.net/files02/PI_SGrowth-Day-Walk/gb/">http://www.jonahome.net/files02/PI_SGrowth-Day-Walk/gb/</a>的html存下来，然后重新设计为responsive的页面；使用了一点点bootstrap.min.css。</p>
+
+<h4>访问：</h4>
+
+<p>你可以在PC和手机进行访问。</p>
+
+<h4>截图：</h4>
+
+<p><img src="../images/post/screenshot.png" alt="ScreenShot" /></p>
+
+<h3>终于可以使用手机阅读了</h3>
 </div>
   
   
@@ -1176,11 +1178,11 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/09/11/mei-ri-yu-zhu-tong-xing/">《每日与主同行》手机端网站</a>
+        <a href="/blog/2014/05/29/amazing-xor/">感受异或的神奇</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/05/29/amazing-xor/">《每日与主同行》手机端网站</a>
+        <a href="/blog/2013/09/11/mei-ri-yu-zhu-tong-xing/">《每日与主同行》手机端网站</a>
       </li>
     
       <li class="post">
