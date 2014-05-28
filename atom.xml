@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-05-29T06:30:24+08:00</updated>
+  <updated>2014-05-29T06:32:14+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -18,9 +18,7 @@
     <link href="http://lijinma.github.io/blog/2014/05/29/amazing-xor/"/>
     <updated>2014-05-29T06:26:00+08:00</updated>
     <id>http://lijinma.github.io/blog/2014/05/29/amazing-xor</id>
-    <content type="html"><![CDATA[<h1>感受异或的神奇</h1>
-
-<h2>什么是异或？</h2>
+    <content type="html"><![CDATA[<h2>什么是异或？</h2>
 
 <p>Wikipedia的解释：</p>
 
@@ -69,6 +67,9 @@
 <p>Y = A&#8217; · B + A · B&#8217;</p>
 
 <blockquote><p>解释：我使用<code>·</code>作为<code>与</code>，我使用<code>+</code>作为<code>或</code>，我使用<code>'</code>作为<code>否</code>(本来应该使用<code>头上一横</code>，但是太难编辑了，就使用了<code>'</code>）；</p></blockquote>
+
+<!--more-->
+
 
 <h2>异或有什么特性？</h2>
 
