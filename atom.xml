@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-05-30T02:34:51+08:00</updated>
+  <updated>2014-05-31T15:35:41+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -18,7 +18,7 @@
     <link href="http://lijinma.github.io/blog/2014/05/29/amazing-xor/"/>
     <updated>2014-05-29T06:26:00+08:00</updated>
     <id>http://lijinma.github.io/blog/2014/05/29/amazing-xor</id>
-    <content type="html"><![CDATA[<p><img src="../images/post/xor.jpg" alt="异或" /></p>
+    <content type="html"><![CDATA[<p><img src="http://lijinma.github.io/images/post/xor.png" alt="异或" /></p>
 
 <h2>什么是异或？</h2>
 
