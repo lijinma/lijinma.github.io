@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-05-31T16:03:28+08:00</updated>
+  <updated>2014-06-02T00:14:08+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -704,7 +704,7 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
     <link href="http://lijinma.github.io/blog/2013/04/09/version-control/"/>
     <updated>2013-04-09T01:03:00+08:00</updated>
     <id>http://lijinma.github.io/blog/2013/04/09/version-control</id>
-    <content type="html"><![CDATA[<p><img src="../images/post/version_control.png" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+    <content type="html"><![CDATA[<p><img src="http://lijinma.github.io/images/version_control.png" alt="版本管理" /></p>
 
 <p>版本管理是每一个项目中必不可少的环节，但这些知识却无法在学校中学到，常常需要在实践中学习，我总结了一些自己工作中版本管理的知识和经验，希望能给大家带来一起启发。
 本文章是有感于某外包公司因为人少竟然不用版本管理而发。部分内容参考网上资料。</p>
