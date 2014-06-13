@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-06-13T16:20:46+08:00</updated>
+  <updated>2014-06-13T16:22:12+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -37,7 +37,7 @@
 
 <p>我主要说一下我做这个题的思路；</p>
 
-<h4>哈希表的实现方法</h4>
+<h3>哈希表的实现方法</h3>
 
 <p>我们知道哈希表有开发地址法（Open addressing）和链表法（Chaining），因为开发地址法的最大负载率是1，所以开发地址法常常更需要实现动态平衡，所以我们选择使用开发地址法来实现；</p>
 
@@ -45,11 +45,11 @@
 
 <p>开发地址法的实现也可以有很多种，但是我们选取最简单的一种，就是如果一个 slot 被暂用，就向后一个地址查询，知道找到空的 slot，然后把对应 {key:value} 放进去；</p>
 
-<h4>数据结构</h4>
+<h3>数据结构</h3>
 
 <p>需要有两个数据结构，一个是Hashtable，Hashtable是一个数组；另一个是Entry，就是放在这个数组上的一个一个的entry；整体思路是：我们先创建一个空的Hashtable，然后把一个一个的Entry放到这个数组里面；</p>
 
-<h4>确定数据结构原型</h4>
+<h3>确定数据结构原型</h3>
 
 <p>大家可以通过我的注释来了解我代码的意思；</p>
 
@@ -126,7 +126,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h4>写单元测试</h4>
+<h3>写单元测试</h3>
 
 <p>有了原型之后，我们就可以来书写单元测试代码了，通过单元测试，我们很快的就可以定位到自己的问题；我们先写好最简单的测试；</p>
 
@@ -190,7 +190,7 @@
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>实现方法</h4>
+<h3>实现方法</h3>
 
 <p>实现方法的时候，可以边实现边测试，一会会你就完成了;</p>
 
@@ -397,12 +397,12 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h4>在线测试</h4>
+<h3>在线测试</h3>
 
 <script src="http://ideone.com/e.js/guXhB4" type="text/javascript" ></script>
 
 
-<p>我没有做过C++的大型项目，一直写JavaScript，所以以上代码任何写的不正确的、烂的地方，还请大家多多指教，非常感谢；</p>
+<p>我没有做过C++的项目，一直写JavaScript，所以以上代码任何写的不正确的、烂的地方，还请大家多多指教，非常感谢；</p>
 ]]></content>
   </entry>
   
