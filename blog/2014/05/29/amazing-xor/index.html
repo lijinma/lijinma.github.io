@@ -148,9 +148,9 @@
 
 <p>Y = A&#8217; · B + A · B&#8217;</p>
 
-<blockquote><p>解释：我使用<code>·</code>作为<code>与</code>，我使用<code>+</code>作为<code>或</code>，我使用<code>'</code>作为<code>否</code>(本来应该使用<code>头上一横</code>，但是太难编辑了，就使用了<code>'</code>）；</p>
+<blockquote><p>解释：我使用<code>·</code>作为<code>与</code>，我使用<code>+</code>作为<code>或</code>，我使用<code>'</code>作为<code>否</code>(本来应该使用<code>头上一横</code>，但是太难编辑了，就使用了<code>'</code>）；</p></blockquote>
 
-<h2>异或有什么特性？</h2></blockquote>
+<h2>异或有什么特性？</h2>
 
 <p>根据定义我们很容易获得<code>异或</code>两个特性：</p>
 
@@ -309,8 +309,9 @@
 
 <h3>（3）我们可以使用<code>异或</code>来使某些特定的位翻转，因为不管是0或者是1与1做异或将得到原值的相反值；</h3>
 
-<p>0 ^ 1 = 1
-1 ^ 1 = 0</p>
+<p>0 ^ 1 = 1</p>
+
+<p>1 ^ 1 = 0</p>
 
 <p>例如：翻转<code>10100001</code>的第6位，
 答案：可以将该数与<code>00100000</code>进行按位异或运算;<code>10100001 ^ 00100000 = 10000001</code></p>
