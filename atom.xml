@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-06-13T16:27:56+08:00</updated>
+  <updated>2014-06-13T18:29:45+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -102,25 +102,25 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>class Hashtable {
 </span><span class='line'>private:
 </span><span class='line'>  int size;
-</span><span class='line'>  //存放一个一个entry的数组
 </span><span class='line'>  Entry **table;
 </span><span class='line'>  //已占用的位置个数
 </span><span class='line'>  int occupiedSize;
 </span><span class='line'>  //负载率临界值
-</span><span class='line'>  float loadFactorThreshold;
-</span><span class='line'>  //负载率超过临界值后，需要动态修改 table 的大小
-</span><span class='line'>  void resize();
+</span><span class='line'>  float minLoadFactorThreshold;
+</span><span class='line'>  float maxLoadFactorThreshold;
+</span><span class='line'>  int maxTableSize;
+</span><span class='line'>  int minTableSize;
+</span><span class='line'>  static Entry * deleteEntry;
+</span><span class='line'>  void resize(double factor);
 </span><span class='line'>
 </span><span class='line'>public:
 </span><span class='line'>  Hashtable (int size);
-</span><span class='line'>  //拿数据
 </span><span class='line'>  int get (int key);
-</span><span class='line'>  //放数据
-</span><span class='line'>  void put (int key, int value);  
-</span><span class='line'>  //hash key后，进行存放
+</span><span class='line'>  void put (int key, int value);
 </span><span class='line'>  int hash (int key);
 </span><span class='line'>  int getSize ();
 </span><span class='line'>  int getOccupiedSize ();
+</span><span class='line'>  void remove (int key);
 </span><span class='line'>  ~Hashtable ();
 </span><span class='line'>};
 </span></code></pre></td></tr></table></div></figure>
@@ -159,11 +159,43 @@
 <span class='line-number'>27</span>
 <span class='line-number'>28</span>
 <span class='line-number'>29</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;iostream&gt;
-</span><span class='line'>#include &lt;assert.h&gt;
-</span><span class='line'>using namespace std;
-</span><span class='line'>
-</span><span class='line'>int main () {
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>int main () {
 </span><span class='line'>  Hashtable * table10 = new Hashtable(10);
 </span><span class='line'>  table10-&gt;put(1, 100);
 </span><span class='line'>  table10-&gt;put(2, 200);
@@ -175,6 +207,7 @@
 </span><span class='line'>  assert(table10-&gt;getOccupiedSize() == 3);
 </span><span class='line'>
 </span><span class='line'>
+</span><span class='line'>  //测试当负载率大于maxLoadFactorThreshold，要扩大 size * 2
 </span><span class='line'>  Hashtable * table2 = new Hashtable(2);
 </span><span class='line'>  table2-&gt;put(1, 100);
 </span><span class='line'>  table2-&gt;put(2, 200);
@@ -184,6 +217,45 @@
 </span><span class='line'>  assert(table2-&gt;get(3) == 300);
 </span><span class='line'>  assert(table2-&gt;getSize() == 8);
 </span><span class='line'>  assert(table2-&gt;getOccupiedSize() == 3);
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>  //测试删除和最小删除值
+</span><span class='line'>  Hashtable * table11 = new Hashtable(11);
+</span><span class='line'>  table11-&gt;put(1, 100);
+</span><span class='line'>  table11-&gt;put(2, 200);
+</span><span class='line'>  table11-&gt;put(3, 300);
+</span><span class='line'>  table11-&gt;put(4, 400);
+</span><span class='line'>  table11-&gt;put(5, 500);
+</span><span class='line'>  table11-&gt;put(6, 600);
+</span><span class='line'>  table11-&gt;put(7, 700);
+</span><span class='line'>  table11-&gt;put(8, 800);
+</span><span class='line'>  table11-&gt;put(9, 900);
+</span><span class='line'>  table11-&gt;put(10, 1000);
+</span><span class='line'>  table11-&gt;put(11, 1100);
+</span><span class='line'>  table11-&gt;put(12, 1200);
+</span><span class='line'>  assert(table11-&gt;get(8) == 800);
+</span><span class='line'>  assert(table11-&gt;getSize() == 44);
+</span><span class='line'>  assert(table11-&gt;getOccupiedSize() == 12);
+</span><span class='line'>  table11-&gt;remove(8);
+</span><span class='line'>  assert(table11-&gt;get(8) == -1);
+</span><span class='line'>  table11-&gt;remove(7);
+</span><span class='line'>  // 10 / 44 = 0.2 0.2 &lt; 0.25 所以要压缩
+</span><span class='line'>  assert(table11-&gt;getSize() == 22);
+</span><span class='line'>  assert(table11-&gt;getOccupiedSize() == 10);
+</span><span class='line'>  table11-&gt;remove(6);
+</span><span class='line'>  table11-&gt;remove(5);
+</span><span class='line'>  table11-&gt;remove(4);
+</span><span class='line'>  table11-&gt;remove(3);
+</span><span class='line'>  table11-&gt;remove(2);
+</span><span class='line'>  // 5 / 22 = 0.2 0.2 &lt; 0.25 所以要压缩
+</span><span class='line'>  assert(table11-&gt;getSize() == 11);
+</span><span class='line'>  assert(table11-&gt;getOccupiedSize() == 5);
+</span><span class='line'>  table11-&gt;remove(1);
+</span><span class='line'>  table11-&gt;remove(9);
+</span><span class='line'>  table11-&gt;remove(10);
+</span><span class='line'>  // 2 / 11 = 0.18 0.18 &lt; 0.25 但是 11/2 &lt; 10 ，所以不压缩
+</span><span class='line'>  assert(table11-&gt;getSize() == 11);
+</span><span class='line'>  assert(table11-&gt;getOccupiedSize() == 2);
 </span><span class='line'>
 </span><span class='line'>  cout &lt;&lt; "The tests run successfully." &lt;&lt; endl;
 </span><span class='line'>
@@ -294,7 +366,42 @@
 <span class='line-number'>98</span>
 <span class='line-number'>99</span>
 <span class='line-number'>100</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Entry::Entry (int key, int value) {
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>Entry::Entry (int key, int value) {
 </span><span class='line'>  this-&gt;key = key;
 </span><span class='line'>  this-&gt;value = value;
 </span><span class='line'>}
@@ -307,11 +414,17 @@
 </span><span class='line'>  return this-&gt;value;
 </span><span class='line'>}
 </span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>Entry * Hashtable::deleteEntry = new Entry(-1, -1);
+</span><span class='line'>
 </span><span class='line'>Hashtable::Hashtable (int size) {
 </span><span class='line'>  assert(size &gt; 0);
 </span><span class='line'>  this-&gt;size = size;
-</span><span class='line'>  this-&gt;occupiedSize = 0;
-</span><span class='line'>  this-&gt;loadFactorThreshold = 0.5;
+</span><span class='line'>  occupiedSize = 0;
+</span><span class='line'>  minTableSize = MIN_TABLE_SIZE;
+</span><span class='line'>  maxTableSize = MAX_TABLE_SIZE;
+</span><span class='line'>  minLoadFactorThreshold = MIN_LOAD_FACTOR_THREHOLD;
+</span><span class='line'>  maxLoadFactorThreshold = MAX_LOAD_FACTOR_THREHOLD;
 </span><span class='line'>  table = new Entry* [size];
 </span><span class='line'>  for (int i = 0; i &lt; size; i++) {
 </span><span class='line'>    table[i] = NULL;
@@ -322,19 +435,19 @@
 </span><span class='line'>  int hash = this-&gt;hash(key);
 </span><span class='line'>  int count = 0;
 </span><span class='line'>  while(table[hash] != NULL) {
-</span><span class='line'>    //全部位置遍历后，如果仍然没有空位，返回；这个在动态平衡的哈希表中不会出现
-</span><span class='line'>    if (count &gt;= this-&gt;size) {
+</span><span class='line'>    //全部位置遍历后，如果仍然没有空位，返回；
+</span><span class='line'>    if (count &gt;= size) {
 </span><span class='line'>      cout &lt;&lt; "The hashtable is full, failed to add {key:" &lt;&lt; key &lt;&lt; " value:" &lt;&lt; value &lt;&lt; "}" &lt;&lt; endl;
 </span><span class='line'>      return;
 </span><span class='line'>    }
-</span><span class='line'>    hash = (hash + 1) % this-&gt;size;
+</span><span class='line'>    hash = (hash + 1) % size;
 </span><span class='line'>    count ++;
 </span><span class='line'>  }
 </span><span class='line'>  table[hash] = new Entry(key, value);
-</span><span class='line'>  this-&gt;occupiedSize ++;
-</span><span class='line'>  float currentLoadFactor = (float)this-&gt;occupiedSize / (float)this-&gt;size;
-</span><span class='line'>  if( currentLoadFactor &gt; this-&gt;loadFactorThreshold) {
-</span><span class='line'>    resize();
+</span><span class='line'>  occupiedSize ++;
+</span><span class='line'>  float currentLoadFactor = (float)occupiedSize / (float)size;
+</span><span class='line'>  if( currentLoadFactor &gt; maxLoadFactorThreshold && size * 2 &lt; maxTableSize) {
+</span><span class='line'>    resize(2);
 </span><span class='line'>  }
 </span><span class='line'>}
 </span><span class='line'>
@@ -346,10 +459,10 @@
 </span><span class='line'>      return table[hash]-&gt;getValue();
 </span><span class='line'>    }
 </span><span class='line'>    //全部位置遍历后，仍然没有找到对应的key，返回-1
-</span><span class='line'>    if (count &gt;= this-&gt;size) {
+</span><span class='line'>    if (count &gt;= size) {
 </span><span class='line'>      return -1;
 </span><span class='line'>    }
-</span><span class='line'>    hash = (hash + 1) % this-&gt;size;
+</span><span class='line'>    hash = (hash + 1) % size;
 </span><span class='line'>    count ++;
 </span><span class='line'>  }
 </span><span class='line'>
@@ -357,19 +470,19 @@
 </span><span class='line'>}
 </span><span class='line'>
 </span><span class='line'>int Hashtable::hash (int key) {
-</span><span class='line'>  return key % this-&gt;size;
+</span><span class='line'>  return key % size;
 </span><span class='line'>}
 </span><span class='line'>int Hashtable::getSize () {
-</span><span class='line'>  return this-&gt;size;
+</span><span class='line'>  return size;
 </span><span class='line'>}
 </span><span class='line'>int Hashtable::getOccupiedSize () {
-</span><span class='line'>  return this-&gt;occupiedSize;
+</span><span class='line'>  return occupiedSize;
 </span><span class='line'>}
 </span><span class='line'>
-</span><span class='line'>void Hashtable::resize () {
-</span><span class='line'>  int oldSize = this-&gt;size;
-</span><span class='line'>  Entry ** oldTable = this-&gt;table;
-</span><span class='line'>  size = oldSize * 2;
+</span><span class='line'>void Hashtable::resize (double factor) {
+</span><span class='line'>  int oldSize = size;
+</span><span class='line'>  Entry ** oldTable = table;
+</span><span class='line'>  size = (int) oldSize * factor;
 </span><span class='line'>  table = new Entry* [size];
 </span><span class='line'>  occupiedSize = 0;
 </span><span class='line'>
@@ -379,11 +492,38 @@
 </span><span class='line'>
 </span><span class='line'>
 </span><span class='line'>  for (int i = 0; i &lt; oldSize; i++) {
-</span><span class='line'>    if (NULL != oldTable[i]) {
+</span><span class='line'>    if (NULL != oldTable[i] &&  oldTable[i] != deleteEntry) {
 </span><span class='line'>      put(oldTable[i]-&gt;getKey(), oldTable[i]-&gt;getValue());
 </span><span class='line'>    }
 </span><span class='line'>  }
 </span><span class='line'>
+</span><span class='line'>  delete[] oldTable;
+</span><span class='line'>
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>void Hashtable::remove (int key) {
+</span><span class='line'>  int hash = this-&gt;hash(key);
+</span><span class='line'>  int count = 0;
+</span><span class='line'>  while(table[hash] != NULL) {
+</span><span class='line'>    if(table[hash]-&gt;getKey() == key) {
+</span><span class='line'>      delete table[hash];
+</span><span class='line'>      table[hash] = deleteEntry;
+</span><span class='line'>      occupiedSize --;
+</span><span class='line'>      // cout &lt;&lt; "remove and occupiedSize: " &lt;&lt; occupiedSize &lt;&lt;  endl;
+</span><span class='line'>      float currentLoadFactor = (float)occupiedSize / (float)size;
+</span><span class='line'>      if( currentLoadFactor &lt; minLoadFactorThreshold && size / 2 &gt; minTableSize) {
+</span><span class='line'>        resize(0.5);
+</span><span class='line'>      }
+</span><span class='line'>
+</span><span class='line'>    }
+</span><span class='line'>    //全部位置遍历后，仍然没有找到对应的key
+</span><span class='line'>    if (count &gt;= size) {
+</span><span class='line'>      cout &lt;&lt; "没有找到你要删除的 key: " &lt;&lt; key &lt;&lt; endl;
+</span><span class='line'>      return;
+</span><span class='line'>    }
+</span><span class='line'>    hash = (hash + 1) % size;
+</span><span class='line'>    count ++;
+</span><span class='line'>  }
 </span><span class='line'>}
 </span><span class='line'>
 </span><span class='line'>Hashtable::~Hashtable () {
@@ -399,7 +539,7 @@
 
 <h3>在线测试</h3>
 
-<script src="http://ideone.com/e.js/guXhB4" type="text/javascript" ></script>
+<script src="http://ideone.com/e.js/QWKgw8" type="text/javascript" ></script>
 
 
 <p>我没有做过C++的项目，一直写JavaScript，所以以上代码任何写的不正确的、烂的地方，还请大家多多指教，非常感谢；</p>
