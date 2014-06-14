@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-06-13T18:29:45+08:00</updated>
+  <updated>2014-06-14T23:39:19+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -53,7 +53,7 @@
 
 <p>大家可以通过我的注释来了解我代码的意思；</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -62,20 +62,21 @@
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>class Entry {
-</span><span class='line'>private:
-</span><span class='line'>  int key;
-</span><span class='line'>  int value;
-</span><span class='line'>public:
-</span><span class='line'>  Entry (int key, int value);
-</span><span class='line'>  int getKey ();
-</span><span class='line'>  int getValue ();
-</span><span class='line'>};</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">class</span> <span class="nc">Entry</span> <span class="p">{</span>
+</span><span class='line'><span class="k">private</span><span class="o">:</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">key</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+</span><span class='line'><span class="k">public</span><span class="o">:</span>
+</span><span class='line'>  <span class="n">Entry</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">getKey</span> <span class="p">();</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">getValue</span> <span class="p">();</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -99,30 +100,30 @@
 <span class='line-number'>22</span>
 <span class='line-number'>23</span>
 <span class='line-number'>24</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>class Hashtable {
-</span><span class='line'>private:
-</span><span class='line'>  int size;
-</span><span class='line'>  Entry **table;
-</span><span class='line'>  //已占用的位置个数
-</span><span class='line'>  int occupiedSize;
-</span><span class='line'>  //负载率临界值
-</span><span class='line'>  float minLoadFactorThreshold;
-</span><span class='line'>  float maxLoadFactorThreshold;
-</span><span class='line'>  int maxTableSize;
-</span><span class='line'>  int minTableSize;
-</span><span class='line'>  static Entry * deleteEntry;
-</span><span class='line'>  void resize(double factor);
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">class</span> <span class="nc">Hashtable</span> <span class="p">{</span>
+</span><span class='line'><span class="k">private</span><span class="o">:</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">Entry</span> <span class="o">**</span><span class="n">table</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">//已占用的位置个数</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">occupiedSize</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">//负载率临界值</span>
+</span><span class='line'>  <span class="kt">float</span> <span class="n">minLoadFactorThreshold</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">float</span> <span class="n">maxLoadFactorThreshold</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">maxTableSize</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">minTableSize</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">static</span> <span class="n">Entry</span> <span class="o">*</span> <span class="n">deleteEntry</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">void</span> <span class="n">resize</span><span class="p">(</span><span class="kt">double</span> <span class="n">factor</span><span class="p">);</span>
 </span><span class='line'>
-</span><span class='line'>public:
-</span><span class='line'>  Hashtable (int size);
-</span><span class='line'>  int get (int key);
-</span><span class='line'>  void put (int key, int value);
-</span><span class='line'>  int hash (int key);
-</span><span class='line'>  int getSize ();
-</span><span class='line'>  int getOccupiedSize ();
-</span><span class='line'>  void remove (int key);
-</span><span class='line'>  ~Hashtable ();
-</span><span class='line'>};
+</span><span class='line'><span class="k">public</span><span class="o">:</span>
+</span><span class='line'>  <span class="n">Hashtable</span> <span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">get</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">void</span> <span class="n">put</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">hash</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">getSize</span> <span class="p">();</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">getOccupiedSize</span> <span class="p">();</span>
+</span><span class='line'>  <span class="kt">void</span> <span class="n">remove</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">);</span>
+</span><span class='line'>  <span class="o">~</span><span class="n">Hashtable</span> <span class="p">();</span>
+</span><span class='line'><span class="p">};</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -130,7 +131,7 @@
 
 <p>有了原型之后，我们就可以来书写单元测试代码了，通过单元测试，我们很快的就可以定位到自己的问题；我们先写好最简单的测试；</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -195,78 +196,79 @@
 <span class='line-number'>63</span>
 <span class='line-number'>64</span>
 <span class='line-number'>65</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>int main () {
-</span><span class='line'>  Hashtable * table10 = new Hashtable(10);
-</span><span class='line'>  table10-&gt;put(1, 100);
-</span><span class='line'>  table10-&gt;put(2, 200);
-</span><span class='line'>  table10-&gt;put(3, 300);
-</span><span class='line'>  assert(table10-&gt;get(1) == 100);
-</span><span class='line'>  assert(table10-&gt;get(2) == 200);
-</span><span class='line'>  assert(table10-&gt;get(3) == 300);
-</span><span class='line'>  assert(table10-&gt;getSize() == 10);
-</span><span class='line'>  assert(table10-&gt;getOccupiedSize() == 3);
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="kt">int</span> <span class="n">main</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">Hashtable</span> <span class="o">*</span> <span class="n">table10</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table10</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table10</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table10</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table10</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">100</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table10</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table10</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">300</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table10</span><span class="o">-&gt;</span><span class="n">getSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">10</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table10</span><span class="o">-&gt;</span><span class="n">getOccupiedSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>  //测试当负载率大于maxLoadFactorThreshold，要扩大 size * 2
-</span><span class='line'>  Hashtable * table2 = new Hashtable(2);
-</span><span class='line'>  table2-&gt;put(1, 100);
-</span><span class='line'>  table2-&gt;put(2, 200);
-</span><span class='line'>  table2-&gt;put(3, 300);
-</span><span class='line'>  assert(table2-&gt;get(1) == 100);
-</span><span class='line'>  assert(table2-&gt;get(2) == 200);
-</span><span class='line'>  assert(table2-&gt;get(3) == 300);
-</span><span class='line'>  assert(table2-&gt;getSize() == 8);
-</span><span class='line'>  assert(table2-&gt;getOccupiedSize() == 3);
+</span><span class='line'>  <span class="c1">//测试当负载率大于maxLoadFactorThreshold，要扩大 size * 2</span>
+</span><span class='line'>  <span class="n">Hashtable</span> <span class="o">*</span> <span class="n">table2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table2</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table2</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table2</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table2</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">100</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table2</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table2</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">300</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table2</span><span class="o">-&gt;</span><span class="n">getSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">8</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table2</span><span class="o">-&gt;</span><span class="n">getOccupiedSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>  //测试删除和最小删除值
-</span><span class='line'>  Hashtable * table11 = new Hashtable(11);
-</span><span class='line'>  table11-&gt;put(1, 100);
-</span><span class='line'>  table11-&gt;put(2, 200);
-</span><span class='line'>  table11-&gt;put(3, 300);
-</span><span class='line'>  table11-&gt;put(4, 400);
-</span><span class='line'>  table11-&gt;put(5, 500);
-</span><span class='line'>  table11-&gt;put(6, 600);
-</span><span class='line'>  table11-&gt;put(7, 700);
-</span><span class='line'>  table11-&gt;put(8, 800);
-</span><span class='line'>  table11-&gt;put(9, 900);
-</span><span class='line'>  table11-&gt;put(10, 1000);
-</span><span class='line'>  table11-&gt;put(11, 1100);
-</span><span class='line'>  table11-&gt;put(12, 1200);
-</span><span class='line'>  assert(table11-&gt;get(8) == 800);
-</span><span class='line'>  assert(table11-&gt;getSize() == 44);
-</span><span class='line'>  assert(table11-&gt;getOccupiedSize() == 12);
-</span><span class='line'>  table11-&gt;remove(8);
-</span><span class='line'>  assert(table11-&gt;get(8) == -1);
-</span><span class='line'>  table11-&gt;remove(7);
-</span><span class='line'>  // 10 / 44 = 0.2 0.2 &lt; 0.25 所以要压缩
-</span><span class='line'>  assert(table11-&gt;getSize() == 22);
-</span><span class='line'>  assert(table11-&gt;getOccupiedSize() == 10);
-</span><span class='line'>  table11-&gt;remove(6);
-</span><span class='line'>  table11-&gt;remove(5);
-</span><span class='line'>  table11-&gt;remove(4);
-</span><span class='line'>  table11-&gt;remove(3);
-</span><span class='line'>  table11-&gt;remove(2);
-</span><span class='line'>  // 5 / 22 = 0.2 0.2 &lt; 0.25 所以要压缩
-</span><span class='line'>  assert(table11-&gt;getSize() == 11);
-</span><span class='line'>  assert(table11-&gt;getOccupiedSize() == 5);
-</span><span class='line'>  table11-&gt;remove(1);
-</span><span class='line'>  table11-&gt;remove(9);
-</span><span class='line'>  table11-&gt;remove(10);
-</span><span class='line'>  // 2 / 11 = 0.18 0.18 &lt; 0.25 但是 11/2 &lt; 10 ，所以不压缩
-</span><span class='line'>  assert(table11-&gt;getSize() == 11);
-</span><span class='line'>  assert(table11-&gt;getOccupiedSize() == 2);
+</span><span class='line'>  <span class="c1">//测试删除和最小删除值</span>
+</span><span class='line'>  <span class="n">Hashtable</span> <span class="o">*</span> <span class="n">table11</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">700</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">800</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">900</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">1100</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1200</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">==</span> <span class="mi">800</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">getSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">44</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">getOccupiedSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">12</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">// 10 / 44 = 0.2 0.2 &lt; 0.25 所以要压缩</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">getSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">22</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">getOccupiedSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">10</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">// 5 / 22 = 0.2 0.2 &lt; 0.25 所以要压缩</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">getSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">11</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">getOccupiedSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">5</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">table11</span><span class="o">-&gt;</span><span class="n">remove</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">// 2 / 11 = 0.18 0.18 &lt; 0.25 但是 11/2 &lt; 10 ，所以不压缩</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">getSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">11</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">table11</span><span class="o">-&gt;</span><span class="n">getOccupiedSize</span><span class="p">()</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span>
 </span><span class='line'>
-</span><span class='line'>  cout &lt;&lt; "The tests run successfully." &lt;&lt; endl;
+</span><span class='line'>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The tests run successfully.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>实现方法</h3>
 
 <p>实现方法的时候，可以边实现边测试，一会会你就完成了;</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -399,141 +401,139 @@
 <span class='line-number'>131</span>
 <span class='line-number'>132</span>
 <span class='line-number'>133</span>
-<span class='line-number'>134</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>Entry::Entry (int key, int value) {
-</span><span class='line'>  this-&gt;key = key;
-</span><span class='line'>  this-&gt;value = value;
-</span><span class='line'>}
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="n">Entry</span><span class="o">::</span><span class="n">Entry</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">this</span><span class="o">-&gt;</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">this</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>int Entry::getKey () {
-</span><span class='line'>  return this-&gt;key;
-</span><span class='line'>}
+</span><span class='line'><span class="kt">int</span> <span class="n">Entry</span><span class="o">::</span><span class="n">getKey</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">key</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>int Entry::getValue () {
-</span><span class='line'>  return this-&gt;value;
-</span><span class='line'>}
+</span><span class='line'><span class="kt">int</span> <span class="n">Entry</span><span class="o">::</span><span class="n">getValue</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>Entry * Hashtable::deleteEntry = new Entry(-1, -1);
+</span><span class='line'><span class="n">Entry</span> <span class="o">*</span> <span class="n">Hashtable</span><span class="o">::</span><span class="n">deleteEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Entry</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
 </span><span class='line'>
-</span><span class='line'>Hashtable::Hashtable (int size) {
-</span><span class='line'>  assert(size &gt; 0);
-</span><span class='line'>  this-&gt;size = size;
-</span><span class='line'>  occupiedSize = 0;
-</span><span class='line'>  minTableSize = MIN_TABLE_SIZE;
-</span><span class='line'>  maxTableSize = MAX_TABLE_SIZE;
-</span><span class='line'>  minLoadFactorThreshold = MIN_LOAD_FACTOR_THREHOLD;
-</span><span class='line'>  maxLoadFactorThreshold = MAX_LOAD_FACTOR_THREHOLD;
-</span><span class='line'>  table = new Entry* [size];
-</span><span class='line'>  for (int i = 0; i &lt; size; i++) {
-</span><span class='line'>    table[i] = NULL;
-</span><span class='line'>  }
-</span><span class='line'>}
+</span><span class='line'><span class="n">Hashtable</span><span class="o">::</span><span class="n">Hashtable</span> <span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">assert</span><span class="p">(</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">this</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">occupiedSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">minTableSize</span> <span class="o">=</span> <span class="n">MIN_TABLE_SIZE</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">maxTableSize</span> <span class="o">=</span> <span class="n">MAX_TABLE_SIZE</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">minLoadFactorThreshold</span> <span class="o">=</span> <span class="n">MIN_LOAD_FACTOR_THREHOLD</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">maxLoadFactorThreshold</span> <span class="o">=</span> <span class="n">MAX_LOAD_FACTOR_THREHOLD</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Entry</span><span class="o">*</span> <span class="p">[</span><span class="n">size</span><span class="p">];</span>
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>void Hashtable::put (int key, int value) {
-</span><span class='line'>  int hash = this-&gt;hash(key);
-</span><span class='line'>  int count = 0;
-</span><span class='line'>  while(table[hash] != NULL) {
-</span><span class='line'>    //全部位置遍历后，如果仍然没有空位，返回；
-</span><span class='line'>    if (count &gt;= size) {
-</span><span class='line'>      cout &lt;&lt; "The hashtable is full, failed to add {key:" &lt;&lt; key &lt;&lt; " value:" &lt;&lt; value &lt;&lt; "}" &lt;&lt; endl;
-</span><span class='line'>      return;
-</span><span class='line'>    }
-</span><span class='line'>    hash = (hash + 1) % size;
-</span><span class='line'>    count ++;
-</span><span class='line'>  }
-</span><span class='line'>  table[hash] = new Entry(key, value);
-</span><span class='line'>  occupiedSize ++;
-</span><span class='line'>  float currentLoadFactor = (float)occupiedSize / (float)size;
-</span><span class='line'>  if( currentLoadFactor &gt; maxLoadFactorThreshold && size * 2 &lt; maxTableSize) {
-</span><span class='line'>    resize(2);
-</span><span class='line'>  }
-</span><span class='line'>}
+</span><span class='line'><span class="kt">void</span> <span class="n">Hashtable</span><span class="o">::</span><span class="n">put</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">hash</span> <span class="o">=</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">//全部位置遍历后，如果仍然没有空位，返回；</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The hashtable is full, failed to add {key:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">key</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; value:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;}&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">hash</span> <span class="o">=</span> <span class="p">(</span><span class="n">hash</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">table</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Entry</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">occupiedSize</span> <span class="o">++</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">float</span> <span class="n">currentLoadFactor</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">occupiedSize</span> <span class="o">/</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">size</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span> <span class="n">currentLoadFactor</span> <span class="o">&gt;</span> <span class="n">maxLoadFactorThreshold</span> <span class="o">&amp;&amp;</span> <span class="n">size</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">maxTableSize</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">resize</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>int Hashtable::get (int key) {
-</span><span class='line'>  int hash = this-&gt;hash(key);
-</span><span class='line'>  int count = 0;
-</span><span class='line'>  while(table[hash] != NULL) {
-</span><span class='line'>    if(table[hash]-&gt;getKey() == key) {
-</span><span class='line'>      return table[hash]-&gt;getValue();
-</span><span class='line'>    }
-</span><span class='line'>    //全部位置遍历后，仍然没有找到对应的key，返回-1
-</span><span class='line'>    if (count &gt;= size) {
-</span><span class='line'>      return -1;
-</span><span class='line'>    }
-</span><span class='line'>    hash = (hash + 1) % size;
-</span><span class='line'>    count ++;
-</span><span class='line'>  }
+</span><span class='line'><span class="kt">int</span> <span class="n">Hashtable</span><span class="o">::</span><span class="n">get</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">hash</span> <span class="o">=</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getKey</span><span class="p">()</span> <span class="o">==</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">table</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="c1">//全部位置遍历后，仍然没有找到对应的key，返回-1</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">hash</span> <span class="o">=</span> <span class="p">(</span><span class="n">hash</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>  return -1;
-</span><span class='line'>}
+</span><span class='line'>  <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>int Hashtable::hash (int key) {
-</span><span class='line'>  return key % size;
-</span><span class='line'>}
-</span><span class='line'>int Hashtable::getSize () {
-</span><span class='line'>  return size;
-</span><span class='line'>}
-</span><span class='line'>int Hashtable::getOccupiedSize () {
-</span><span class='line'>  return occupiedSize;
-</span><span class='line'>}
+</span><span class='line'><span class="kt">int</span> <span class="n">Hashtable</span><span class="o">::</span><span class="n">hash</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">key</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">Hashtable</span><span class="o">::</span><span class="n">getSize</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">size</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">Hashtable</span><span class="o">::</span><span class="n">getOccupiedSize</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">occupiedSize</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>void Hashtable::resize (double factor) {
-</span><span class='line'>  int oldSize = size;
-</span><span class='line'>  Entry ** oldTable = table;
-</span><span class='line'>  size = (int) oldSize * factor;
-</span><span class='line'>  table = new Entry* [size];
-</span><span class='line'>  occupiedSize = 0;
+</span><span class='line'><span class="kt">void</span> <span class="n">Hashtable</span><span class="o">::</span><span class="n">resize</span> <span class="p">(</span><span class="kt">double</span> <span class="n">factor</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">oldSize</span> <span class="o">=</span> <span class="n">size</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">Entry</span> <span class="o">**</span> <span class="n">oldTable</span> <span class="o">=</span> <span class="n">table</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">oldSize</span> <span class="o">*</span> <span class="n">factor</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Entry</span><span class="o">*</span> <span class="p">[</span><span class="n">size</span><span class="p">];</span>
+</span><span class='line'>  <span class="n">occupiedSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>  for (int i = 0; i &lt; size; i++) {
-</span><span class='line'>    table[i] = NULL;
-</span><span class='line'>  }
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'>  for (int i = 0; i &lt; oldSize; i++) {
-</span><span class='line'>    if (NULL != oldTable[i] &&  oldTable[i] != deleteEntry) {
-</span><span class='line'>      put(oldTable[i]-&gt;getKey(), oldTable[i]-&gt;getValue());
-</span><span class='line'>    }
-</span><span class='line'>  }
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">oldSize</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">!=</span> <span class="n">oldTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;&amp;</span>  <span class="n">oldTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">deleteEntry</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">put</span><span class="p">(</span><span class="n">oldTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getKey</span><span class="p">(),</span> <span class="n">oldTable</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getValue</span><span class="p">());</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>  delete[] oldTable;
+</span><span class='line'>  <span class="k">delete</span><span class="p">[]</span> <span class="n">oldTable</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>}
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>void Hashtable::remove (int key) {
-</span><span class='line'>  int hash = this-&gt;hash(key);
-</span><span class='line'>  int count = 0;
-</span><span class='line'>  while(table[hash] != NULL) {
-</span><span class='line'>    if(table[hash]-&gt;getKey() == key) {
-</span><span class='line'>      delete table[hash];
-</span><span class='line'>      table[hash] = deleteEntry;
-</span><span class='line'>      occupiedSize --;
-</span><span class='line'>      // cout &lt;&lt; "remove and occupiedSize: " &lt;&lt; occupiedSize &lt;&lt;  endl;
-</span><span class='line'>      float currentLoadFactor = (float)occupiedSize / (float)size;
-</span><span class='line'>      if( currentLoadFactor &lt; minLoadFactorThreshold && size / 2 &gt; minTableSize) {
-</span><span class='line'>        resize(0.5);
-</span><span class='line'>      }
+</span><span class='line'><span class="kt">void</span> <span class="n">Hashtable</span><span class="o">::</span><span class="n">remove</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">hash</span> <span class="o">=</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getKey</span><span class="p">()</span> <span class="o">==</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">delete</span> <span class="n">table</span><span class="p">[</span><span class="n">hash</span><span class="p">];</span>
+</span><span class='line'>      <span class="n">table</span><span class="p">[</span><span class="n">hash</span><span class="p">]</span> <span class="o">=</span> <span class="n">deleteEntry</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">occupiedSize</span> <span class="o">--</span><span class="p">;</span>
+</span><span class='line'>      <span class="c1">// cout &lt;&lt; &quot;remove and occupiedSize: &quot; &lt;&lt; occupiedSize &lt;&lt;  endl;</span>
+</span><span class='line'>      <span class="kt">float</span> <span class="n">currentLoadFactor</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">occupiedSize</span> <span class="o">/</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">size</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span> <span class="n">currentLoadFactor</span> <span class="o">&lt;</span> <span class="n">minLoadFactorThreshold</span> <span class="o">&amp;&amp;</span> <span class="n">size</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="n">minTableSize</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">resize</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>    }
-</span><span class='line'>    //全部位置遍历后，仍然没有找到对应的key
-</span><span class='line'>    if (count &gt;= size) {
-</span><span class='line'>      cout &lt;&lt; "没有找到你要删除的 key: " &lt;&lt; key &lt;&lt; endl;
-</span><span class='line'>      return;
-</span><span class='line'>    }
-</span><span class='line'>    hash = (hash + 1) % size;
-</span><span class='line'>    count ++;
-</span><span class='line'>  }
-</span><span class='line'>}
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="c1">//全部位置遍历后，仍然没有找到对应的key</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;没有找到你要删除的 key: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">key</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="n">hash</span> <span class="o">=</span> <span class="p">(</span><span class="n">hash</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>Hashtable::~Hashtable () {
-</span><span class='line'>  for (int i = 0; i &lt; size; i++) {
-</span><span class='line'>    if(table[i]) {
-</span><span class='line'>      delete table[i];
-</span><span class='line'>    }
-</span><span class='line'>  }
-</span><span class='line'>  delete [] table;
-</span><span class='line'>}
+</span><span class='line'><span class="n">Hashtable</span><span class="o">::~</span><span class="n">Hashtable</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">delete</span> <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">delete</span> <span class="p">[]</span> <span class="n">table</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
