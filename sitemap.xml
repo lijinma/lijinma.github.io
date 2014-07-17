@@ -48,7 +48,13 @@
     </url>
     <url>
         <loc>http://lijinma.github.io/blog/2014/06/09/hashtable/</loc>
-        <lastmod>2014-06-14T23:40:24+08:00</lastmod>
+        <lastmod>2014-06-14T23:40:35+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://lijinma.github.io/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress/
+        </loc>
+        <lastmod>2014-07-18T05:17:38+08:00</lastmod>
     </url>
     <url>
         <loc>http://lijinma.github.io/about/</loc>
@@ -56,11 +62,11 @@
     </url>
     <url>
         <loc>http://lijinma.github.io/blog/archives/</loc>
-        <lastmod>2014-06-14T23:40:24+08:00</lastmod>
+        <lastmod>2014-07-18T05:17:38+08:00</lastmod>
     </url>
     <url>
         <loc>http://lijinma.github.io/</loc>
-        <lastmod>2014-06-14T23:40:24+08:00</lastmod>
+        <lastmod>2014-07-18T05:17:38+08:00</lastmod>
     </url>
     <url>
         <loc>http://lijinma.github.io/robots.txt</loc>

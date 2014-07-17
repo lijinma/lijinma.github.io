@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>金马的Blog</title>
+  <title>WordPress 出现“Error Establishing a Database Connection ”（无法连接数据库）怎么办？ - 金马的Blog</title>
   <meta name="author" content="lijinma">
 
   
-  <meta name="description" content=" 花了两个晚上读完了刘未鹏的暗时间，心中窃喜。今天再次翻看这本书进行浏览总结并思考，通过这本书我到底学到了什么？ ">
+  <meta name="description" content="WordPress 出现“Error establishing a database connection ”（无法连接数据库）怎么办？ 今天朋友使用 WordPress 建站的时候出现“无法连接数据库”的问题，我想分享我解决问题的思路。 （1定位问题：获取更详细出错信息。 看到这个提示后， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lijinma.github.io/blog/page/2">
+  <link rel="canonical" href="http://lijinma.github.io/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="金马的Blog" type="application/atom+xml">
@@ -64,15 +64,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/09/14/liuweipeng_mindhacks_dark_time/">读刘未鹏《暗时间》</a></h1>
+      <h1 class="entry-title">WordPress 出现“Error Establishing a Database Connection ”（无法连接数据库）怎么办？</h1>
     
     
       <p class="meta">
@@ -88,89 +85,67 @@
   
 
 
-<time datetime="2012-09-14T23:21:00+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+<time datetime="2014-07-18T04:54:25+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2014</time>
         
-           | <a href="/blog/2012/09/14/liuweipeng_mindhacks_dark_time/#disqus_thread"
-             data-disqus-identifier="http://lijinma.github.io/blog/2012/09/14/liuweipeng_mindhacks_dark_time/">Comments</a>
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lijinma.github.io">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p><img src="/images/post/dark_time.jpeg" alt="暗时间" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+<div class="entry-content"><h1>WordPress 出现“Error establishing a database connection ”（无法连接数据库）怎么办？</h1>
 
-<!-- ![暗时间](../images/post/dark_time.jpeg) -->
+<p>今天朋友使用 WordPress 建站的时候出现“无法连接数据库”的问题，我想分享我解决问题的思路。</p>
+
+<h3>（1定位问题：获取更详细出错信息。</h3>
+
+<p>看到这个提示后，我们脑子里会有多重假设，如果靠着我们的假设会花费大量的时间去试验，我的做法是：WordPress 是否有一种更详细显示出错信息的开关？在我寻找后，我发现，在<code>wp-config.php</code>中有一个可以修改为<code>define('WP_DEBUG', true)</code>;</p>
+
+<h3>(2)分析问题：确定解决方案</h3>
+
+<p>打开<code>DEBUG</code>的开关后，发现问题是<code>Can't connect to local MySQL server through socket '/var/run/mysqld/mysql.sock’</code></p>
+
+<p>问题很明显是 PHP 无法通过默认的<code>mysql.sock</code>连接到 MySQL server。</p>
+
+<h4>2.1 确定 mysql.sock 的位置</h4>
+
+<p>使用指令 <code>mysql -uroot -p</code> 进入 MySQL；
+使用指令 <code>SHOW VARIABLES LIKE 'socket’;</code> 获取到 mysql.sock 的位置；</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>| socket        | /tmp/mysql.sock |</span></code></pre></td></tr></table></div></figure>
 
 
-<p>花了两个晚上读完了刘未鹏的暗时间，心中窃喜。今天再次翻看这本书进行浏览总结并思考，通过这本书我到底学到了什么？</p>
+<h3>(3)解决问题：用最简单好用的方法</h3>
 
+<p>一般出现上述问题有几种方法来解决：</p>
+
+<p>（1）软连接到默认的 sock 位置 <code>ln -s /tmp/mysql.sock /var/run/mysqld/mysql.sock</code></p>
+
+<p>这是最简单最快的执行方法。</p>
+
+<p>（2）修改 php.ini 中的 <code>mysql.default_socket=tmp/mysql.sock</code></p>
+
+<p>使用 <code>php -i|grep php.ini</code>找到 php.ini 的位置，然后修改，但是这种方法需要重启 Apache 或者 Nginx。</p>
+
+<p>（3）直接修改 wp-config.php  <code>define('DB_HOST', 'localhost:/tmp/mysql.sock');</code> 在 WordPress 应用中配置 sock 的位置。</p>
+
+<p>这种方法可以直接在应用层面修改，不涉及后台设置，如果没有太多权限，这是一种不错的方法。</p>
+
+<p>最后使用的是方法（3），原因是朋友的后台账号没有足够的权限进行方法（1）和（2）的操作。</p>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/09/14/liuweipeng_mindhacks_dark_time/">Read on &rarr;</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2/">使用Amazon EC2搭建WordPress全过程</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">lijinma</span></span>
 
-<time datetime="2012-09-13T01:24:00+08:00" pubdate data-updated="true">Sep 13<span>th</span>, 2012</time>
-        
-           | <a href="/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2/#disqus_thread"
-             data-disqus-identifier="http://lijinma.github.io/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/post/amazon_ec2.jpg" alt="Amazon EC2" target="_blank" style="float:right;width:150px;margin-left:20px;" />
-一直就想见识一下Amazon EC2，因为可以免费使用一年，但由于我一直没有 Visa 卡，所以一直等到现在，网上已经有很多关于如何申请Amazon EC2 的帖子，我在这里不多说，不过我要提醒各位的有如下几点：</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/13/jinma_blog_opened/">金马博客开启</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -182,40 +157,36 @@
   
 
 
-<time datetime="2012-09-13T00:57:00+08:00" pubdate data-updated="true">Sep 13<span>th</span>, 2012</time>
-        
-           | <a href="/blog/2012/09/13/jinma_blog_opened/#disqus_thread"
-             data-disqus-identifier="http://lijinma.github.io/blog/2012/09/13/jinma_blog_opened/">Comments</a>
-        
-      </p>
+<time datetime="2014-07-18T04:54:25+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2014</time>
+      
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  
+  
+</div>
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/06/09/hashtable/" title="Previous Post: 设计一个动态平衡的哈希表">&laquo; 设计一个动态平衡的哈希表</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-  <div class="entry-content"><p><img src="/images/post/jinma.jpg" alt="金马的blog" target="_blank" style="float:right;width:150px;margin-left:20px;" />
-经过一晚上的折腾，终于开启了我的博客。</p>
-
-<p>我在csdn的博客是：<a href="http://blog.csdn.net/handsomerocco">http://blog.csdn.net/handsomerocco</a>, 在csdn写的主要是一些技术上解决问题的文章，比较杂，总体来说也算一个技术博客。一直以来就期望自己能建立一个独立的博客，一方面方便自己来积累技术上遇到的一些问题并与大家分享，另一方面也是给自己一个平台来总结自己最近的思考。</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/09/13/jinma_blog_opened/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/">Newer &rarr;</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -248,7 +219,7 @@
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/lijinma">@lijinma</a> on GitHub
@@ -281,6 +252,7 @@
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -295,7 +267,10 @@
       var disqus_shortname = 'jinmablog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lijinma.github.io/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress/';
+        var disqus_url = 'http://lijinma.github.io/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
