@@ -97,17 +97,17 @@
 
 <div class="entry-content"><p>今天朋友使用 WordPress 建站的时候出现“无法连接数据库”的问题，我想分享我解决问题的思路。</p>
 
-<h3>（1)定位问题：获取更详细出错信息。</h3>
+<h2>（1)定位问题：获取更详细出错信息。</h2>
 
 <p>看到这个提示后，我们脑子里会有多重假设，如果靠着我们的假设会花费大量的时间去试验，我的做法是：WordPress 是否有一种更详细显示出错信息的开关？在我寻找后，我发现，在<code>wp-config.php</code>中有一个可以修改为<code>define('WP_DEBUG', true)</code>;</p>
 
-<h3>(2)分析问题：确定解决方案</h3>
+<h2>(2)分析问题：确定解决方案</h2>
 
 <p>打开<code>DEBUG</code>的开关后，发现问题是<code>Can't connect to local MySQL server through socket '/var/run/mysqld/mysql.sock’</code></p>
 
 <p>问题很明显是 PHP 无法通过默认的<code>mysql.sock</code>连接到 MySQL server。</p>
 
-<h4>2.1 确定 mysql.sock 的位置</h4>
+<h3>2.1 确定 mysql.sock 的位置</h3>
 
 <p>使用指令 <code>mysql -uroot -p</code> 进入 MySQL；
 使用指令 <code>SHOW VARIABLES LIKE 'socket’;</code> 获取到 mysql.sock 的位置；</p>
@@ -116,7 +116,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>| socket        | /tmp/mysql.sock |</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>(3)解决问题：用最简单好用的方法</h3>
+<h2>(3)解决问题：用最简单好用的方法</h2>
 
 <p>一般出现上述问题有几种方法来解决：</p>
 
