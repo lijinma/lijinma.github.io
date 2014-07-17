@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-07-18T05:18:57+08:00</updated>
+  <updated>2014-07-18T05:21:05+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -18,9 +18,7 @@
     <link href="http://lijinma.github.io/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress/"/>
     <updated>2014-07-18T04:54:25+08:00</updated>
     <id>http://lijinma.github.io/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress</id>
-    <content type="html"><![CDATA[<h1>WordPress 出现“Error establishing a database connection ”（无法连接数据库）怎么办？</h1>
-
-<p>今天朋友使用 WordPress 建站的时候出现“无法连接数据库”的问题，我想分享我解决问题的思路。</p>
+    <content type="html"><![CDATA[<p>今天朋友使用 WordPress 建站的时候出现“无法连接数据库”的问题，我想分享我解决问题的思路。</p>
 
 <h3>（1)定位问题：获取更详细出错信息。</h3>
 
