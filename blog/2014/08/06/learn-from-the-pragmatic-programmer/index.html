@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>《程序员修炼之道》读后感 - 金马的Blog</title>
+  <meta name="author" content="lijinma">
+
+  
+  <meta name="description" content="最近时间比较多，抽了4天时间读完了程序与经典书籍《程序员修炼之道》，结论是，这是一本适合多次阅读的书籍。 这是一本讲程序员内功的书籍，涵盖了设计一个的产品各个点，包括：设计，编码，测试，管理，文档等等，书中始终围绕的一个中心就是：注重实效的程序员应该如何做。 我选了一些有意思的内容分享给大家。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lijinma.github.io/blog/2014/08/06/learn-from-the-pragmatic-programmer">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="金马的Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.useso.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.useso.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.useso.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">金马的Blog</a></h1>
+  
+    <h2>我喜欢折腾，请和我一起折腾</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lijinma.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">《程序员修炼之道》读后感</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-06T14:21:06+08:00" pubdate data-updated="true">Aug 6<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://lijinma.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>最近时间比较多，抽了4天时间读完了程序与经典书籍《程序员修炼之道》，结论是，这是一本适合多次阅读的书籍。</p>
+
+<p>这是一本讲程序员内功的书籍，涵盖了设计一个的产品各个点，包括：设计，编码，测试，管理，文档等等，书中始终围绕的一个中心就是：注重实效的程序员应该如何做。</p>
+
+<p>我选了一些有意思的内容分享给大家。</p>
+
+<h2>领域语言</h2>
+
+<p>让我想起了《代码的未来》中提到的DSL(Domain Specific Language)，在我们工作中会经历各种DSL，在我们需要的时候，我们可以自己来书写DSL。</p>
+
+<h2>如果出现了Bug,记住：</h2>
+
+<pre><code>死程序不会说谎：
+</code></pre>
+
+<p>我是做测试出生，当时提交 Bug 到程序员那边，经常会被回应：怎么可能会有这个问题？现在我自己做程序员了，我发现我依然没有跳出这个怪圈，要时刻提醒自己<code>死程序不会说谎</code>。</p>
+
+<h2>断言式编程：</h2>
+
+<pre><code>如果它不可能发生，用断言确保它不会发生。
+</code></pre>
+
+<p>里面举了两个例子来让我们对断言烦死，很有意思：</p>
+
+<pre><code>（1）1752年9约只有19天，为使日历同步而进行的。
+（2）非欧几何中，三角形的内角和不等于180°，想一想投影在球面上的三角形？
+</code></pre>
+
+<h2>元数据</h2>
+
+<pre><code>使用元数据来解耦，要配置，不要集成。
+</code></pre>
+
+<h2>考虑并发：</h2>
+
+<pre><code>软件设计的适时候，我们要考虑并发的情况，以提高效率。
+</code></pre>
+
+<h2>不要靠巧合编程：</h2>
+
+<pre><code>不要试，要证明；
+</code></pre>
+
+<p>这又是很多人学习新技术的通病，我们不但要知其然，而且要知其所以然。</p>
+
+<h2>算法：</h2>
+
+<pre><code>1.估算你的算法。测试你的估算；
+2.最高效的算法并非总是最好的。
+</code></pre>
+
+<h2>重构：</h2>
+
+<pre><code>早重构，常重构。
+</code></pre>
+
+<p>书里关于重构的内容讲得比较少，但是重构的方向已经给我们指明，使用<code>重构</code>这个武器，我们可以战胜两个敌人：提前超详细设计和烂代码。</p>
+
+<h2>需求：</h2>
+
+<pre><code>与用户一同工作，像用户一样思考。
+</code></pre>
+
+<p>里面举了一个<code>需求之坑</code>，也很有意思：</p>
+
+<pre><code>“只有员工的上级和人事部门才可以查看员工的档案”
+“只有得到授权的用户可以访问员工档案”
+</code></pre>
+
+<p>哪个才是我们真正的需求？</p>
+
+<pre><code>维护词汇表，Use a project glossary 来让我们高效沟通吧。
+</code></pre>
+
+<h2>测试：</h2>
+
+<pre><code>早测试，常测试，自动测试：编一点，测一点。
+
+要到通过全部测试，编码才算完成。
+
+通过“蓄意破坏”测试你的测试。
+
+测试状态覆盖，而不是代码覆盖。
+
+为新bug编写新的测试；
+</code></pre>
+
+<h2>文档：</h2>
+
+<pre><code>代码中的注释应该讨论为何做某事，它的目标和目的。
+
+让不同形式的文档内容保持一致：文档和代码是同一底层模型的不同视图。对待文档要像对待代码一样用心。
+</code></pre>
+
+<h2>责任：</h2>
+
+<pre><code>代码署名，代码所有人，责任。
+</code></pre>
+
+<p>我们的目的是：多年以后，当我们的孙子看到我们编写的代码的时候，他的眼里也会闪过一丝骄傲。</p>
+
+<h2>注重实效的团队：</h2>
+
+<pre><code>1. 不要留破窗户：
+
+最勤勉的开发者如果被派到不在乎质量的团队里，会发现自己很难保持修正琐碎问题所需的热情。
+
+2. 注重检测环境的变化；
+
+3. 交流：一个方法给自己的项目团队创建一个名字和LOGO来增加归属感。
+
+4. 不要重复，重复代码，重复功能等等。
+
+5. 按照功能划分团队。而不是按工作职务来划分组织。
+
+6. 自动化：效率最大化。
+
+7. 制作完美软件的时候，要知道何时停止绘画？
+</code></pre>
+
+<h2>最终结论：</h2>
+
+<p>注重实效的程序员应该不断学习！果然是这个样子。</p>
+
+<h2>本书结尾推荐的书籍：</h2>
+
+<pre><code>分析与设计：
+
+Object-Oriented Software Construction 2nd Edition
+
+Design Patterns
+
+Analysis Patterns
+
+团队与项目：
+
+The Mythical Man Month.
+
+Dynamics of Software Development
+
+Surviving Object-Oriented Projects: A Manager’s Guide
+
+具体环境：
+
+Unix:
+
+Advanced Programming in the Unix Environment
+Unix Network Programming 
+</code></pre>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">lijinma</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-06T14:21:06+08:00" pubdate data-updated="true">Aug 6<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress/" title="Previous Post: WordPress 出现“Error establishing a database connection ”（无法连接数据库）怎么办？">&laquo; WordPress 出现“Error establishing a database connection ”（无法连接数据库）怎么办？</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/08/06/learn-from-the-pragmatic-programmer/">《程序员修炼之道》读后感</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress/">WordPress 出现“Error Establishing a Database Connection ”（无法连接数据库）怎么办？</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/09/hashtable/">设计一个动态平衡的哈希表</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/29/amazing-xor/">感受异或的神奇</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/11/mei-ri-yu-zhu-tong-xing/">《每日与主同行》手机端网站</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/lijinma">@lijinma</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'lijinma',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - <a href="http://www.lijinma.com" target="_blank">lijinma</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jinmablog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://lijinma.github.io/blog/2014/08/06/learn-from-the-pragmatic-programmer/';
+        var disqus_url = 'http://lijinma.github.io/blog/2014/08/06/learn-from-the-pragmatic-programmer/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
