@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-08-06T14:55:18+08:00</updated>
+  <updated>2014-08-06T14:57:05+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -34,6 +34,9 @@
 </code></pre>
 
 <p>我是做测试出生，当时提交 Bug 到程序员那边，经常会被回应：怎么可能会有这个问题？现在我自己做程序员了，我发现我依然没有跳出这个怪圈，要时刻提醒自己<code>死程序不会说谎</code>。</p>
+
+<!-- more -->
+
 
 <h2>断言式编程：</h2>
 
