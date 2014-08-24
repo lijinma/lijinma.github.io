@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-08-06T15:18:32+08:00</updated>
+  <updated>2014-08-24T20:51:06+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linux/Unix 指令使用说明的格式介绍（the Bash Command 'Usage' Syntax）]]></title>
+    <link href="http://lijinma.github.io/blog/2014/08/24/bash-command-usage-syntax/"/>
+    <updated>2014-08-24T20:32:17+08:00</updated>
+    <id>http://lijinma.github.io/blog/2014/08/24/bash-command-usage-syntax</id>
+    <content type="html"><![CDATA[<p>此片文章是对自己的一个提醒！</p>
+
+<p>很多时候在 Linux/Unix 平台上看到一个命令的 Usage 的时候，以为看懂了，其实根本没看懂，还需要通过 man 来查阅，今天我就讲讲 Usage 的语法（syntax）。</p>
+
+<pre><code>bold text          type exactly as shown.
+italic text        replace with appropriate argument.
+[-abc]             any or all arguments within [ ] are optional.
+-a|-b              options delimited by | cannot be used together.
+argument ...       argument is repeatable.
+[expression] ...   entire expression within [ ] is repeatable.
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[《程序员修炼之道》读后感]]></title>
