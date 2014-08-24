@@ -110,6 +110,36 @@ italic text        replace with appropriate argument.
 argument ...       argument is repeatable.
 [expression] ...   entire expression within [ ] is repeatable.
 </code></pre>
+
+<p>举例</p>
+
+<pre><code>$ cp
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file ... target_directory
+</code></pre>
+
+<p>其中<code>cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file ... target_directory</code>包括6部分：</p>
+
+<p><code>cp</code> 是指令名称。</p>
+
+<p><code>[-R [-H | -L | -P]]</code> 一个 options 块，<code>-H</code>、<code>-L</code>和<code>-P</code>三个选项互斥。</p>
+
+<p><code>[-fi | -n]</code> 一个 options 块， <code>-fi</code>和<code>-n</code>选项互斥</p>
+
+<p><code>[-apvX]</code> 一个 options 块， 所有在[]内的参数可以不选择使用，也可以全部选择使用。</p>
+
+<p><code>source_file ...</code> 文件名，<code>...</code>表示可以有多个文件，就是可以有多个 <code>source_file</code></p>
+
+<p><code>target_directory</code> 一个参数，表示要复制文件的最终文件夹。</p>
+
+<p>实例：</p>
+
+<pre><code>$ cp file1 file2 file3 directory
+$ ls direcoty
+file1 file2 file3
+</code></pre>
+
+<p>妈妈再也不用担心我不懂 Command usage 了。</p>
 </div>
   
   
