@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://lijinma.github.io/atom.xml" rel="self"/>
   <link href="http://lijinma.github.io/"/>
-  <updated>2014-08-24T21:20:56+08:00</updated>
+  <updated>2015-01-06T16:39:01+08:00</updated>
   <id>http://lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[PHP 学习推荐的网站]]></title>
+    <link href="http://lijinma.github.io/blog/2015/01/06/websites-that-you-should-know-for-php/"/>
+    <updated>2015-01-06T16:10:13+08:00</updated>
+    <id>http://lijinma.github.io/blog/2015/01/06/websites-that-you-should-know-for-php</id>
+    <content type="html"><![CDATA[<p><a href="http://www.phptherightway.com/">http://www.phptherightway.com/</a></p>
+
+<p>这个网站应该是学习 PHP 的最好的指南，没有之一。</p>
+
+<p><a href="http://www.php-fig.org/">http://www.php-fig.org/</a></p>
+
+<p>一个制定 PHP 规范的机构，非常有必要了解下。</p>
+
+<p><a href="https://packagist.org/">https://packagist.org/</a></p>
+
+<p>Composer 的官方的主要的 Repository，当然你得先去了解下 Composer。</p>
+
+<p><a href="http://thephpleague.com/">http://thephpleague.com/</a></p>
+
+<p>PHP 精品库，由国外几个开发者打造，只有满足如下条件的库才会被收录：</p>
+
+<p>We comply to the standards of the PHP-FIG.
+We adhere to the best-practices put forward by PHP The &ldquo;Right&rdquo; Way.
+We distribute code via Packagist and Composer.</p>
+
+<p>虽然库比较少，但这些库都是精品，也是 PHP 的希望。</p>
+
+<p><a href="http://hhvm.com/">http://hhvm.com/</a></p>
+
+<p>Facebook 开发的高性能的 PHP 虚拟机，据说比官方的快9倍，随着 HHVM 的不断完善，现在大部分的框架都被支持，比如 Laravel。</p>
+
+<p>我感觉这也是 PHP 的一个希望。</p>
+
+<p>社区类：</p>
+
+<p><a href="https://phphub.org/">https://phphub.org/</a></p>
+
+<p>国内非常好的社区，里面主要分享 Laravel 相关的内容，但是非常值得一看。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PHP 的最佳实践]]></title>
+    <link href="http://lijinma.github.io/blog/2014/11/13/what-is-php-best-practice/"/>
+    <updated>2014-11-13T16:35:46+08:00</updated>
+    <id>http://lijinma.github.io/blog/2014/11/13/what-is-php-best-practice</id>
+    <content type="html"><![CDATA[<p>今天听了 Mc 对 PHP 的分享，就偷偷把他的分享内容拿过来了。</p>
+
+<p>“PHP 是世界上最好的语言”, 那么今天的题目就是 Zen of PHP（PHP 之禅）。</p>
+
+<h2>PHP 语言使用原则：</h2>
+
+<p>原则1：去其糟粕，取其精华。</p>
+
+<p>原则2：使用 PHP 最高稳定版本。</p>
+
+<p>原则3：注重实际，注重效率（Be pragmatic）</p>
+
+<p>原则4：可读性与可改性（Readability &amp; Writability）</p>
+
+<h2>PHP 语言使用战略：</h2>
+
+<p>(1)Autoload everything</p>
+
+<p>(2)Require only autoload.php</p>
+
+<p>(3)static method instead of global method</p>
+
+<p>(4)Namespace every class</p>
+
+<p>(5)Do not mix &lsquo;side effects&rsquo; and &lsquo;definitions&rsquo;</p>
+
+<h2>PHP 语言使用战术：</h2>
+
+<p>(1)用一款牛逼的 IDE，比如 PHPStorm</p>
+
+<p>(2) PHPDoc &amp; Type hint，让写代码成为做选择题，而不是写作文。</p>
+
+<p>(3) Log log log</p>
+
+<p>(4) Object &amp; Array</p>
+
+<p>(5) Exception or Boolean return</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linux/Unix 指令使用说明的格式介绍（the Bash Command 'Usage' Syntax）]]></title>
