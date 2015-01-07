@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>金马博客开启 - 金马的Blog</title>
+  <title>Web Technologies I Am Using Recently - 金马的Blog</title>
   <meta name="author" content="lijinma">
 
   
-  <meta name="description" content="经过一晚上的折腾，终于开启了我的博客。 我在csdn的博客是：http://blog.csdn.net/handsomerocco, 在csdn写的主要是一些技术上解决问题的文章，比较杂，总体来说也算一个技术博客。一直以来就期望自己能建立一个独立的博客， &hellip;">
+  <meta name="description" content="最近的项目使用了一些技术，分享出来，希望和大家有一些讨论和切磋。 项目管理： 使用的是 Teambition，整体感觉凑合， 但问题也有， 比如产品经理的文档无法在 teambition 上很舒服的书写，只能通过上传文件来分享，效率太低，最后只能使用印象笔记来分享，结果印象笔记分享被封了，真是坑 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="git@github.com:lijinma/lijinma.github.io.git/blog/2012/09/13/jinma_blog_opened">
+  <link rel="canonical" href="git@github.com:lijinma/lijinma.github.io.git/blog/2015/01/07/web-technologies-i-am-using-recently">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="金马的Blog" type="application/atom+xml">
@@ -69,7 +69,7 @@
   
   <header>
     
-      <h1 class="entry-title">金马博客开启</h1>
+      <h1 class="entry-title">Web Technologies I Am Using Recently</h1>
     
     
       <p class="meta">
@@ -85,24 +85,69 @@
   
 
 
-<time datetime="2012-09-13T00:57:00+08:00" pubdate data-updated="true">Sep 13<span>th</span>, 2012</time>
+<time datetime="2015-01-07T18:54:03+08:00" pubdate data-updated="true">Jan 7<span>th</span>, 2015</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><img src="/images/post/jinma.jpg" alt="金马的blog" target="_blank" style="float:right;width:150px;margin-left:20px;" />
-经过一晚上的折腾，终于开启了我的博客。</p>
+<div class="entry-content"><p>最近的项目使用了一些技术，分享出来，希望和大家有一些讨论和切磋。</p>
 
-<p>我在csdn的博客是：<a href="http://blog.csdn.net/handsomerocco">http://blog.csdn.net/handsomerocco</a>, 在csdn写的主要是一些技术上解决问题的文章，比较杂，总体来说也算一个技术博客。一直以来就期望自己能建立一个独立的博客，一方面方便自己来积累技术上遇到的一些问题并与大家分享，另一方面也是给自己一个平台来总结自己最近的思考。</p>
+<h2>项目管理：</h2>
 
-<!--more-->
+<p>使用的是 <code>Teambition</code>，整体感觉凑合，</p>
+
+<p>但问题也有，</p>
+
+<ol>
+<li>比如产品经理的文档无法在 teambition 上很舒服的书写，只能通过上传文件来分享，效率太低，最后只能使用印象笔记来分享，结果印象笔记分享被封了，真是坑。</li>
+</ol>
 
 
-<p>最近读了刘未鹏的《暗时间》，也深刻的理解了他为什么会整整花费一个章节来讲述一个博客的重要性，沉淀、思考、讨论等等都会在一个博客中呈现出来。没有读过的同学推荐去读一下，他书的内容大部分都可以在他博客中找到，不过还是推荐大家购买他的书，安静的晚上，捧起一本书的感觉是无以言表的。</p>
+<h2>版本管理：</h2>
 
-<p>我的博客空间是使用 Amazon EC2，使用的是放在日本的实例，感觉速度还算可以。希望我的博客可以把我想写的东西写出来，也更希望能帮到大家。</p>
+<p>使用 <code>Git</code>，搭配 <code>GitLab</code>，<code>Gitlab</code> 使用起来真的超出预期，版本管理，代码 Review 等等都非常好用，<code>Github</code> 有的功能 <code>GitLab</code> 应该都有吧。</p>
+
+<h2>项目后端使用语言：PHP</h2>
+
+<p>PHP 是世界上最好的语言，哈哈哈哈哈哈。</p>
+
+<p>PHP 现在依然是最受人鄙视的语言，但是你们确定了解 PHP 5.4, PHP 5.5, PHP 5.6吗？我承认 PHP 5.2之前真的是有太多的糟粕，但是 PHP 现在的稳定版本 5.5已经吸收了很多优秀的思想，焕然一新。<code>Composer</code>（Packagist）、<code>Laravel</code>、<code>HHVM</code> 都是 PHP 的希望，用 PHP 依然可以写出优秀的代码。</p>
+
+<p>而且，PHP 的程序员很多啊，创业公司比较好招人。嘿嘿</p>
+
+<h2>项目PHP包管理：Composer</h2>
+
+<p>在本地服务器搭建 <code>Composer Satis</code> 来存放自己的私有的包，尽可能将所有公有的包也缓存到本地的服务器，这样子 <code>composer update</code> 会节省很多时间，秒更新，酸爽。</p>
+
+<h2>项目前端：</h2>
+
+<p>使用 <code>bower</code> 进行前端包管理。
+使用 <code>webpack</code> 实现前端模块化机制，就是类似 <code>require.js</code> 做的事情，简单实用。
+使用 <code>gulp.js</code> 来实现前端自动化，比如 <code>less</code> 编译，js 文件 uglify，文件连接，文件监听等等，使用下来感觉比 <code>grunt.js</code> 要好用几倍，<code>gulp.js</code> 能做的事情太多了，而且插件很丰富。</p>
+
+<h2>缓存：Redis</h2>
+
+<p>主要用来存储 <code>session</code> 和一些高频率读取的值，整体来说没有使用太复杂的数据结构。</p>
+
+<p>之前使用 <code>Redis</code> 来做队列，后来使用了 <code>Rabbitmq</code> 就感觉省心了不少。</p>
+
+<h2>消息：Rabbitmq</h2>
+
+<p>主要用到的业务比如：发送短信，发送邮件，一些段时间内大量操作但响应要求不是那么及时的都可以使用队列来做。</p>
+
+<h2>日志：</h2>
+
+<p>使用 PHP 的一个 <code>monolog</code> 库，使用文本记录 + <code>MongoDB</code> 两种方式记录日志，查日志的时候，你会发现 <code>MongoDB</code> 比文本方便太多，因为你可以用任何语言来分析 <code>MongoDB</code> 数据库，但是文本文件的话就比较局限。</p>
+
+<h2>监控程序：supervisor</h2>
+
+<p>很好用，可以满足进程监控。</p>
+
+<h2>定时执行：crontab</h2>
+
+<p>感觉整体够用，一些定时需要执行的任务都使用 crontab，简单稳定。</p>
 </div>
 
 
@@ -125,7 +170,7 @@
   
 
 
-<time datetime="2012-09-13T00:57:00+08:00" pubdate data-updated="true">Sep 13<span>th</span>, 2012</time>
+<time datetime="2015-01-07T18:54:03+08:00" pubdate data-updated="true">Jan 7<span>th</span>, 2015</time>
       
 
 
@@ -140,8 +185,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2015/01/06/websites-that-you-should-know-for-php/" title="Previous Post: PHP 学习推荐的网站">&laquo; PHP 学习推荐的网站</a>
       
-        <a class="basic-alignment right" href="/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2/" title="Next Post: 使用Amazon EC2搭建WordPress全过程">使用Amazon EC2搭建WordPress全过程 &raquo;</a>
       
     </p>
   </footer>
@@ -149,7 +194,7 @@
 <section>
       <h1>Comments</h1>
         <!-- 多说评论框 start -->
-  	<div class="ds-thread" data-thread-key="/blog/2012/09/13/jinma_blog_opened" data-title="金马博客开启 - 金马的Blog" data-url="/blog/2012/09/13/jinma_blog_opened/"></div>
+  	<div class="ds-thread" data-thread-key="/blog/2015/01/07/web-technologies-i-am-using-recently" data-title="web technologies I am using recently - 金马的Blog" data-url="/blog/2015/01/07/web-technologies-i-am-using-recently/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">
