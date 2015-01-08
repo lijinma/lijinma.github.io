@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[金马的Blog]]></title>
-  <link href="git@github.com:lijinma/lijinma.github.io.git/atom.xml" rel="self"/>
-  <link href="git@github.com:lijinma/lijinma.github.io.git/"/>
-  <updated>2015-01-08T01:31:12+08:00</updated>
-  <id>git@github.com:lijinma/lijinma.github.io.git/</id>
+  <link href="https://github.com/lijinma/lijinma.github.io/atom.xml" rel="self"/>
+  <link href="https://github.com/lijinma/lijinma.github.io/"/>
+  <updated>2015-01-08T16:58:39+08:00</updated>
+  <id>https://github.com/lijinma/lijinma.github.io/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[2014年总结与2015年展望]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2015/01/08/2014-and-2015/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2015/01/08/2014-and-2015/"/>
     <updated>2015-01-08T01:25:19+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2015/01/08/2014-and-2015</id>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2015/01/08/2014-and-2015</id>
     <content type="html"><![CDATA[<h2>家庭（妻子）</h2>
 
 <p>2014年中更多的认识了神，更多的看到了神的荣美，所以与妻子的关系也是越来越好，感谢主的恩典。只可惜我依然经常以自我为中心，没有做好妻子的头，还求神不断的带领。</p>
@@ -144,9 +144,9 @@
   
   <entry>
     <title type="html"><![CDATA[项目最近使用的一些技术]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2015/01/07/web-technologies-i-am-using-recently/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2015/01/07/web-technologies-i-am-using-recently/"/>
     <updated>2015-01-07T18:54:03+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2015/01/07/web-technologies-i-am-using-recently</id>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2015/01/07/web-technologies-i-am-using-recently</id>
     <content type="html"><![CDATA[<p>最近的项目使用了一些技术，分享出来，希望和大家有一些讨论和切磋。</p>
 
 <h2>项目管理：</h2>
@@ -208,9 +208,9 @@
   
   <entry>
     <title type="html"><![CDATA[PHP 学习推荐的网站]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2015/01/06/websites-that-you-should-know-for-php/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2015/01/06/websites-that-you-should-know-for-php/"/>
     <updated>2015-01-06T16:10:13+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2015/01/06/websites-that-you-should-know-for-php</id>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2015/01/06/websites-that-you-should-know-for-php</id>
     <content type="html"><![CDATA[<p><a href="http://www.phptherightway.com/">http://www.phptherightway.com/</a></p>
 
 <p>这个网站应该是学习 PHP 的最好的指南，没有之一。</p>
@@ -249,9 +249,9 @@ We distribute code via Packagist and Composer.</p>
   
   <entry>
     <title type="html"><![CDATA[PHP 的最佳实践]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2014/11/13/what-is-php-best-practice/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2014/11/13/what-is-php-best-practice/"/>
     <updated>2014-11-13T16:35:46+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2014/11/13/what-is-php-best-practice</id>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2014/11/13/what-is-php-best-practice</id>
     <content type="html"><![CDATA[<p>今天听了 Mc 对 PHP 的分享，就偷偷把他的分享内容拿过来了。</p>
 
 <p>“PHP 是世界上最好的语言”, 那么今天的题目就是 Zen of PHP（PHP 之禅）。</p>
@@ -294,9 +294,9 @@ We distribute code via Packagist and Composer.</p>
   
   <entry>
     <title type="html"><![CDATA[Linux/Unix 指令使用说明的格式介绍（the Bash Command 'Usage' Syntax）]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2014/08/24/bash-command-usage-syntax/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2014/08/24/bash-command-usage-syntax/"/>
     <updated>2014-08-24T20:32:17+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2014/08/24/bash-command-usage-syntax</id>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2014/08/24/bash-command-usage-syntax</id>
     <content type="html"><![CDATA[<p>此片文章是对自己的一个提醒！</p>
 
 <p>很多时候在 Linux/Unix 平台上看到一个命令的 Usage 的时候，以为看懂了，其实根本没看懂，还需要通过 man 来查阅，今天我就讲讲 Usage 的语法（syntax）。</p>
@@ -348,9 +348,9 @@ file1 file2 file3
   
   <entry>
     <title type="html"><![CDATA[《程序员修炼之道》读后感]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2014/08/06/learn-from-the-pragmatic-programmer/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2014/08/06/learn-from-the-pragmatic-programmer/"/>
     <updated>2014-08-06T14:21:06+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2014/08/06/learn-from-the-pragmatic-programmer</id>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2014/08/06/learn-from-the-pragmatic-programmer</id>
     <content type="html"><![CDATA[<p>最近时间比较多，抽了4天时间读完了程序与经典书籍《程序员修炼之道》，结论是，这是一本适合多次阅读的书籍。</p>
 
 <p>这是一本讲程序员内功的书籍，涵盖了设计一个的产品各个点，包括：设计，编码，测试，管理，文档等等，书中始终围绕的一个中心就是：注重实效的程序员应该如何做。</p>
@@ -496,9 +496,9 @@ file1 file2 file3
   
   <entry>
     <title type="html"><![CDATA[WordPress 出现“Error Establishing a Database Connection ”（无法连接数据库）怎么办？]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress/"/>
     <updated>2014-07-18T04:54:25+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress</id>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2014/07/18/error-establishing-a-database-connection-for-wordpress</id>
     <content type="html"><![CDATA[<p>今天朋友使用 WordPress 建站的时候出现“无法连接数据库”的问题，我想分享我解决问题的思路。</p>
 
 <h2>（1)定位问题：获取更详细出错信息。</h2>
@@ -545,9 +545,9 @@ file1 file2 file3
   
   <entry>
     <title type="html"><![CDATA[设计一个动态平衡的哈希表]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2014/06/09/hashtable/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2014/06/09/hashtable/"/>
     <updated>2014-06-09T01:20:02+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2014/06/09/hashtable</id>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2014/06/09/hashtable</id>
     <content type="html"><![CDATA[<p>最近周六在上 July 组织的算法课，学习了很多当年大学错过的课程，感觉收获很多，尤其是Ben的课程，很大的鼓励，很丰富的内容，以下内容是一个作业题：如何设计一个动态平衡的哈希表。</p>
 
 <h2>什么是动态平衡的哈希表</h2>
@@ -1078,10 +1078,10 @@ file1 file2 file3
   
   <entry>
     <title type="html"><![CDATA[感受异或的神奇]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2014/05/29/amazing-xor/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2014/05/29/amazing-xor/"/>
     <updated>2014-05-29T06:26:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2014/05/29/amazing-xor</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/xor.png" alt="异或" /></p>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2014/05/29/amazing-xor</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/xor.png" alt="异或" /></p>
 
 <h2>什么是异或？</h2>
 
@@ -1727,10 +1727,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[《每日与主同行》手机端网站]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2013/09/11/mei-ri-yu-zhu-tong-xing/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2013/09/11/mei-ri-yu-zhu-tong-xing/"/>
     <updated>2013-09-11T01:03:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2013/09/11/mei-ri-yu-zhu-tong-xing</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/meiriyuzhutongxing.png" alt="每日与主同行" /></p>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2013/09/11/mei-ri-yu-zhu-tong-xing</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/meiriyuzhutongxing.png" alt="每日与主同行" /></p>
 
 <p>在阿牛哥的带领下，我现在每天都会读圣经，参考的资料就是苏颖智牧师的《每日与主同行》，经常需要在网上读一下每天的章节，但是网上大部分版本都没有做很好的手机兼容，所以在手机上读的很累，我就自己做了一个简单的网站来进行每天的阅读。</p>
 
@@ -1757,7 +1757,7 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 
 <h4>截图：</h4>
 
-<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/screenshot.png" alt="ScreenShot" /></p>
+<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/screenshot.png" alt="ScreenShot" /></p>
 
 <h3>终于可以使用手机阅读了</h3>
 ]]></content>
@@ -1765,10 +1765,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[一个年轻程序员对版本管理的理解]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2013/04/09/version-control/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2013/04/09/version-control/"/>
     <updated>2013-04-09T01:03:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2013/04/09/version-control</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/version_control.png" alt="版本管理" /></p>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2013/04/09/version-control</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/version_control.png" alt="版本管理" /></p>
 
 <p>版本管理是每一个项目中必不可少的环节，但这些知识却无法在学校中学到，常常需要在实践中学习，我总结了一些自己工作中版本管理的知识和经验，希望能给大家带来一起启发。
 本文章是有感于某外包公司因为人少竟然不用版本管理而发。部分内容参考网上资料。</p>
@@ -1889,10 +1889,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[金马的2012年总结]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2013/02/02/my-2012/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2013/02/02/my-2012/"/>
     <updated>2013-02-02T23:30:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2013/02/02/my-2012</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/2013.png" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2013/02/02/my-2012</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/2013.png" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
 
 <p>明天要回家，虽然明天要5点起赶飞机，我依然决定要熬夜写下这篇博客，因为我想在年前把这篇文章发布了，2012年对于我来说是神奇的一年，也是充满感动的一年，婚姻，工作，信仰，家庭在这一年中都是收获满满，连昨天的年会抽奖也是幸运连连，我有点幸福…… 以下内容我想到哪写到哪，可能前言不搭后语，请大家凑合看，这篇博客的最终目的是期望你们会知道我的近况。</p>
 
@@ -1901,7 +1901,7 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 
 <h2>关于博客：</h2>
 
-<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/wodeblog.png" alt="Blog" /></p>
+<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/wodeblog.png" alt="Blog" /></p>
 
 <p>我是一个爱写东西但又写得很烂的人，所以常常在校内写了东西最后又没有发出去，我会忧虑很多。但今年下半年我最终还是决定要写一点点关于技术和思考的东西了，因为我觉得我是一个程序猿，就这样金马的Blog <a href="http://www.lijinma.com">www.lijinma.com</a>诞生了。</p>
 
@@ -1911,7 +1911,7 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 
 <h2>关于我的工作：</h2>
 
-<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/yeeccologo.png" alt="Yeecco" /></p>
+<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/yeeccologo.png" alt="Yeecco" /></p>
 
 <p>我们公司是做什么：我们公司是从ios移植app到android上的，我们提供你移植工具或移植服务，如果想了解更多的，请访问我们网站<a href="http://www.yeecco.com">www.yeecco.com</a>，服务器在国外，所以有点慢，另外网站大部分是我弄的，体验不够好，请大家轻喷；网站做的不好不代表公司不牛逼。</p>
 
@@ -1923,17 +1923,17 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 
 <h2>关于婚姻：</h2>
 
-<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/hunying.png" alt="Marrige" /></p>
+<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/hunying.png" alt="Marrige" /></p>
 
 <p>婚姻是一个常被人讨论的话题，我的感觉是：真的不容易；两个人组成一个家庭会遇见各种各样的问题，会冲突会吵架，但无论如何：你会在某一天某时刻感受到婚姻的甜美，甜美的滋味会让你觉得一切都是值得。很感谢参加教会的夫妻营，也很感谢这一年来教会中弟兄姊妹对我们夫妻的帮助，让我们能认识到彼此的差异，让我们能不求回报的去爱；我想在将来无数的日夜里我们还会遇到各种各样的难题，但我有充足的信心去解决（不包括吵架的时候）。</p>
 
-<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/laopo.png" alt="Laopo" /></p>
+<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/laopo.png" alt="Laopo" /></p>
 
 <p>也在这样一个文章里感谢我妻子，我无房无车吊丝一枚，她为了我辞掉了大连的工作来到上海，一切从头开始，单单是为了我，我是幸运的。</p>
 
 <h2>关于朋友：</h2>
 
-<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/pengyou.jpg" alt="Friends" /></p>
+<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/pengyou.jpg" alt="Friends" /></p>
 
 <p>我承认自己是一个很懒的人，我去到一个新环境后，很少去联系以前的朋友，我只想说，对不起，或许你没有收到我的电话或短信，但是，但我会经常想起你们，会怀念，会发呆。刚才在《ONE 一个》上看到这样一句话：<code>当头发已斑白的时候，你是否还依然能牢记我？（from 陈升《然而》）</code>我想说的是，我会的，我会忘记你的大名，但我会牢记你的绰号；我会忘记与你的不开心，但我会牢记与你一起的欢乐；我会忘记你的样子，但我会牢记你的笑容。</p>
 
@@ -1941,7 +1941,7 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 
 <h2>关于支教：</h2>
 
-<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/zhijiao.png" alt="Zhijiao" /></p>
+<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/zhijiao.png" alt="Zhijiao" /></p>
 
 <p>去年听到了一些关于短期支教的批评声音，我想在这里说一些我对支教的认识，我个人觉得有些同学理解错了短期支教的该概念，短期支教真的能给孩子们带去很多吗？短期支教真的可以让孩子视野扩大吗？我觉得会有，但不会很多；但我依然很支持短期支教，为什么呢？因为我觉得支教过程对参与支教的大学生们改变很多，因为我们每个人都需要了解中国的教育现状，有一句话叫：<code>人对了，事情就对了。</code>如果将来某一天我们很多人都有这样一颗支教的心，而且付诸了行动，山区的孩子就会有接受更好教育的机会，教育的新鲜血液就会不断涌入，中国的教育也就会有希望。</p>
 
@@ -1949,7 +1949,7 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 
 <h2>关于公益与感动：</h2>
 
-<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/gongyi.png" alt="Gongyi" /></p>
+<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/gongyi.png" alt="Gongyi" /></p>
 
 <p>毕业两年来，我公益方面都做了什么？几乎没有，就是前段时间在小王老师的带领下我们三位老师：小王老师，黄老师和我给以前支教教过的孩子们邮去了一些照片和书籍，内心得到了平安，和小王老师比起来，我的爱心远不够。</p>
 
@@ -1969,7 +1969,7 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 
 <h1>关于2013计划：</h1>
 
-<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/2013.png" alt="2013" /></p>
+<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/2013.png" alt="2013" /></p>
 
 <p>一般我们都很难实现年初的计划，但我依然想写下新的一年的打算，我会尝试降低完成难度：</p>
 
@@ -1984,10 +1984,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[公司如何进行文档管理]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2013/01/28/how-to-manage-docs/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2013/01/28/how-to-manage-docs/"/>
     <updated>2013-01-28T00:35:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2013/01/28/how-to-manage-docs</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/docs.jpeg" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2013/01/28/how-to-manage-docs</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/docs.jpeg" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
 
 <p>我相信每个公司都会认为写文档是一件很重要的事情，但是文档的书写、管理、更新，备份等问题绝对不是一件简单的事情，我不知道别的公司是如何管理文档的，但是我以前在畅游工作，文档是通过word来书写，然后通过svn来管理就非常低效，我想先说一下我们公司文档是一步一步如何改进的，也许在这个一个改进的路上会看到你自己的影子。</p>
 
@@ -2085,10 +2085,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[我的博客到底应该写什么？]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2013/01/26/what-for-blog/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2013/01/26/what-for-blog/"/>
     <updated>2013-01-26T21:53:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2013/01/26/what-for-blog</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/blog.jpg" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2013/01/26/what-for-blog</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/blog.jpg" alt="Blog" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
 
 <p>前段时间脑子里面突然蹦出这个问题：我的博客到底应该写什么？博客可以写很多东西，可以写生活的琐事，可以写一些工作中遇到的技术小问题，可以分享身边的任何东西，当然还可以写自己的思考；从我开始<a href="">www.lijinma.com</a>博客后，我写了差不多8篇文章，其中大部分的文章是一些技术小问题，但当我再回头看自己写的文章的时候，我发现有价值的东西很少，所以从那天我就开始反省自己：我的博客到底要写些什么？想回答这个问题，我问了自己另外一个问题：我为什么要写博客?</p>
 
@@ -2167,10 +2167,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[博客搬家：从Wordpress迁移到octopress]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2013/01/23/move-from-wordpress-to-octopress/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2013/01/23/move-from-wordpress-to-octopress/"/>
     <updated>2013-01-23T23:59:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2013/01/23/move-from-wordpress-to-octopress</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/octopress.jpeg" alt="Octopress" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2013/01/23/move-from-wordpress-to-octopress</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/octopress.jpeg" alt="Octopress" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
 
 <p>终于还是下定决心从Wordpress迁移到Octopress上了，Wordpress的便利导致了他越来越庞大的身躯，但他的臃肿常常会打消我写文章的念头，也真的是不想再花心思在Wordpress主题和插件上了，我们要更专注于写而不是别的花里胡哨的东西，从复杂中解脱，回归简单。</p>
 
@@ -2219,10 +2219,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[【用objective-c写android游戏】初次使用Stella SDK]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2012/11/17/what_is_stella_sdk/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2012/11/17/what_is_stella_sdk/"/>
     <updated>2012-11-17T23:30:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2012/11/17/what_is_stella_sdk</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/yeecco.png" alt="StellaSDK" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2012/11/17/what_is_stella_sdk</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/yeecco.png" alt="StellaSDK" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
 
 <p>现在跨平台开发的工具越来越多，比如使用html5的Phone Gap，比如某姓王的提出来的Cocos2d-x等等，还有很多很多，这些平台都可以直接开发ios和android平台的应用，但是对于我却不满意，因为我只会写Objective-c，不会用javascript、c++等，我也不愿意再花大量的时间去学习js、c++、lua等，那怎么办？Stella SDK解决了我的问题。</p>
 
@@ -2267,10 +2267,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[读刘未鹏《暗时间》]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2012/09/14/liuweipeng_mindhacks_dark_time/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2012/09/14/liuweipeng_mindhacks_dark_time/"/>
     <updated>2012-09-14T23:21:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2012/09/14/liuweipeng_mindhacks_dark_time</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/dark_time.jpeg" alt="暗时间" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2012/09/14/liuweipeng_mindhacks_dark_time</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/dark_time.jpeg" alt="暗时间" target="_blank" style="float:right;width:150px;margin-left:20px;"  /></p>
 
 <!-- ![暗时间](../images/post/dark_time.jpeg) -->
 
@@ -2409,10 +2409,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[使用Amazon EC2搭建WordPress全过程]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2/"/>
     <updated>2012-09-13T01:24:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/amazon_ec2.jpg" alt="Amazon EC2" target="_blank" style="float:right;width:150px;margin-left:20px;" />
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2012/09/13/how_to_setup_wordpress_using_amazon_ec2</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/amazon_ec2.jpg" alt="Amazon EC2" target="_blank" style="float:right;width:150px;margin-left:20px;" />
 一直就想见识一下Amazon EC2，因为可以免费使用一年，但由于我一直没有 Visa 卡，所以一直等到现在，网上已经有很多关于如何申请Amazon EC2 的帖子，我在这里不多说，不过我要提醒各位的有如下几点：</p>
 
 <!--more-->
@@ -2470,10 +2470,10 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
   
   <entry>
     <title type="html"><![CDATA[金马博客开启]]></title>
-    <link href="git@github.com:lijinma/lijinma.github.io.git/blog/2012/09/13/jinma_blog_opened/"/>
+    <link href="https://github.com/lijinma/lijinma.github.io/blog/2012/09/13/jinma_blog_opened/"/>
     <updated>2012-09-13T00:57:00+08:00</updated>
-    <id>git@github.com:lijinma/lijinma.github.io.git/blog/2012/09/13/jinma_blog_opened</id>
-    <content type="html"><![CDATA[<p><img src="git@github.com:lijinma/lijinma.github.io.git/images/post/jinma.jpg" alt="金马的blog" target="_blank" style="float:right;width:150px;margin-left:20px;" />
+    <id>https://github.com/lijinma/lijinma.github.io/blog/2012/09/13/jinma_blog_opened</id>
+    <content type="html"><![CDATA[<p><img src="https://github.com/lijinma/lijinma.github.io/images/post/jinma.jpg" alt="金马的blog" target="_blank" style="float:right;width:150px;margin-left:20px;" />
 经过一晚上的折腾，终于开启了我的博客。</p>
 
 <p>我在csdn的博客是：<a href="http://blog.csdn.net/handsomerocco">http://blog.csdn.net/handsomerocco</a>, 在csdn写的主要是一些技术上解决问题的文章，比较杂，总体来说也算一个技术博客。一直以来就期望自己能建立一个独立的博客，一方面方便自己来积累技术上遇到的一些问题并与大家分享，另一方面也是给自己一个平台来总结自己最近的思考。</p>

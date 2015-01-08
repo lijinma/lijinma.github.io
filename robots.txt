@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: git@github.com:lijinma/lijinma.github.io.git/sitemap.xml 
+Sitemap: https://github.com/lijinma/lijinma.github.io/sitemap.xml 
