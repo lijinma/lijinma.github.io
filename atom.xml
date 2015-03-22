@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://www.lijinma.com/atom.xml" rel="self"/>
   <link href="http://www.lijinma.com/"/>
-  <updated>2015-03-22T20:57:43+08:00</updated>
+  <updated>2015-03-22T21:01:00+08:00</updated>
   <id>http://www.lijinma.com/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -27,6 +27,9 @@
 <p>思前想后，dingo/api 确实在很多方面都很全面，也很方便（参考 <a href="https://github.com/dingo/api/wiki">https://github.com/dingo/api/wiki</a> ），比如集成了fractal来对数据进行统一处理 （参考 <a href="https://github.com/thephpleague/fractal">https://github.com/thephpleague/fractal</a> ）, 比如集成了多种 Authetication，比如集成了接口访问频次的限制（Rate limiting），比如集成了多种错误 Response 等，总体来说如果使用这个 Package 会节省很多时间。</p>
 
 <p>因为要使用 dingo/api，最后的决定使用 Laravel 4.2，正好也了解一下 Laravel 4.2 的特性，因为我确实没有使用 Laravel 框架做过正式的项目，将来再升级 Laravel 5.0 也行。</p>
+
+<!-- more -->
+
 
 <h2>中间遇见的一个坑和解决方案：</h2>
 
