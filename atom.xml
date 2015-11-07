@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://www.lijinma.com/atom.xml" rel="self"/>
   <link href="http://www.lijinma.com/"/>
-  <updated>2015-11-07T21:23:45+08:00</updated>
+  <updated>2015-11-07T21:26:12+08:00</updated>
   <id>http://www.lijinma.com/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -39,45 +39,76 @@
 <p>几个小技巧分享：</p>
 
 <p>（1）在线上环境，如果数据库需要一些初始数据，可以使用 migration 完成，不使用 Seed 主要有两个原因，一、Seed 会依赖一些 开发环境的包 ，例如 faker 等，而这些包是在 require-dev 中，二， 使用 Seed 可能会和开发环境的 Seed 混淆。
-（2）重写别人 Trait 的方法：
-trait CustomCommanderTrait
-{</p>
+（2）重写别人 Trait 的方法：</p>
 
-<pre><code>use CommanderTrait {
-    mapInputToCommand as originMapInputToCommand;
- ...
-}
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">trait</span> <span class="nx">CustomCommanderTrait</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">use</span> <span class="nx">CommanderTrait</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">mapInputToCommand</span> <span class="k">as</span> <span class="nx">originMapInputToCommand</span><span class="p">;</span>
+</span><span class='line'>     <span class="o">...</span>
+</span><span class='line'>    <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>php</p>
 
 <p> Api 的文档选择</p>
 
 <p>选了很多，最后决定使用<a href="http://apidocjs.com/%EF%BC%8C%E4%BB%96%E7%9A%84%E4%BC%98%E7%82%B9%E5%B0%B1%E6%98%AF%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E9%83%BD%E5%BE%88%E6%96%B9%E4%BE%BF%EF%BC%8C%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%BC%98%E7%82%B9%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%9C%A8">http://apidocjs.com/%EF%BC%8C%E4%BB%96%E7%9A%84%E4%BC%98%E7%82%B9%E5%B0%B1%E6%98%AF%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E9%83%BD%E5%BE%88%E6%96%B9%E4%BE%BF%EF%BC%8C%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E4%BC%98%E7%82%B9%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%9C%A8</a> Api 文档中测试，省去使用 Postman 这样的工具（参考<a href="http://apidocjs.com/example/%EF%BC%89%EF%BC%8C%E4%B8%8D%E8%BF%87%E9%87%8C%E9%9D%A2%E6%9C%89%E4%B8%80%E4%B8%AA%E5%9D%91%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%B5%8B%E8%AF%95">http://apidocjs.com/example/%EF%BC%89%EF%BC%8C%E4%B8%8D%E8%BF%87%E9%87%8C%E9%9D%A2%E6%9C%89%E4%B8%80%E4%B8%AA%E5%9D%91%EF%BC%8C%E5%B0%B1%E6%98%AF%E6%B5%8B%E8%AF%95</a> Api 的部分代码如下：</p>
 
-<pre><code>  // send AJAX request, catch success or error callback
-  $.ajax({
-      url: url,
-      dataType: "json",
-      contentType: "application/json",
-      data: JSON.stringify(param),
-      headers: header,
-      type: type.toUpperCase(),
-      success: displaySuccess,
-      error: displayError
-  });
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="c1">// send AJAX request, catch success or error callback</span>
+</span><span class='line'><span class="err">$</span><span class="o">.</span><span class="nx">ajax</span><span class="p">({</span>
+</span><span class='line'>    <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">contentType</span><span class="o">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">data</span><span class="o">:</span> <span class="nx">JSON</span><span class="o">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">param</span><span class="p">),</span>
+</span><span class='line'>    <span class="nx">headers</span><span class="o">:</span> <span class="nx">header</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">type</span><span class="o">:</span> <span class="nx">type</span><span class="o">.</span><span class="nx">toUpperCase</span><span class="p">(),</span>
+</span><span class='line'>    <span class="nx">success</span><span class="o">:</span> <span class="nx">displaySuccess</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">error</span><span class="o">:</span> <span class="nx">displayError</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>在 Oauth 2.0获取 Access token 的时候，提交方式必须是：application/x-www-form-urlencoded，所以我使用 gulp 替换了对应的内容为：</p>
 
-<pre><code>  // send AJAX request, catch success or error callback
-  $.ajax({
-      url: url,
-      data: param,
-      headers: header,
-      type: type.toUpperCase(),
-      success: displaySuccess,
-      error: displayError
-  });
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="c1">// send AJAX request, catch success or error callback</span>
+</span><span class='line'><span class="err">$</span><span class="o">.</span><span class="nx">ajax</span><span class="p">({</span>
+</span><span class='line'>    <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">data</span><span class="o">:</span> <span class="nx">param</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">headers</span><span class="o">:</span> <span class="nx">header</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">type</span><span class="o">:</span> <span class="nx">type</span><span class="o">.</span><span class="nx">toUpperCase</span><span class="p">(),</span>
+</span><span class='line'>    <span class="nx">success</span><span class="o">:</span> <span class="nx">displaySuccess</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">error</span><span class="o">:</span> <span class="nx">displayError</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>jQuery Ajax 默认 Post 的方式就是application/x-www-form-urlencoded，也是醉了。</p>
 
