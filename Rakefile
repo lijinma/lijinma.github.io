@@ -264,10 +264,10 @@ multitask :push do
     message = "Site updated at #{Time.now.utc}"
     puts "\n## Committing: #{message}"
     system "git commit -m \"#{message}\""
-    puts "\n## Pushing generated #{deploy_dir} website"
-    system "git push origin #{deploy_branch}"
+#    puts "\n## Pushing generated #{deploy_dir} website"
+#    system "git push origin #{deploy_branch}"
     puts "\n## Github Pages deploy complete"
-    system "git remote add gitcafe git@gitcafe.com:lijinma/lijinma.git >> /dev/null 2>&1"
+#    system "git remote add gitcafe git@gitcafe.com:lijinma/lijinma.git >> /dev/null 2>&1"
     system "git push -u gitcafe master:gitcafe-pages"
   end
 end
