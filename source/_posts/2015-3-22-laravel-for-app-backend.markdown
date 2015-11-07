@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "laravel for app backend"
+title: "讲讲我最近做的一个 App 后端项目"
 date: 2015-3-22 21:21:51 +0800
 comments: true
 categories: 
@@ -9,6 +9,8 @@ categories:
 以前主要做网站类的后端，没有深入做过一个 App 的后端。最近因为前公司项目解散加入了一个新的公司，现在做的项目是一个教育导航 App 的后端 Api 部分。
 
 因为只有我一个后端程序员，所以一切要使用的框架等都需要我来调查并选择。我用的是 PHP，以前的项目使用过 Codeigniter，也使用过非常轻量级的 Slim 框架，Laravel 也有一直关注，看了 Jeffery Way 的 Laracasts 很多视频，确实感觉到了 Laravel 在快速建立方面非常优秀，而且因为使用的人越来越多，现在也有非常丰富的第三方库，而且 Laravel 框架一直都在使用 PHP 最新的一些技术，这也是我喜欢这个框架的一个原因。
+
+<!-- more -->
 
 确实因为对 Laravel 框架的偏好，打算使用最近发布的 Laravel 5.0，因为我是为 App 后端开发 Api，所以需要在对应框架上找一个方便的 Api 解决方案，Laravel 中比较优秀的 Package 是https://github.com/dingo/api ，Summer 也推荐这个框架（参考讨论https://phphub.org/topics/504），但是一个最大的问题是，dingo/api 还没有 Laravel 5.0 的版本（参考讨论https://github.com/dingo/api/issues/213）。
 
