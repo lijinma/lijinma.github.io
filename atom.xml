@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://www.lijinma.com/atom.xml" rel="self"/>
   <link href="http://www.lijinma.com/"/>
-  <updated>2015-11-07T21:32:05+08:00</updated>
+  <updated>2015-11-07T21:33:57+08:00</updated>
   <id>http://www.lijinma.com/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -44,7 +44,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Laravel for App Backend]]></title>
+    <title type="html"><![CDATA[讲讲我最近做的一个 App 后端项目]]></title>
     <link href="http://www.lijinma.com/blog/2015/03/22/laravel-for-app-backend/"/>
     <updated>2015-03-22T21:21:51+08:00</updated>
     <id>http://www.lijinma.com/blog/2015/03/22/laravel-for-app-backend</id>
