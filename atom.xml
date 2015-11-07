@@ -4,7 +4,7 @@
   <title><![CDATA[金马的Blog]]></title>
   <link href="http://www.lijinma.com/atom.xml" rel="self"/>
   <link href="http://www.lijinma.com/"/>
-  <updated>2015-11-07T21:26:12+08:00</updated>
+  <updated>2015-11-07T21:32:05+08:00</updated>
   <id>http://www.lijinma.com/</id>
   <author>
     <name><![CDATA[lijinma]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[关于数据库建表脚本管理]]></title>
+    <link href="http://www.lijinma.com/blog/2015/11/07/sql-version-control/"/>
+    <updated>2015-11-07T21:30:21+08:00</updated>
+    <id>http://www.lijinma.com/blog/2015/11/07/sql-version-control</id>
+    <content type="html"><![CDATA[<p>这是一个好问题，经过一段时间的使用，我推荐使用 MySQLWorkbench 来进行管理数据库脚本。</p>
+
+<p>我简单分析一下我用过的几种管理方式的优缺点：</p>
+
+<h2>SQL 脚本</h2>
+
+<p>优点：可版本管理。
+缺点：数据库表修改后，同步数据库比较麻烦。</p>
+
+<h2>Migration（比如 Laravel 的 Migration）</h2>
+
+<p>优点：可版本管理，直接使用代码代替 SQL 脚本；
+缺点：只能特定的框架才能用，不够通用。</p>
+
+<h2>MySQLWorkbench</h2>
+
+<p>优点：修改方便，管理方便，同步数据库非常方便。
+缺点：无法版本管理，因为是一个二进制文件。</p>
+
+<p>MySQLWorkbench的亮点功能是：同步建表 Model 和数据库，当Model 修改后，直接和数据库进行同步，生成差异的 SQL 脚本执行，非常方便。</p>
+
+<p>综上，没有使用过 MySQLWorkbench 的同学，真的可以试一试。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Laravel for App Backend]]></title>
@@ -2570,25 +2600,6 @@ Y和Z的低位第一位都是00000100， X的低位第一位是00001000；
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[金马博客开启]]></title>
-    <link href="http://www.lijinma.com/blog/2012/09/13/jinma_blog_opened/"/>
-    <updated>2012-09-13T00:57:00+08:00</updated>
-    <id>http://www.lijinma.com/blog/2012/09/13/jinma_blog_opened</id>
-    <content type="html"><![CDATA[<p><img src="http://www.lijinma.com/images/post/jinma.jpg" alt="金马的blog" target="_blank" style="float:right;width:150px;margin-left:20px;" />
-经过一晚上的折腾，终于开启了我的博客。</p>
-
-<p>我在csdn的博客是：<a href="http://blog.csdn.net/handsomerocco">http://blog.csdn.net/handsomerocco</a>, 在csdn写的主要是一些技术上解决问题的文章，比较杂，总体来说也算一个技术博客。一直以来就期望自己能建立一个独立的博客，一方面方便自己来积累技术上遇到的一些问题并与大家分享，另一方面也是给自己一个平台来总结自己最近的思考。</p>
-
-<!--more-->
-
-
-<p>最近读了刘未鹏的《暗时间》，也深刻的理解了他为什么会整整花费一个章节来讲述一个博客的重要性，沉淀、思考、讨论等等都会在一个博客中呈现出来。没有读过的同学推荐去读一下，他书的内容大部分都可以在他博客中找到，不过还是推荐大家购买他的书，安静的晚上，捧起一本书的感觉是无以言表的。</p>
-
-<p>我的博客空间是使用 Amazon EC2，使用的是放在日本的实例，感觉速度还算可以。希望我的博客可以把我想写的东西写出来，也更希望能帮到大家。</p>
 ]]></content>
   </entry>
   

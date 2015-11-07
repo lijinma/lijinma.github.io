@@ -9,7 +9,8 @@
   <meta name="author" content="lijinma">
 
   
-  <meta name="description" content="以前主要做网站类的后端，没有深入做过一个 App 的后端。最近因为前公司项目解散加入了一个新的公司，现在做的项目是一个教育导航 App 的后端 Api 部分。 因为只有我一个后端程序员，所以一切要使用的框架等都需要我来调查并选择。我用的是 PHP，以前的项目使用过 Codeigniter， &hellip;">
+  <meta name="description" content="这是一个好问题，经过一段时间的使用，我推荐使用 MySQLWorkbench 来进行管理数据库脚本。 我简单分析一下我用过的几种管理方式的优缺点： SQL 脚本 优点：可版本管理。
+缺点：数据库表修改后，同步数据库比较麻烦。 Migration（比如 Laravel 的 Migration） 优点 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +67,63 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/11/07/sql-version-control/">关于数据库建表脚本管理</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-11-07T21:30:21+08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这是一个好问题，经过一段时间的使用，我推荐使用 MySQLWorkbench 来进行管理数据库脚本。</p>
+
+<p>我简单分析一下我用过的几种管理方式的优缺点：</p>
+
+<h2>SQL 脚本</h2>
+
+<p>优点：可版本管理。
+缺点：数据库表修改后，同步数据库比较麻烦。</p>
+
+<h2>Migration（比如 Laravel 的 Migration）</h2>
+
+<p>优点：可版本管理，直接使用代码代替 SQL 脚本；
+缺点：只能特定的框架才能用，不够通用。</p>
+
+<h2>MySQLWorkbench</h2>
+
+<p>优点：修改方便，管理方便，同步数据库非常方便。
+缺点：无法版本管理，因为是一个二进制文件。</p>
+
+<p>MySQLWorkbench的亮点功能是：同步建表 Model 和数据库，当Model 修改后，直接和数据库进行同步，生成差异的 SQL 脚本执行，非常方便。</p>
+
+<p>综上，没有使用过 MySQLWorkbench 的同学，真的可以试一试。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -717,53 +775,6 @@ file1 file2 file3
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/29/amazing-xor/">感受异或的神奇</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-05-29T06:26:00+08:00" pubdate data-updated="true">May 29<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/post/xor.png" alt="异或" /></p>
-
-<h2>什么是异或？</h2>
-
-<p>Wikipedia的解释：</p>
-
-<blockquote><p>在逻辑学中，逻辑算符异或（<code>exclusive or</code>）是对两个运算元的一种逻辑析取类型，符号为 XOR 或 EOR 或 ⊕（编程语言中常用<code>^</code>）。但与一般的逻辑或不同，异或算符的值为真仅当两个运算元中恰有一个的值为真，而另外一个的值为非真。转化为命题，就是：“两者的值不同。”或“有且仅有一个为真。”</p></blockquote>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/29/amazing-xor/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -779,6 +790,10 @@ file1 file2 file3
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/07/sql-version-control/">关于数据库建表脚本管理</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/03/22/laravel-for-app-backend/">Laravel for App Backend</a>
       </li>
     
@@ -792,10 +807,6 @@ file1 file2 file3
     
       <li class="post">
         <a href="/blog/2015/01/06/websites-that-you-should-know-for-php/">PHP 学习推荐的网站</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/13/what-is-php-best-practice/">PHP 的最佳实践</a>
       </li>
     
   </ul>
