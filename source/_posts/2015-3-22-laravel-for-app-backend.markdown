@@ -12,9 +12,9 @@ categories:
 
 <!-- more -->
 
-确实因为对 Laravel 框架的偏好，打算使用最近发布的 Laravel 5.0，因为我是为 App 后端开发 Api，所以需要在对应框架上找一个方便的 Api 解决方案，Laravel 中比较优秀的 Package 是https://github.com/dingo/api ，Summer 也推荐这个框架（参考讨论https://phphub.org/topics/504），但是一个最大的问题是，dingo/api 还没有 Laravel 5.0 的版本（参考讨论https://github.com/dingo/api/issues/213）。
+确实因为对 Laravel 框架的偏好，打算使用最近发布的 Laravel 5.0，因为我是为 App 后端开发 Api，所以需要在对应框架上找一个方便的 Api 解决方案，Laravel 中比较优秀的 Package 是https://github.com/dingo/api ，Summer 也推荐这个框架（参考讨论https://phphub.org/topics/504 ），但是一个最大的问题是，dingo/api 还没有 Laravel 5.0 的版本（参考讨论https://github.com/dingo/api/issues/213 ）。
 
-思前想后，dingo/api 确实在很多方面都很全面，也很方便（参考https://github.com/dingo/api/wiki），比如集成了fractal来对数据进行统一处理 （参考https://github.com/thephpleague/fractal）, 比如集成了多种 Authetication，比如集成了接口访问频次的限制（Rate limiting），比如集成了多种错误 Response 等，总体来说如果使用这个 Package 会节省很多时间。
+思前想后，dingo/api 确实在很多方面都很全面，也很方便（参考https://github.com/dingo/api/wiki ），比如集成了fractal来对数据进行统一处理 （参考https://github.com/thephpleague/fractal ）, 比如集成了多种 Authetication，比如集成了接口访问频次的限制（Rate limiting），比如集成了多种错误 Response 等，总体来说如果使用这个 Package 会节省很多时间。
 
 因为要使用 dingo/api，最后的决定使用 Laravel 4.2，正好也了解一下 Laravel 4.2 的特性，因为我确实没有使用 Laravel 框架做过正式的项目，将来再升级 Laravel 5.0 也行。
 
@@ -24,7 +24,7 @@ categories:
 
 后来发现使用 Session 是不好的解决方案，因为 Session 会过期，如果 Authetication 使用 Session 来处理，在授权方面就完全没有 Oauth 2.0那么灵活，另外一个问题就是，App的登录一般都是永久的登录，使用 Oauth 2.0可以通过 refresh token 来解决，但是使用 Session 你就态尴尬了。
 
-解决方案：需要用到 Session 的地方使用 Cache 来解决（参考https://phphub.org/topics/594），Summer 还给出了我具体的解决方案，非常感谢。Authentication 部分不使用 Session 就直接使用 Oauth 2.0（参考https://github.com/dingo/api/wiki/Authentication 和https://github.com/lucadegasperi/oauth2-server-laravel/wiki），Oauth 2.0在安全方面和灵活方面真的是爽到爆，当然需要 Https 的支持。
+解决方案：需要用到 Session 的地方使用 Cache 来解决（参考https://phphub.org/topics/594 ），Summer 还给出了我具体的解决方案，非常感谢。Authentication 部分不使用 Session 就直接使用 Oauth 2.0（参考https://github.com/dingo/api/wiki/Authentication 和https://github.com/lucadegasperi/oauth2-server-laravel/wiki ），Oauth 2.0在安全方面和灵活方面真的是爽到爆，当然需要 Https 的支持。
 
 几个小技巧分享：
 
@@ -43,7 +43,7 @@ trait CustomCommanderTrait
 
  Api 的文档选择
 
-选了很多，最后决定使用http://apidocjs.com/，他的优点就是安装使用都很方便，另外一个优点是可以直接在 Api 文档中测试，省去使用 Postman 这样的工具（参考http://apidocjs.com/example/），不过里面有一个坑，就是测试 Api 的部分代码如下：
+选了很多，最后决定使用http://apidocjs.com ，他的优点就是安装使用都很方便，另外一个优点是可以直接在 Api 文档中测试，省去使用 Postman 这样的工具（参考http://apidocjs.com/example ），不过里面有一个坑，就是测试 Api 的部分代码如下：
 
 ```php
 // send AJAX request, catch success or error callback

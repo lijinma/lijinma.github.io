@@ -8,13 +8,13 @@ categories:
 
 今天朋友使用 WordPress 建站的时候出现“无法连接数据库”的问题，我想分享我解决问题的思路。
 
-##（1)定位问题：获取更详细出错信息。
+## 1. 定位问题：获取更详细出错信息。
 
 看到这个提示后，我们脑子里会有多重假设，如果靠着我们的假设会花费大量的时间去试验，我的做法是：WordPress 是否有一种更详细显示出错信息的开关？在我寻找后，我发现，在`wp-config.php`中有一个可以修改为`define('WP_DEBUG', true)`;
 
 <!-- more -->
 
-## (2)分析问题：确定解决方案
+## 2. 分析问题：确定解决方案
 
 打开`DEBUG`的开关后，发现问题是`Can't connect to local MySQL server through socket '/var/run/mysqld/mysql.sock’`
 
@@ -29,7 +29,7 @@ categories:
 | socket        | /tmp/mysql.sock |
 ```
 
-## (3)解决问题：用最简单好用的方法
+## 3. 解决问题：用最简单好用的方法
 
 一般出现上述问题有几种方法来解决：
 

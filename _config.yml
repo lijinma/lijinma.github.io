@@ -3,7 +3,7 @@
 # ----------------------- #
 
 
-url: http://www.lijinma.com
+url: https://www.lijinma.com
 title: 金马的Blog
 subtitle: 我喜欢折腾，请和我一起折腾
 author: lijinma
@@ -91,8 +91,8 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name: 
-disqus_show_comment_count: true
+disqus_short_name: lijinma
+disqus_show_comment_count: false
 
 # Google Analytics
 google_analytics_tracking_id:
