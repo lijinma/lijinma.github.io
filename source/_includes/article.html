@@ -25,5 +25,8 @@
     </footer>
   {% endif %}
 {% else %}
-<div class="entry-content">{{ content }}</div>
+<div class="entry-content">
+  {{ content }}
+  本文链接：<a href="{{ site.url }} {{ page.url }}"> {{ site.url }} {{ page.url }} </a>
+</div>
 {% endif %}
