@@ -76,9 +76,9 @@ a10 = share10 * 100 = 0.17218543 * 100 = 17.218543
 ## 测试：
 
 <form>
-红包个数：<input type="text" name="count" id="count" required> <br>
-总金额(元)：<input type="text" name="amount" id="amount" required><br>
-<input type="button" id="submit" value="获取红包金额">
+红包个数：<input type="text" name="count" id="count" required style="height: 20px;margin-top: 10px;padding: 9px 7px;border: 1px solid #b8b8b8;border-bottom: 1px solid #ccc;outline: none;box-shadow: none;"> <br>
+总金额(元)：<input type="text" name="amount" id="amount" required style="height: 20px;margin-top: 10px;padding: 9px 7px;border: 1px solid #b8b8b8;border-bottom: 1px solid #ccc;outline: none;box-shadow: none;"><br>
+<input type="button" id="submit" value="获取红包金额" style="cursor: pointer;width: 120px;height: 38px;line-height: 38px;padding: 0;border: 0;background-color: #38f;font-size: 16px;color: white;margin-top: 10px">
 </form>
 <div id='result'></div>
 <script>
