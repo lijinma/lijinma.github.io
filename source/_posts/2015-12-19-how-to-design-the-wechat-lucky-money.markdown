@@ -6,6 +6,7 @@ comments: true
 categories: 
 ---
 
+![微信红包](/images/post/wechat_lucky_money.png)
 ## 一些前提解释
 
 我要讨论的红包是：微信拼手气红包。
