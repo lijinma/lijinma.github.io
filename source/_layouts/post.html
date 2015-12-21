@@ -27,13 +27,13 @@ single: true
 </article>
 {% if false %}
 <section>
-      <h1>Comments</h1>
+      <h1 id="getComments">显示评论</h1>
       {% include custom/duoshuo.html %}
 </section>
 {% endif %}
 {% if site.disqus_short_name and page.comments == true %}
   <section>
-    <h1>Comments</h1>
+    <h1 id="getComments">显示评论</h1>
     <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
   </section>
 {% endif %}

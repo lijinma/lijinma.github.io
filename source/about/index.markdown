@@ -12,8 +12,6 @@ comments: true
 
 Email: lijinma # 126.com
 
-微信：42851249
-
 我现在的工作是web开发，包括Nodejs和PHP。
 
 也特别喜欢web前端的东西，所以一直关注者前端的技术。
