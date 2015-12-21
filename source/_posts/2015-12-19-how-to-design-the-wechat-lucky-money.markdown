@@ -111,6 +111,7 @@ $('#submit').click(function(){
   }
   if (amount / count < 0.01) {
     alert('单个红包金额不可低于0.01元，请重新填写金额');
+    return false;
   }
   amount = amount * 100;
   var items = [];
