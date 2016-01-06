@@ -13,7 +13,10 @@ categories:
 ##简介
 
 ####网址：
-[http://mryztx.duapp.com](http://mryztx.duapp.com)  (mryztx是《每日与主同行》的首字母)
+[http://m.lijinma.com](http://m.lijinma.com)  (~~http://mryztx.duapp.com~~)
+
+#### 源码
+[https://github.com/lijinma/mryztx](https://github.com/lijinma/mryztx)
 
 ####平台：
 百度BAE
@@ -26,7 +29,10 @@ categories:
 
 ####截图：
 
-![ScreenShot](/images/post/screenshot.png)
+![ScreenShot](/images/post/screenshot.jpeg)
 
 ###终于可以使用手机阅读了
+
+## 修改
+2016年01月06日 修改网址并添加一些内容
 
