@@ -19,7 +19,7 @@ categories:
 [https://github.com/lijinma/mryztx](https://github.com/lijinma/mryztx)
 
 ####平台：
-百度BAE
+阿里云 ~~百度BAE~~
 
 ####方法：
 抓取网站[http://www.jonahome.net/files02/PI_SGrowth-Day-Walk/gb/](http://www.jonahome.net/files02/PI_SGrowth-Day-Walk/gb/)的html存下来，然后重新设计为responsive的页面；使用了一点点bootstrap.min.css。
