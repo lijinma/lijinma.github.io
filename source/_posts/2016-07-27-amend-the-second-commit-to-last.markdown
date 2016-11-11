@@ -18,7 +18,7 @@ categories:
 
 2. 修改倒数第二个提交为：edit，保存退出
 
-![rebase edit](http://ww1.sinaimg.cn/large/72f96cbagw1f61la3iguoj20kp0eb78v.jpg)
+![rebase edit](https://ww1.sinaimg.cn/large/72f96cbagw1f61la3iguoj20kp0eb78v.jpg)
 
 3. rebase 会停在倒数第二个提交，此时你可以修改代码。
 
