@@ -6,8 +6,6 @@ comments: true
 categories: 
 ---
 
-![file](https://dn-phphub.qbox.me/uploads/images/201701/31/77/GVKeIASKWW.png)
-
 背景
 ---
 首先说一下我写这篇文章的初衷，在我们打算使用 Laravel Queue 的时候，你的首选应该是去看文档，但是无奈 Laravel 的文档很多地方写得太简单，有时候想了解一个深入的问题，不得不去看源码，但是看源码确实费一些时间。
